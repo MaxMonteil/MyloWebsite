@@ -101,8 +101,8 @@
           Saw an awesome exercise in a video? Invented your own?
         </p>
         <p class="text-gray-darker">
-          Mylo is here to help you not limit you so there are almost no
-          constraints on what kind of exercise or workout you can create.
+          Mylo is here to help you not limit you, so there are almost no
+          constraints on the kind of exercises or workouts you can create.
         </p>
         <p class="font-medium text-green-darker">
           Whatever you can think of, Mylo can manage.
