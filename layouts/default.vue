@@ -1,7 +1,7 @@
 <template>
-  <main class="antialiased">
+  <div class="antialiased">
     <TheHeader />
 
     <Nuxt />
-  </main>
+  </div>
 </template>
