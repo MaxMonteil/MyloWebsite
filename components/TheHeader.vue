@@ -1,7 +1,21 @@
 <template>
-  <div class="text-green-darker">
-    Mylo
-  </div>
+  <header
+    class="w-full mx-auto sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl"
+  >
+    <div class="flex items-center justify-between px-6 py-5">
+      <a href="/" class="flex items-center text-green-darker">
+        <TheLogo :size="36" />
+        <p>Mylo</p>
+      </a>
+
+      <a
+        href="https://www.mylo.fit"
+        class="px-5 py-2 text-sm font-medium border rounded-md hover:bg-green-dark hover:text-white hover:shadow text-green-dark border-green-dark"
+      >
+        Log in
+      </a>
+    </div>
+  </header>
 </template>
 
 <script>
