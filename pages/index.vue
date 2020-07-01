@@ -19,7 +19,7 @@
 
         <form class="max-w-3xl mx-auto text-lg md:text-xl space-y-5">
           <button
-            class="px-4 py-3 font-medium text-white rounded shadow hover:bg-opacity-75 transition duration-150 bg-green-dark"
+            class="px-4 py-3 font-medium text-white rounded shadow focus:outline-none focus:shadow-outline hover:bg-opacity-75 transition duration-150 bg-green-dark"
           >
             Notify me
           </button>
@@ -73,7 +73,7 @@
         </article>
 
         <button
-          class="p-3 font-medium rounded shadow hover:bg-opacity-75 transition duration-150 bg-green text-green-darker"
+          class="p-3 font-medium rounded shadow focus:outline-none focus:shadow-outline hover:bg-opacity-75 transition duration-150 bg-green text-green-darker"
         >
           Join the launch list
         </button>
@@ -132,7 +132,7 @@
       <form class="max-w-3xl px-6 mx-auto text-lg md:text-xl space-y-5">
         <p class="text-gray-darker">Get notified at launch</p>
         <button
-          class="px-4 py-3 font-medium text-white rounded shadow hover:bg-opacity-75 transition duration-150 bg-green-dark"
+          class="px-4 py-3 font-medium text-white rounded shadow focus:outline-none focus:shadow-outline hover:bg-opacity-75 transition duration-150 bg-green-dark"
         >
           Sign up
         </button>
