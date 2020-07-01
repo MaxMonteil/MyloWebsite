@@ -5,7 +5,7 @@
     <div class="flex items-center justify-between px-6 py-5">
       <a href="/" class="flex items-center text-green-darker">
         <TheLogo :size="36" />
-        <p>Mylo</p>
+        <span>Mylo</span>
       </a>
 
       <a
