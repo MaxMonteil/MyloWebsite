@@ -10,7 +10,7 @@
 
       <a
         href="https://www.mylo.fit"
-        class="px-5 py-2 text-sm font-medium border rounded-md hover:bg-green-dark hover:text-white hover:shadow text-green-dark border-green-dark"
+        class="px-5 py-2 text-sm font-medium border rounded transition duration-150 hover:bg-green-dark hover:text-white hover:shadow text-green-dark border-green-dark"
       >
         Log in
       </a>
