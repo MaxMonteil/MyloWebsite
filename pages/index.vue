@@ -6,18 +6,24 @@
     >
       <div class="px-6 md:text-center space-y-5">
         <h1
-          class="text-4xl font-semibold leading-tight tracking-tight text-black md:text-5xl"
+          class="text-4xl font-semibold leading-tight tracking-tight text-black space-y-2 sm:space-y-0 md:text-5xl"
         >
-          Stay focused on getting <span class="text-green-dark">stronger</span>
+          <span>Stay focused on getting</span>
+          <span
+            class="inline-block px-3 py-1 rounded shadow-xl text-green bg-green-darker"
+          >
+            stronger
+          </span>
         </h1>
 
         <p class="mx-auto text-lg md:text-xl text-gray-darker">
-          We're making Mylo to automatically update and manage your workouts.
+          Let Mylo automatically update your workouts so you can focus on what
+          matters.
           <br />
           Currently in beta, launching soon.
         </p>
 
-        <form class="max-w-3xl mx-auto text-lg md:text-xl space-y-5">
+        <form class="max-w-3xl mx-auto md:text-xl space-y-5">
           <button
             class="px-4 py-3 font-medium text-white rounded shadow focus:outline-none focus:shadow-outline hover:bg-opacity-75 transition duration-150 bg-green-dark"
           >
@@ -129,8 +135,8 @@
     <section
       class="w-full mx-auto space-y-16 sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl"
     >
-      <form class="max-w-3xl px-6 mx-auto text-lg md:text-xl space-y-5">
-        <p class="text-gray-darker">Get notified at launch</p>
+      <form class="max-w-3xl px-6 mx-auto md:text-xl space-y-5">
+        <p class="text-lg text-gray-darker">Get notified at launch</p>
         <button
           class="px-4 py-3 font-medium text-white rounded shadow focus:outline-none focus:shadow-outline hover:bg-opacity-75 transition duration-150 bg-green-dark"
         >
