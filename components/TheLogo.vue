@@ -4,7 +4,7 @@
     :width="props.size"
     :height="props.size"
     viewBox="0 0 16 16"
-    :aria-labelledby="logo"
+    aria-labelledby="logo"
     role="presentation"
     class="inline-block align-top fill-current"
     :class="[data.class, data.staticClass]"
