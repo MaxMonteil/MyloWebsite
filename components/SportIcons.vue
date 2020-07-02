@@ -1,13 +1,12 @@
 <template>
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    :width="size"
-    :height="size"
+    width="100%"
     :fill="getFill"
     viewBox="0 0 400 400"
     aria-labelledby="sport icons"
     role="presentation"
-    class="inline-block align-top"
+    class=""
   >
     <title lang="en">sport icons</title>
     <path
