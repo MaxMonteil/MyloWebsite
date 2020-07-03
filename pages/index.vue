@@ -28,13 +28,19 @@
           Currently in beta, launching soon.
         </p>
 
-        <form class="max-w-3xl mx-auto md:text-xl space-y-5">
+        <SignupForm justify="center">
+          <input
+            name="email_address"
+            placeholder="email@example.com"
+            type="email"
+            class="py-3 pl-6 text-black rounded shadow-xs bg-gray shadow-sm placeholder-gray-dark"
+          />
           <button
             class="px-4 py-3 font-medium text-white rounded shadow focus:outline-none focus:shadow-outline hover:bg-opacity-75 transition duration-150 bg-green-dark"
           >
             Notify me
           </button>
-        </form>
+        </SignupForm>
       </div>
     </section>
 
@@ -96,11 +102,19 @@
           </p>
         </article>
 
-        <button
-          class="p-3 font-medium rounded shadow focus:outline-none focus:shadow-outline hover:bg-opacity-75 transition duration-150 bg-green text-green-darker"
-        >
-          Join the launch list
-        </button>
+        <SignupForm>
+          <input
+            name="email_address"
+            placeholder="email@example.com"
+            type="email"
+            class="py-3 pl-6 text-black bg-white rounded shadow-xs shadow-sm placeholder-gray-dark"
+          />
+          <button
+            class="px-4 py-3 font-medium rounded shadow focus:outline-none focus:shadow-outline hover:bg-opacity-75 transition duration-150 bg-green text-green-darker"
+          >
+            Join the launch list
+          </button>
+        </SignupForm>
       </div>
     </section>
 
@@ -127,7 +141,7 @@
         </p>
 
         <div
-          class="flex items-center px-16 py-16 overflow-x-scroll md:py-0 md:px-0 md:justify-between md:overflow-x-visible snap-x md:space-x-0 space-x-16"
+          class="flex items-center px-16 pt-16 overflow-x-scroll md:py-0 md:px-0 md:justify-between md:overflow-x-visible snap-x md:space-x-0 space-x-16"
         >
           <div class="relative snap-center">
             <SportIcons
@@ -237,16 +251,24 @@
     <section
       class="w-full mx-auto space-y-16 sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl"
     >
-      <form class="max-w-3xl px-6 mx-auto md:px-0 md:text-xl space-y-5">
-        <p class="text-lg md:text-xl text-gray-darker">
+      <article class="max-w-3xl px-6 mx-auto md:px-0 md:text-xl space-y-4">
+        <h3 class="text-lg md:text-xl text-gray-darker">
           Get notified at launch
-        </p>
-        <button
-          class="px-4 py-3 font-medium text-white rounded shadow focus:outline-none focus:shadow-outline hover:bg-opacity-75 transition duration-150 bg-green-dark"
-        >
-          Sign up
-        </button>
-      </form>
+        </h3>
+        <SignupForm>
+          <input
+            name="email_address"
+            placeholder="email@example.com"
+            type="email"
+            class="py-3 pl-6 text-black rounded shadow-xs bg-gray shadow-sm placeholder-gray-dark"
+          />
+          <button
+            class="px-4 py-3 font-medium text-white rounded shadow focus:outline-none focus:shadow-outline hover:bg-opacity-75 transition duration-150 bg-green-dark"
+          >
+            Notify me
+          </button>
+        </SignupForm>
+      </article>
     </section>
   </main>
 </template>
