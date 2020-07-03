@@ -4,7 +4,7 @@
   >
     <div class="flex items-center justify-between px-6 py-5">
       <a
-        href="/"
+        href="https://app.mylo.fit/login"
         class="flex items-center text-green-darker focus:outline-none focus:shadow-outline"
       >
         <TheLogo :size="36" />
