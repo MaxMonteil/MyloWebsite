@@ -4,7 +4,7 @@
     <section
       class="relative w-full py-16 mx-auto -my-16 overflow-hidden sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl"
     >
-      <SportIcons
+      <LazySportIcons
         class="absolute z-0 px-6 -mt-12 opacity-50"
         fill="white"
         stroke="gray"
@@ -48,13 +48,13 @@
     <section
       class="relative w-full overflow-hidden shadow-inner bg-green-darker"
     >
-      <SportIcons
+      <LazySportIcons
         class="absolute left-0 z-0 w-2/4 max-w-2xl px-6 -mt-32 opacity-50 transform rotate-45"
         fill="green-darker"
         stroke="green-dark"
       />
 
-      <SportIcons
+      <LazySportIcons
         class="absolute bottom-0 right-0 z-0 w-2/3 max-w-lg px-6 -mb-32 opacity-50 transform -rotate-90 md:w-1/3"
         fill="green-darker"
         stroke="green-dark"
@@ -144,7 +144,7 @@
           class="flex items-center px-16 pt-16 overflow-x-scroll md:py-0 md:px-0 md:justify-between md:overflow-x-visible snap-x md:space-x-0 space-x-16"
         >
           <div class="relative snap-center">
-            <SportIcons
+            <LazySportIcons
               class="absolute bottom-0 z-0 opacity-75 circle-1"
               fill="white"
               stroke="green"
@@ -161,12 +161,12 @@
           </div>
 
           <div class="relative snap-center">
-            <SportIcons
+            <LazySportIcons
               class="absolute top-0 z-0 w-3/4 opacity-75 circle-2"
               fill="white"
               stroke="green"
             />
-            <SportIcons
+            <LazySportIcons
               class="absolute bottom-0 right-0 z-0 w-5/6 opacity-75 circle-3"
               fill="white"
               stroke="green"
@@ -183,7 +183,7 @@
           </div>
 
           <div class="relative pr-16 md:pr-0 snap-center">
-            <SportIcons
+            <LazySportIcons
               class="absolute top-0 right-0 z-0 w-3/4 opacity-75 circle-4"
               fill="white"
               stroke="green"
@@ -226,7 +226,7 @@
         </div>
 
         <div class="relative flex items-center justify-center">
-          <SportIcons
+          <LazySportIcons
             class="relative z-0 max-w-md opacity-75"
             fill="white"
             stroke="green"
