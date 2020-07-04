@@ -150,11 +150,22 @@
               stroke="green"
             />
 
-            <img
-              class="relative z-10 mb-4 shadow-xl"
-              src="~/assets/images/routine_form.png"
-              alt="Exercise form"
-            />
+            <picture v-lazy-container="{ selector: 'img' }">
+              <source
+                :srcSet="require('~/assets/images/routine_form.png?webp')"
+                type="image/webp"
+              />
+              <source
+                :srcSet="require('~/assets/images/routine_form.png')"
+                type="image/png"
+              />
+              <img
+                class="relative z-10 mb-4 shadow-xl"
+                alt="Exercise form"
+                :data-src="require('~/assets/images/routine_form.png')"
+                :data-loading="require('~/assets/images/routine_form.png?lqip')"
+              />
+            </picture>
             <p class="relative z-10 text-lg text-center w text-gray-dark">
               Make any exercise and organize them in routines
             </p>
@@ -172,11 +183,22 @@
               stroke="green"
             />
 
-            <img
-              class="relative z-10 mb-4 shadow-xl"
-              src="~/assets/images/workout_form.png"
-              alt="Workout form"
-            />
+            <picture v-lazy-container="{ selector: 'img' }">
+              <source
+                :srcSet="require('~/assets/images/workout_form.png?webp')"
+                type="image/webp"
+              />
+              <source
+                :srcSet="require('~/assets/images/workout_form.png')"
+                type="image/png"
+              />
+              <img
+                class="relative z-10 mb-4 shadow-xl"
+                alt="Workout form"
+                :data-src="require('~/assets/images/workout_form.png')"
+                :data-loading="require('~/assets/images/workout_form.png?lqip')"
+              />
+            </picture>
             <p class="relative z-10 text-lg text-center w text-gray-dark">
               Organize them into a workout plan
             </p>
@@ -189,11 +211,22 @@
               stroke="green"
             />
 
-            <img
-              class="relative z-10 mb-4 shadow-xl"
-              src="~/assets/images/training.png"
-              alt="Screenshot of the training view"
-            />
+            <picture v-lazy-container="{ selector: 'img' }">
+              <source
+                :srcSet="require('~/assets/images/training.png?webp')"
+                type="image/webp"
+              />
+              <source
+                :srcSet="require('~/assets/images/training.png')"
+                type="image/png"
+              />
+              <img
+                class="relative z-10 mb-4 shadow-xl"
+                :data-src="require('~/assets/images/training.png')"
+                :data-loading="require('~/assets/images/training.png?lqip')"
+                alt="Screenshot of the training view"
+              />
+            </picture>
             <p class="relative z-10 text-lg text-center w text-gray-dark">
               Start training!
             </p>
@@ -232,16 +265,43 @@
             stroke="green"
           />
           <div class="absolute z-10 flex items-center justify-center">
-            <img
-              class="shadow-lg exercise-form"
-              src="~/assets/images/exercise_form.png"
-              alt="Exercise form"
-            />
-            <img
-              class="z-20 shadow-xl exercise-rules"
-              src="~/assets/images/exercise_rules.png"
-              alt="Exercise rules"
-            />
+            <picture v-lazy-container="{ selector: 'img' }">
+              <source
+                :srcSet="require('~/assets/images/exercise_form.png?webp')"
+                type="image/webp"
+              />
+              <source
+                :srcSet="require('~/assets/images/exercise_form.png')"
+                type="image/png"
+              />
+              <img
+                class="shadow-lg exercise-form"
+                :data-src="require('~/assets/images/exercise_form.png')"
+                :data-loading="
+                  require('~/assets/images/exercise_form.png?lqip')
+                "
+                alt="Exercise form"
+              />
+            </picture>
+
+            <picture v-lazy-container="{ selector: 'img' }">
+              <source
+                :srcSet="require('~/assets/images/exercise_rules.png?webp')"
+                type="image/webp"
+              />
+              <source
+                :srcSet="require('~/assets/images/exercise_rules.png')"
+                type="image/png"
+              />
+              <img
+                class="z-20 shadow-xl exercise-rules"
+                :data-src="require('~/assets/images/exercise_rules.png')"
+                :data-loading="
+                  require('~/assets/images/exercise_rules.png?lqip')
+                "
+                alt="Exercise rules"
+              />
+            </picture>
           </div>
         </div>
       </article>
@@ -280,6 +340,10 @@ export default {
 </script>
 
 <style scoped>
+img[lazy='loading'] {
+  filter: blur(15px);
+}
+
 .circle-1 {
   transform: translate(-50%, -20%);
 }
