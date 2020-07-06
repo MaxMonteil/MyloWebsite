@@ -163,7 +163,7 @@
               class="absolute bottom-0 z-0 opacity-75 stroke-green circle-1"
             />
 
-            <div v-lazy-container="{ selector: 'picture' }">
+            <div v-lazy-container="{ selector: 'img' }">
               <picture>
                 <source
                   :srcSet="require('~/assets/images/routine_form.png?webp')"
@@ -204,7 +204,7 @@
               class="absolute bottom-0 right-0 z-0 w-5/6 opacity-75 stroke-green circle-3"
             />
 
-            <div v-lazy-container="{ selector: 'picture' }">
+            <div v-lazy-container="{ selector: 'img' }">
               <picture>
                 <source
                   :srcSet="require('~/assets/images/workout_form.png?webp')"
@@ -238,7 +238,7 @@
               class="absolute top-0 right-0 z-0 w-3/4 opacity-75 stroke-green circle-4"
             />
 
-            <div v-lazy-container="{ selector: 'picture' }">
+            <div v-lazy-container="{ selector: 'img' }">
               <picture>
                 <source
                   :srcSet="require('~/assets/images/training.png?webp')"
@@ -297,7 +297,7 @@
           />
 
           <div class="absolute z-10 flex items-center justify-center">
-            <div v-lazy-container="{ selector: 'picture' }">
+            <div v-lazy-container="{ selector: 'img' }">
               <picture>
                 <source
                   :srcSet="require('~/assets/images/exercise_form.png?webp')"
@@ -318,7 +318,7 @@
               </picture>
             </div>
 
-            <div v-lazy-container="{ selector: 'picture' }">
+            <div v-lazy-container="{ selector: 'img' }">
               <picture>
                 <source
                   :srcSet="require('~/assets/images/exercise_rules.png?webp')"
