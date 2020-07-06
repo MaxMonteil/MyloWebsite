@@ -13,8 +13,8 @@
       class="relative z-20 mx-auto text-lg text-white sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl space-y-5 divide-y"
     >
       <p href="/" class="flex items-center space-x-3">
-        <TheLogo :size="56" />
-        <span>Mylo, your personal training assistant.</span>
+        <TheLogo labelledby="headline" :size="56" />
+        <span id="headline">Mylo, your personal training assistant.</span>
       </p>
 
       <p class="pt-5 opacity-50">

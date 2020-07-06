@@ -7,8 +7,8 @@
         href="https://www.mylo.fit"
         class="flex items-center text-green-darker focus:outline-none focus:shadow-outline"
       >
-        <TheLogo :size="36" />
-        <span>Mylo</span>
+        <TheLogo labelledby="mylo" :size="36" />
+        <span id="mylo">Mylo</span>
       </a>
 
       <a

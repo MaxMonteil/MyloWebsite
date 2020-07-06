@@ -4,7 +4,7 @@
     :width="props.size"
     :height="props.size"
     viewBox="0 0 16 16"
-    aria-labelledby="logo"
+    :aria-labelledby="props.labelledby"
     role="presentation"
     class="inline-block align-top fill-current"
     :class="[data.class, data.staticClass]"
@@ -27,6 +27,10 @@
 export default {
   name: 'TheLogo',
   props: {
+    labelledby: {
+      type: String,
+      default: 'logo',
+    },
     size: {
       type: [Number, String],
       default: 16,
