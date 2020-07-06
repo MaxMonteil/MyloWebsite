@@ -17,7 +17,7 @@
         <span id="headline">Mylo, your personal training assistant.</span>
       </p>
 
-      <p class="pt-5 opacity-50">
+      <p class="pt-5 opacity-75">
         © 2020 Mylo
       </p>
     </section>
