@@ -31,7 +31,9 @@
         </p>
 
         <SignupForm justify="center">
+          <label class="sr-only" for="notify_me">Email address</label>
           <input
+            id="notify_me"
             name="email_address"
             placeholder="email@example.com"
             type="email"
@@ -110,7 +112,9 @@
         </article>
 
         <SignupForm>
+          <label class="sr-only" for="join_launch_list">Email address</label>
           <input
+            id="join_launch_list"
             name="email_address"
             placeholder="email@example.com"
             type="email"
@@ -334,7 +338,9 @@
           Get notified at launch
         </h3>
         <SignupForm>
+          <label class="sr-only" for="sign_up">Email address</label>
           <input
+            id="sign_up"
             name="email_address"
             placeholder="email@example.com"
             type="email"
