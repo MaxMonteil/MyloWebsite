@@ -163,16 +163,16 @@
               class="absolute bottom-0 z-0 opacity-75 stroke-green circle-1"
             />
 
-            <picture>
-              <source
-                :srcSet="require('~/assets/images/routine_form.png?webp')"
-                type="image/webp"
-              />
-              <source
-                :srcSet="require('~/assets/images/routine_form.png')"
-                type="image/png"
-              />
-              <div v-lazy-container="{ selector: 'img' }">
+            <div v-lazy-container="{ selector: 'img' }">
+              <picture>
+                <source
+                  :srcSet="require('~/assets/images/routine_form.png?webp')"
+                  type="image/webp"
+                />
+                <source
+                  :srcSet="require('~/assets/images/routine_form.png')"
+                  type="image/png"
+                />
                 <img
                   alt="Exercise form"
                   :data-src="require('~/assets/images/routine_form.png')"
@@ -181,8 +181,8 @@
                   "
                   class="relative z-10 mb-4 shadow-xl"
                 />
-              </div>
-            </picture>
+              </picture>
+            </div>
             <p class="relative z-10 text-lg text-center w text-gray-dark">
               Make any exercise and organize them in routines
             </p>
@@ -204,16 +204,16 @@
               class="absolute bottom-0 right-0 z-0 w-5/6 opacity-75 stroke-green circle-3"
             />
 
-            <picture>
-              <source
-                :srcSet="require('~/assets/images/workout_form.png?webp')"
-                type="image/webp"
-              />
-              <source
-                :srcSet="require('~/assets/images/workout_form.png')"
-                type="image/png"
-              />
-              <div v-lazy-container="{ selector: 'img' }">
+            <div v-lazy-container="{ selector: 'img' }">
+              <picture>
+                <source
+                  :srcSet="require('~/assets/images/workout_form.png?webp')"
+                  type="image/webp"
+                />
+                <source
+                  :srcSet="require('~/assets/images/workout_form.png')"
+                  type="image/png"
+                />
                 <img
                   alt="Workout form"
                   :data-src="require('~/assets/images/workout_form.png')"
@@ -222,8 +222,8 @@
                   "
                   class="relative z-10 mb-4 shadow-xl"
                 />
-              </div>
-            </picture>
+              </picture>
+            </div>
             <p class="relative z-10 text-lg text-center w text-gray-dark">
               Organize them into a workout plan
             </p>
@@ -238,24 +238,24 @@
               class="absolute top-0 right-0 z-0 w-3/4 opacity-75 stroke-green circle-4"
             />
 
-            <picture>
-              <source
-                :srcSet="require('~/assets/images/training.png?webp')"
-                type="image/webp"
-              />
-              <source
-                :srcSet="require('~/assets/images/training.png')"
-                type="image/png"
-              />
-              <div v-lazy-container="{ selector: 'img' }">
+            <div v-lazy-container="{ selector: 'img' }">
+              <picture>
+                <source
+                  :srcSet="require('~/assets/images/training.png?webp')"
+                  type="image/webp"
+                />
+                <source
+                  :srcSet="require('~/assets/images/training.png')"
+                  type="image/png"
+                />
                 <img
                   alt="Screenshot of the training view"
                   :data-src="require('~/assets/images/training.png')"
                   :data-loading="require('~/assets/images/training.png?lqip')"
                   class="relative z-10 mb-4 shadow-xl"
                 />
-              </div>
-            </picture>
+              </picture>
+            </div>
             <p class="relative z-10 text-lg text-center w text-gray-dark">
               Start training!
             </p>
@@ -297,16 +297,16 @@
           />
 
           <div class="absolute z-10 flex items-center justify-center">
-            <picture>
-              <source
-                :srcSet="require('~/assets/images/exercise_form.png?webp')"
-                type="image/webp"
-              />
-              <source
-                :srcSet="require('~/assets/images/exercise_form.png')"
-                type="image/png"
-              />
-              <div v-lazy-container="{ selector: 'img' }">
+            <div v-lazy-container="{ selector: 'img' }">
+              <picture>
+                <source
+                  :srcSet="require('~/assets/images/exercise_form.png?webp')"
+                  type="image/webp"
+                />
+                <source
+                  :srcSet="require('~/assets/images/exercise_form.png')"
+                  type="image/png"
+                />
                 <img
                   alt="Exercise form"
                   :data-src="require('~/assets/images/exercise_form.png')"
@@ -315,19 +315,19 @@
                   "
                   class="shadow-lg exercise-form"
                 />
-              </div>
-            </picture>
+              </picture>
+            </div>
 
-            <picture>
-              <source
-                :srcSet="require('~/assets/images/exercise_rules.png?webp')"
-                type="image/webp"
-              />
-              <source
-                :srcSet="require('~/assets/images/exercise_rules.png')"
-                type="image/png"
-              />
-              <div v-lazy-container="{ selector: 'img' }">
+            <div v-lazy-container="{ selector: 'img' }">
+              <picture>
+                <source
+                  :srcSet="require('~/assets/images/exercise_rules.png?webp')"
+                  type="image/webp"
+                />
+                <source
+                  :srcSet="require('~/assets/images/exercise_rules.png')"
+                  type="image/png"
+                />
                 <img
                   alt="Exercise rules"
                   :data-src="require('~/assets/images/exercise_rules.png')"
@@ -336,8 +336,8 @@
                   "
                   class="z-20 shadow-xl exercise-rules"
                 />
-              </div>
-            </picture>
+              </picture>
+            </div>
           </div>
         </div>
       </article>
