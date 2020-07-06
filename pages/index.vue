@@ -4,10 +4,12 @@
     <section
       class="relative w-full py-16 mx-auto -my-16 overflow-hidden sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl"
     >
-      <SportIcons
-        class="absolute z-0 px-6 -mt-12 opacity-50"
-        fill="white"
-        stroke="gray"
+      <img
+        :src="require('~/assets/images/sports_icons.svg')"
+        alt="sports_icons"
+        width="100%"
+        title="Sport Icons"
+        class="absolute z-0 px-6 -mt-12 opacity-50 transform rotate-90 stroke-gray"
       />
       <div class="relative z-10 px-6 md:text-center space-y-5">
         <h1
@@ -29,7 +31,9 @@
         </p>
 
         <SignupForm justify="center">
+          <label class="sr-only" for="notify_me">Email address</label>
           <input
+            id="notify_me"
             name="email_address"
             placeholder="email@example.com"
             type="email"
@@ -48,17 +52,22 @@
     <section
       class="relative w-full overflow-hidden shadow-inner bg-green-darker"
     >
-      <SportIcons
-        class="absolute left-0 z-0 w-2/4 max-w-2xl px-6 -mt-32 opacity-50 transform rotate-45"
-        fill="green-darker"
-        stroke="green-dark"
+      <img
+        :src="require('~/assets/images/sports_icons.svg')"
+        alt="sports_icons"
+        width="100%"
+        title="Sport Icons"
+        class="absolute left-0 z-0 w-2/4 max-w-2xl px-6 -mt-32 opacity-50 stroke-green-dark transform rotate-45"
       />
 
-      <SportIcons
-        class="absolute bottom-0 right-0 z-0 w-2/3 max-w-lg px-6 -mb-32 opacity-50 transform -rotate-90 md:w-1/3"
-        fill="green-darker"
-        stroke="green-dark"
+      <img
+        :src="require('~/assets/images/sports_icons.svg')"
+        alt="sports_icons"
+        width="100%"
+        title="Sport Icons"
+        class="absolute bottom-0 right-0 z-0 w-2/3 max-w-lg px-6 -mb-32 opacity-50 stroke-green-dark transform -rotate-90 md:w-1/3"
       />
+
       <div class="relative z-10 max-w-3xl px-6 py-8 mx-auto md:px-0 space-y-6">
         <h2
           class="text-3xl font-semibold leading-tight tracking-tight text-white md:text-4xl"
@@ -103,7 +112,9 @@
         </article>
 
         <SignupForm>
+          <label class="sr-only" for="join_launch_list">Email address</label>
           <input
+            id="join_launch_list"
             name="email_address"
             placeholder="email@example.com"
             type="email"
@@ -144,56 +155,107 @@
           class="flex items-center px-16 pt-16 overflow-x-scroll md:py-0 md:px-0 md:justify-between md:overflow-x-visible snap-x md:space-x-0 space-x-16"
         >
           <div class="relative snap-center">
-            <SportIcons
-              class="absolute bottom-0 z-0 opacity-75 circle-1"
-              fill="white"
-              stroke="green"
+            <img
+              :src="require('~/assets/images/sports_icons.svg')"
+              alt="sports_icons"
+              width="100%"
+              title="Sport Icons"
+              class="absolute bottom-0 z-0 opacity-75 stroke-green circle-1"
             />
 
-            <img
-              class="relative z-10 mb-4 shadow-xl"
-              src="~/assets/images/routine_form.png"
-              alt="Exercise form"
-            />
+            <div v-lazy-container="{ selector: 'img' }">
+              <picture>
+                <source
+                  :srcSet="require('~/assets/images/routine_form.png?webp')"
+                  type="image/webp"
+                />
+                <source
+                  :srcSet="require('~/assets/images/routine_form.png')"
+                  type="image/png"
+                />
+                <img
+                  alt="Exercise form"
+                  :data-src="require('~/assets/images/routine_form.png')"
+                  :data-loading="
+                    require('~/assets/images/routine_form.png?lqip')
+                  "
+                  class="relative z-10 mb-4 shadow-xl"
+                />
+              </picture>
+            </div>
             <p class="relative z-10 text-lg text-center w text-gray-dark">
               Make any exercise and organize them in routines
             </p>
           </div>
 
           <div class="relative snap-center">
-            <SportIcons
-              class="absolute top-0 z-0 w-3/4 opacity-75 circle-2"
-              fill="white"
-              stroke="green"
+            <img
+              :src="require('~/assets/images/sports_icons.svg')"
+              alt="sports_icons"
+              width="100%"
+              title="Sport Icons"
+              class="absolute top-0 z-0 w-3/4 opacity-75 stroke-green circle-2"
             />
-            <SportIcons
-              class="absolute bottom-0 right-0 z-0 w-5/6 opacity-75 circle-3"
-              fill="white"
-              stroke="green"
+            <img
+              :src="require('~/assets/images/sports_icons.svg')"
+              alt="sports_icons"
+              width="100%"
+              title="Sport Icons"
+              class="absolute bottom-0 right-0 z-0 w-5/6 opacity-75 stroke-green circle-3"
             />
 
-            <img
-              class="relative z-10 mb-4 shadow-xl"
-              src="~/assets/images/workout_form.png"
-              alt="Workout form"
-            />
+            <div v-lazy-container="{ selector: 'img' }">
+              <picture>
+                <source
+                  :srcSet="require('~/assets/images/workout_form.png?webp')"
+                  type="image/webp"
+                />
+                <source
+                  :srcSet="require('~/assets/images/workout_form.png')"
+                  type="image/png"
+                />
+                <img
+                  alt="Workout form"
+                  :data-src="require('~/assets/images/workout_form.png')"
+                  :data-loading="
+                    require('~/assets/images/workout_form.png?lqip')
+                  "
+                  class="relative z-10 mb-4 shadow-xl"
+                />
+              </picture>
+            </div>
             <p class="relative z-10 text-lg text-center w text-gray-dark">
               Organize them into a workout plan
             </p>
           </div>
 
           <div class="relative pr-16 md:pr-0 snap-center">
-            <SportIcons
-              class="absolute top-0 right-0 z-0 w-3/4 opacity-75 circle-4"
-              fill="white"
-              stroke="green"
+            <img
+              :src="require('~/assets/images/sports_icons.svg')"
+              alt="sports_icons"
+              width="100%"
+              title="Sport Icons"
+              class="absolute top-0 right-0 z-0 w-3/4 opacity-75 stroke-green circle-4"
             />
 
-            <img
-              class="relative z-10 mb-4 shadow-xl"
-              src="~/assets/images/training.png"
-              alt="Screenshot of the training view"
-            />
+            <div v-lazy-container="{ selector: 'img' }">
+              <picture>
+                <source
+                  :srcSet="require('~/assets/images/training.png?webp')"
+                  type="image/webp"
+                />
+                <source
+                  :srcSet="require('~/assets/images/training.png')"
+                  type="image/png"
+                />
+                <img
+                  alt="Screenshot of the training view"
+                  :data-src="require('~/assets/images/training.png')"
+                  :data-loading="require('~/assets/images/training.png?lqip')"
+                  class="relative z-10 mb-4 shadow-xl"
+                />
+              </picture>
+            </div>
             <p class="relative z-10 text-lg text-center w text-gray-dark">
               Start training!
             </p>
@@ -226,22 +288,56 @@
         </div>
 
         <div class="relative flex items-center justify-center">
-          <SportIcons
-            class="relative z-0 max-w-md opacity-75"
-            fill="white"
-            stroke="green"
+          <img
+            :src="require('~/assets/images/sports_icons.svg')"
+            alt="sports_icons"
+            width="100%"
+            title="Sport Icons"
+            class="relative z-0 max-w-md opacity-75 stroke-green"
           />
+
           <div class="absolute z-10 flex items-center justify-center">
-            <img
-              class="shadow-lg exercise-form"
-              src="~/assets/images/exercise_form.png"
-              alt="Exercise form"
-            />
-            <img
-              class="z-20 shadow-xl exercise-rules"
-              src="~/assets/images/exercise_rules.png"
-              alt="Exercise rules"
-            />
+            <div v-lazy-container="{ selector: 'img' }">
+              <picture>
+                <source
+                  :srcSet="require('~/assets/images/exercise_form.png?webp')"
+                  type="image/webp"
+                />
+                <source
+                  :srcSet="require('~/assets/images/exercise_form.png')"
+                  type="image/png"
+                />
+                <img
+                  alt="Exercise form"
+                  :data-src="require('~/assets/images/exercise_form.png')"
+                  :data-loading="
+                    require('~/assets/images/exercise_form.png?lqip')
+                  "
+                  class="shadow-lg exercise-form"
+                />
+              </picture>
+            </div>
+
+            <div v-lazy-container="{ selector: 'img' }">
+              <picture>
+                <source
+                  :srcSet="require('~/assets/images/exercise_rules.png?webp')"
+                  type="image/webp"
+                />
+                <source
+                  :srcSet="require('~/assets/images/exercise_rules.png')"
+                  type="image/png"
+                />
+                <img
+                  alt="Exercise rules"
+                  :data-src="require('~/assets/images/exercise_rules.png')"
+                  :data-loading="
+                    require('~/assets/images/exercise_rules.png?lqip')
+                  "
+                  class="z-20 shadow-xl exercise-rules"
+                />
+              </picture>
+            </div>
           </div>
         </div>
       </article>
@@ -256,7 +352,9 @@
           Get notified at launch
         </h3>
         <SignupForm>
+          <label class="sr-only" for="sign_up">Email address</label>
           <input
+            id="sign_up"
             name="email_address"
             placeholder="email@example.com"
             type="email"
@@ -265,7 +363,7 @@
           <button
             class="px-4 py-3 font-medium text-white rounded shadow focus:outline-none focus:shadow-outline hover:bg-opacity-75 transition duration-150 bg-green-dark"
           >
-            Notify me
+            Sign up
           </button>
         </SignupForm>
       </article>
@@ -280,6 +378,29 @@ export default {
 </script>
 
 <style scoped>
+img[lazy='loading'] {
+  filter: blur(15px);
+}
+
+/* CSS filters to color SVG icons embedded with <img />
+ * source: https://codepen.io/sosuke/pen/Pjoqqp
+ */
+.stroke-gray {
+  filter: invert(99%) sepia(1%) saturate(4166%) hue-rotate(207deg)
+    brightness(113%) contrast(87%);
+}
+
+.stroke-green-dark {
+  filter: invert(47%) sepia(29%) saturate(403%) hue-rotate(99deg)
+    brightness(90%) contrast(83%);
+}
+
+.stroke-green {
+  filter: invert(91%) sepia(10%) saturate(1436%) hue-rotate(90deg)
+    brightness(94%) contrast(93%);
+}
+/****************************/
+
 .circle-1 {
   transform: translate(-50%, -20%);
 }
