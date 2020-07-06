@@ -4,11 +4,13 @@
     <section
       class="relative w-full py-16 mx-auto -my-16 overflow-hidden sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl"
     >
-      <!-- <LazySportIcons -->
-      <!--   class="absolute z&#45;0 px&#45;6 &#45;mt&#45;12 opacity&#45;50" -->
-      <!--   fill="white" -->
-      <!--   stroke="gray" -->
-      <!-- /> -->
+      <img
+        :src="require('~/assets/images/sports_icons.svg')"
+        alt="sports_icons"
+        width="100%"
+        title="Sport Icons"
+        class="absolute z-0 px-6 -mt-12 opacity-50 transform rotate-90 stroke-gray"
+      />
       <div class="relative z-10 px-6 md:text-center space-y-5">
         <h1
           class="text-4xl font-semibold leading-tight tracking-tight text-black space-y-2 sm:space-y-0 md:text-5xl"
@@ -48,17 +50,22 @@
     <section
       class="relative w-full overflow-hidden shadow-inner bg-green-darker"
     >
-      <!-- <LazySportIcons -->
-      <!--   class="absolute left&#45;0 z&#45;0 w&#45;2/4 max&#45;w&#45;2xl px&#45;6 &#45;mt&#45;32 opacity&#45;50 transform rotate&#45;45" -->
-      <!--   fill="green&#45;darker" -->
-      <!--   stroke="green&#45;dark" -->
-      <!-- /> -->
+      <img
+        :src="require('~/assets/images/sports_icons.svg')"
+        alt="sports_icons"
+        width="100%"
+        title="Sport Icons"
+        class="absolute left-0 z-0 w-2/4 max-w-2xl px-6 -mt-32 opacity-50 stroke-green-dark transform rotate-45"
+      />
 
-      <!-- <LazySportIcons -->
-      <!--   class="absolute bottom&#45;0 right&#45;0 z&#45;0 w&#45;2/3 max&#45;w&#45;lg px&#45;6 &#45;mb&#45;32 opacity&#45;50 transform &#45;rotate&#45;90 md:w&#45;1/3" -->
-      <!--   fill="green&#45;darker" -->
-      <!--   stroke="green&#45;dark" -->
-      <!-- /> -->
+      <img
+        :src="require('~/assets/images/sports_icons.svg')"
+        alt="sports_icons"
+        width="100%"
+        title="Sport Icons"
+        class="absolute bottom-0 right-0 z-0 w-2/3 max-w-lg px-6 -mb-32 opacity-50 stroke-green-dark transform -rotate-90 md:w-1/3"
+      />
+
       <div class="relative z-10 max-w-3xl px-6 py-8 mx-auto md:px-0 space-y-6">
         <h2
           class="text-3xl font-semibold leading-tight tracking-tight text-white md:text-4xl"
@@ -144,11 +151,13 @@
           class="flex items-center px-16 pt-16 overflow-x-scroll md:py-0 md:px-0 md:justify-between md:overflow-x-visible snap-x md:space-x-0 space-x-16"
         >
           <div class="relative snap-center">
-            <!-- <LazySportIcons -->
-            <!--   class="absolute bottom&#45;0 z&#45;0 opacity&#45;75 circle&#45;1" -->
-            <!--   fill="white" -->
-            <!--   stroke="green" -->
-            <!-- /> -->
+            <img
+              :src="require('~/assets/images/sports_icons.svg')"
+              alt="sports_icons"
+              width="100%"
+              title="Sport Icons"
+              class="absolute bottom-0 z-0 opacity-75 stroke-green circle-1"
+            />
 
             <picture v-lazy-container="{ selector: 'img' }">
               <source
@@ -172,16 +181,20 @@
           </div>
 
           <div class="relative snap-center">
-            <!-- <LazySportIcons -->
-            <!--   class="absolute top&#45;0 z&#45;0 w&#45;3/4 opacity&#45;75 circle&#45;2" -->
-            <!--   fill="white" -->
-            <!--   stroke="green" -->
-            <!-- /> -->
-            <!-- <LazySportIcons -->
-            <!--   class="absolute bottom&#45;0 right&#45;0 z&#45;0 w&#45;5/6 opacity&#45;75 circle&#45;3" -->
-            <!--   fill="white" -->
-            <!--   stroke="green" -->
-            <!-- /> -->
+            <img
+              :src="require('~/assets/images/sports_icons.svg')"
+              alt="sports_icons"
+              width="100%"
+              title="Sport Icons"
+              class="absolute top-0 z-0 w-3/4 opacity-75 stroke-green circle-2"
+            />
+            <img
+              :src="require('~/assets/images/sports_icons.svg')"
+              alt="sports_icons"
+              width="100%"
+              title="Sport Icons"
+              class="absolute bottom-0 right-0 z-0 w-5/6 opacity-75 stroke-green circle-3"
+            />
 
             <picture v-lazy-container="{ selector: 'img' }">
               <source
@@ -205,11 +218,13 @@
           </div>
 
           <div class="relative pr-16 md:pr-0 snap-center">
-            <!-- <LazySportIcons -->
-            <!--   class="absolute top&#45;0 right&#45;0 z&#45;0 w&#45;3/4 opacity&#45;75 circle&#45;4" -->
-            <!--   fill="white" -->
-            <!--   stroke="green" -->
-            <!-- /> -->
+            <img
+              :src="require('~/assets/images/sports_icons.svg')"
+              alt="sports_icons"
+              width="100%"
+              title="Sport Icons"
+              class="absolute top-0 right-0 z-0 w-3/4 opacity-75 stroke-green circle-4"
+            />
 
             <picture v-lazy-container="{ selector: 'img' }">
               <source
@@ -259,11 +274,14 @@
         </div>
 
         <div class="relative flex items-center justify-center">
-          <!-- <LazySportIcons -->
-          <!--   class="relative z&#45;0 max&#45;w&#45;md opacity&#45;75" -->
-          <!--   fill="white" -->
-          <!--   stroke="green" -->
-          <!-- /> -->
+          <img
+            :src="require('~/assets/images/sports_icons.svg')"
+            alt="sports_icons"
+            width="100%"
+            title="Sport Icons"
+            class="relative z-0 max-w-md opacity-75 stroke-green"
+          />
+
           <div class="absolute z-10 flex items-center justify-center">
             <picture v-lazy-container="{ selector: 'img' }">
               <source
@@ -343,6 +361,25 @@ export default {
 img[lazy='loading'] {
   filter: blur(15px);
 }
+
+/* CSS filters to color SVG icons embedded with <img />
+ * source: https://codepen.io/sosuke/pen/Pjoqqp
+ */
+.stroke-gray {
+  filter: invert(99%) sepia(1%) saturate(4166%) hue-rotate(207deg)
+    brightness(113%) contrast(87%);
+}
+
+.stroke-green-dark {
+  filter: invert(47%) sepia(29%) saturate(403%) hue-rotate(99deg)
+    brightness(90%) contrast(83%);
+}
+
+.stroke-green {
+  filter: invert(91%) sepia(10%) saturate(1436%) hue-rotate(90deg)
+    brightness(94%) contrast(93%);
+}
+/****************************/
 
 .circle-1 {
   transform: translate(-50%, -20%);
