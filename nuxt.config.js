@@ -48,6 +48,8 @@ export default {
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
+    // Doc: https://pwa.nuxtjs.org/
+    '@nuxtjs/pwa',
     // Doc: https://github.com/aceforth/nuxt-optimized-images
     '@aceforth/nuxt-optimized-images',
   ],
@@ -56,10 +58,25 @@ export default {
     optimizeImages: true,
   },
 
+  pwa: {
+    manifest: {
+      name: 'Mylo',
+      short_name: 'Mylo',
+      theme_color: '#83E8BC',
+      background_color: '#83E8BC',
+      display: 'browser',
+    },
+    meta: {
+      name: 'Mylo',
+      description: 'Your personal workout assistant',
+      author: 'Maximilien Monteil',
+      theme_color: '#83E8BC',
+    },
+  },
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/pwa'],
+  modules: [],
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
