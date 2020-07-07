@@ -37,7 +37,7 @@
             name="email_address"
             placeholder="email@example.com"
             type="email"
-            class="py-3 pl-6 text-black rounded shadow-xs bg-gray shadow-sm placeholder-gray-dark"
+            class="py-3 pl-4 text-black rounded md:pl-6 shadow-xs bg-gray shadow-sm placeholder-gray-dark"
           />
           <button
             class="px-4 py-3 font-medium text-white rounded shadow focus:outline-none focus:shadow-outline hover:bg-opacity-75 transition duration-150 bg-green-dark"
@@ -118,7 +118,7 @@
             name="email_address"
             placeholder="email@example.com"
             type="email"
-            class="py-3 pl-6 text-black bg-white rounded shadow-xs shadow-sm placeholder-gray-dark"
+            class="py-3 pl-4 text-black bg-white rounded md:pl-6 shadow-xs shadow-sm placeholder-gray-dark"
           />
           <button
             class="px-4 py-3 font-medium rounded shadow focus:outline-none focus:shadow-outline hover:bg-opacity-75 transition duration-150 bg-green text-green-darker"
@@ -144,7 +144,7 @@
           Saw an awesome exercise in a video? Invented your own?
         </p>
         <p class="text-gray-darker">
-          Mylo is here to help you not limit you, so there are almost no
+          Mylo is here to help you, not limit you, so there are almost no
           constraints on the kind of exercises or workouts you can create.
         </p>
         <p class="font-medium text-green-darker">
@@ -358,7 +358,7 @@
             name="email_address"
             placeholder="email@example.com"
             type="email"
-            class="py-3 pl-6 text-black rounded shadow-xs bg-gray shadow-sm placeholder-gray-dark"
+            class="py-3 pl-4 text-black rounded md:pl-6 shadow-xs bg-gray shadow-sm placeholder-gray-dark"
           />
           <button
             class="px-4 py-3 font-medium text-white rounded shadow focus:outline-none focus:shadow-outline hover:bg-opacity-75 transition duration-150 bg-green-dark"
