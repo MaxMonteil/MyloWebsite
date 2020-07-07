@@ -1,7 +1,7 @@
 <template functional>
   <form
     action="https://app.convertkit.com/forms/1504369/subscriptions"
-    class="flex flex-col items-start max-w-3xl mx-auto md:flex-row md:text-xl space-y-4 md:space-y-0 md:space-x-4"
+    class="flex flex-col items-start max-w-3xl mx-auto md:flex-row md:text-xl space-y-4 md:space-y-0 md:space-x-reverse md:space-x-4"
     :class="{
       'justify-start': props.justify === 'right',
       'justify-center': props.justify === 'center',
