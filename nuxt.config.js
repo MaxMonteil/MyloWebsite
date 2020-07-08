@@ -84,8 +84,6 @@ export default {
   build: {},
 
   render: {
-    bundleRenderer: {
-      shouldPreload: (_, type) => type !== 'script',
-    },
+    resourceHints: false,
   },
 }
