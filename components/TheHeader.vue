@@ -2,7 +2,7 @@
   <header
     class="w-full mx-auto sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl"
   >
-    <div class="flex items-center justify-between px-6 py-5">
+    <div class="flex items-center justify-between px-6">
       <a
         href="https://www.mylo.fit"
         class="flex items-center text-green-darker focus:outline-none focus:shadow-outline"
