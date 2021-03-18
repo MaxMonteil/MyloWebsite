@@ -1,8 +1,10 @@
 <template>
-  <main class="space-y-16">
+  <main class="overflow-hidden space-y-16">
     <!-- HERO -->
-    <section class="max-w-6xl px-6 mx-auto">
-      <div class="space-y-6">
+    <section
+      class="flex flex-col max-w-6xl mx-auto -mb-20 md:flex-row space-y-12"
+    >
+      <div class="px-6 space-y-6 md:w-1/2 lg:w-2/3">
         <h1
           class="text-4xl font-semibold leading-tight tracking-tight text-black space-y-2 sm:space-y-0 md:text-5xl"
         >
@@ -10,7 +12,7 @@
           <span class="text-green-darker">automatically</span>
         </h1>
 
-        <p class="mx-auto text-lg md:text-xl text-gray-darker">
+        <p class="text-lg md:text-xl text-gray-darker">
           No more spreadsheets or notebooks, Mylo manages everything so you can
           focus on training.
         </p>
@@ -22,6 +24,8 @@
           Try it now for free
         </a>
       </div>
+
+      <TheHero />
     </section>
 
     <!-- FEATURES -->
@@ -124,7 +128,7 @@
               src="~/assets/images/sports_icons.svg"
               alt="sports_icons"
               title="Sport Icons"
-              class="absolute left-0 z-0 stroke-green transform -translate-x-12 translate-y-56 scale-50 rotate-45"
+              class="absolute left-0 z-0 stroke-green transform -translate-x-32 translate-y-56 scale-50 rotate-45"
               loading="lazy"
             />
 
@@ -132,7 +136,7 @@
               src="~/assets/images/sports_icons.svg"
               alt="sports_icons"
               title="Sport Icons"
-              class="absolute z-0 pl-12 stroke-green transform translate-x-64 translate-y-16 scale-90"
+              class="absolute z-0 pl-12 stroke-green transform translate-x-56 translate-y-16 scale-90"
               loading="lazy"
             />
 
@@ -140,7 +144,7 @@
               src="~/assets/images/sports_icons.svg"
               alt="sports_icons"
               title="Sport Icons"
-              class="absolute top-0 z-0 hidden stroke-green md:block transform-circle rotate-180"
+              class="absolute top-0 z-0 hidden stroke-green lg:block transform-circle rotate-180"
               loading="lazy"
             />
           </div>
@@ -246,7 +250,7 @@
         loading="lazy"
       />
 
-      <div class="relative z-10 max-w-5xl px-6 py-8 mx-auto md:px-0 space-y-6">
+      <div class="relative z-10 max-w-5xl px-6 py-8 mx-auto space-y-6">
         <h2
           class="text-3xl font-semibold leading-tight tracking-tight text-white md:text-4xl"
         >
@@ -306,11 +310,7 @@ export default {
 }
 </script>
 
-<style scoped>
-img[lazy='loading'] {
-  filter: blur(15px);
-}
-
+<style>
 /* CSS filters to color SVG icons embedded with <img />
  * source: https://codepen.io/sosuke/pen/Pjoqqp
  */
