@@ -1,6 +1,5 @@
 <template functional>
-  <component
-    :is="props.tag"
+  <div
     :ref="data.ref"
     :class="[data.class, data.staticClass]"
     :style="[data.style, data.staticStyle]"
@@ -29,7 +28,7 @@
         v-on="{ ...listeners, input: (e) => listeners.input(e.target.value) }"
       />
     </label>
-  </component>
+  </div>
 </template>
 
 <script>
@@ -46,10 +45,6 @@ export default {
     modelValue: {
       type: String,
       default: '',
-    },
-    tag: {
-      type: String,
-      default: 'div',
     },
     theme: {
       type: String,

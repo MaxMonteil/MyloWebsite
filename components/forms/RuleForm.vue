@@ -1,6 +1,6 @@
 <template>
   <section
-    class="w-full p-4 text-black bg-white rounded-lg ease-in-out transition-transform transition-shadow duration-150 space-y-6"
+    class="w-full p-4 text-black bg-white rounded-lg ease-in-out transition-transform transition-shadow duration-100 space-y-6"
     :class="active ? 'shadow-2xl' : 'shadow-md'"
     style="width: 321px;"
   >
@@ -64,7 +64,7 @@
           by
           <InputNumber
             min="-100"
-            class="ml-2"
+            class="w-20 ml-2"
             theme="gray"
             :value="rule.amount"
             @change="save({ ...rule, amount: parseAmount($event) })"
@@ -74,10 +74,10 @@
         <label class="inline-block">
           every
           <InputNumber
-            class="mx-2"
+            class="w-20 mx-2"
             theme="gray"
             :value="rule.frequency"
-            @input="save({ ...rule, frequency: parseInt($event) || $event })"
+            @change="save({ ...rule, frequency: parseInt($event) || $event })"
           />
           workout{{ rule.frequency > 1 ? 's' : '' }}
         </label>
@@ -117,9 +117,9 @@
             <label class="inline-block">
               {{ stopStrings(rule.stopMethod, rule.target)[0] }}
               <InputNumber
-                class="mx-1"
+                class="w-20 mx-1"
                 :value="rule.stopValue"
-                @input="
+                @change="
                   save({ ...rule, stopValue: parseInt($event) || $event })
                 "
               />
@@ -135,15 +135,8 @@
 <script>
 import { Rule } from '@/components/domains/rule.js'
 
-import InputRadio from '@/components/inputs/InputRadio'
-import InputNumber from '@/components/inputs/InputNumber'
-
 export default {
   name: 'RuleForm',
-  components: {
-    InputRadio,
-    InputNumber,
-  },
   props: {
     active: {
       type: Boolean,

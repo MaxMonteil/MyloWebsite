@@ -31,7 +31,7 @@
     <!-- FEATURES -->
     <section class="max-w-5xl mx-auto space-y-20">
       <article
-        class="px-6 md:flex md:flex-row-reverse md:space-x-5 md:space-x-reverse"
+        class="px-6 md:flex md:flex-row-reverse md:space-x-6 md:space-x-reverse"
       >
         <div class="mb-6 text-lg space-y-5">
           <h2

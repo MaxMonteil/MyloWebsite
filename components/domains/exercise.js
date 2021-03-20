@@ -1,4 +1,3 @@
-import { Domain } from './Domain'
 import { Rule } from './rule'
 
 const nanoid = () => Math.random().toString(36).substring(2)
@@ -25,7 +24,7 @@ const nanoid = () => Math.random().toString(36).substring(2)
  */
 
 /** @extends {Domain<ExerciseProps>} */
-export class Exercise extends Domain {
+export class Exercise {
   /** @const @type {'exercises'} */
   static collection = 'exercises'
 
@@ -40,56 +39,24 @@ export class Exercise extends Domain {
 
   /** @private @param {ExerciseProps} props */
   constructor(props) {
-    super(props.id, props)
-  }
-
-  get name() {
-    return this.props.name
-  }
-
-  set name(value) {
-    this.props.name = value
-  }
-
-  get scheme() {
-    return this.props.scheme
-  }
-
-  get repUnit() {
-    return this.props.repUnit
-  }
-
-  set repUnit(value) {
-    this.props.repUnit = value
-  }
-
-  get weights() {
-    return this.props.weights
+    this.id = props.id
+    this.name = props.name
+    this.scheme = props.scheme
+    this._rest = props.rest
+    this.repUnit = props.repUnit
+    this.weights = props.weights
+    this.parent = props.parent
+    this.rules = props.rules
+    this.collection = Exercise.collection
   }
 
   get rest() {
-    return this.props.rest
+    return this._rest
   }
 
   set rest(value) {
     value = isNaN(value) ? 0 : Math.round(value)
-    this.props.rest = Math.max(0, Math.min(300, value))
-  }
-
-  get parent() {
-    return this.props.parent
-  }
-
-  set parent(routineID) {
-    this.props.parent = routineID
-  }
-
-  get rules() {
-    return this.props.rules
-  }
-
-  get collection() {
-    return Exercise.collection
+    this._rest = Math.max(0, Math.min(300, value))
   }
 
   /**
@@ -97,26 +64,21 @@ export class Exercise extends Domain {
    * @param {ExerciseProps=} props
    */
   static create(props) {
-    const exercises = [
-      'Squat',
-      'Bench Press',
-      'Pushups',
-      'Plank',
-      'Lunges',
-      'Downward Dog',
-      'Frog Stand',
-    ]
-
     /** @type {ExerciseProps} */
     const defaultExercise = {
       id: props?.id ? props.id : nanoid(),
-      name: exercises[Math.floor(Math.random() * exercises.length)],
+      name: '',
       scheme: [0],
       repUnit: Exercise.REP_UNITS.REPS,
       weights: [0],
       rest: 0,
       parent: '',
-      rules: Rule.emptyRules(),
+      rules: {
+        [Rule.TARGETS.REST]: null,
+        [Rule.TARGETS.WEIGHT]: null,
+        [Rule.TARGETS.SETS]: null,
+        [Rule.TARGETS.REPS]: null,
+      },
       collection: Exercise.collection,
       ...props,
     }
@@ -130,7 +92,7 @@ export class Exercise extends Domain {
    */
   setWeight(weight, set) {
     weight = Math.max(0, isNaN(weight) ? 0 : Math.round(weight * 4) / 4)
-    this.props.weights = this.weights.map((v, i) => (i === set ? weight : v))
+    this.weights = this.weights.map((v, i) => (i === set ? weight : v))
   }
 
   /**
@@ -140,7 +102,7 @@ export class Exercise extends Domain {
    */
   setRep(rep, set) {
     rep = Math.max(0, isNaN(rep) ? 0 : Math.round(rep))
-    this.props.scheme = this.scheme.map((v, i) => (i === set ? rep : v))
+    this.scheme = this.scheme.map((v, i) => (i === set ? rep : v))
   }
 
   /**
@@ -152,8 +114,8 @@ export class Exercise extends Domain {
     weight = Math.max(0, isNaN(weight) ? 0 : Math.round(weight * 4) / 4)
     reps = Math.max(0, isNaN(reps) ? 0 : Math.round(reps))
 
-    this.props.scheme = this.scheme.concat(reps)
-    this.props.weights = this.weights.concat(weight)
+    this.scheme = this.scheme.concat(reps)
+    this.weights = this.weights.concat(weight)
   }
 
   /**
@@ -162,27 +124,11 @@ export class Exercise extends Domain {
    */
   removeSet(set) {
     if (this.scheme.length === 1) {
-      this.props.scheme = [0]
-      this.props.weights = [0]
+      this.scheme = [0]
+      this.weights = [0]
     } else {
-      this.props.scheme = this.scheme.filter((_, i) => i !== set)
-      this.props.weights = this.weights.filter((_, i) => i !== set)
+      this.scheme = this.scheme.filter((_, i) => i !== set)
+      this.weights = this.weights.filter((_, i) => i !== set)
     }
-  }
-
-  /**
-   * Set the rule for a target.
-   * @param {Object} rule
-   */
-  addRule(rule) {
-    this.props.rules[rule.target] = rule
-  }
-
-  /**
-   * Removes the rule for a target.
-   * @param {Object} rule
-   */
-  removeRule(rule) {
-    this.props.rules[rule.target] = null
   }
 }

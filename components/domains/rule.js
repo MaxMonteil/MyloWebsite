@@ -94,12 +94,4 @@ export class Rule {
       collection: this.collection,
     }
   }
-
-  /** @type {() => {[k in Target]: ?RuleDomain}} */
-  static emptyRules = () => ({
-    [Rule.TARGETS.REST]: null,
-    [Rule.TARGETS.WEIGHT]: null,
-    [Rule.TARGETS.SETS]: null,
-    [Rule.TARGETS.REPS]: null,
-  })
 }
