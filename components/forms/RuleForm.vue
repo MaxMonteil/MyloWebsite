@@ -5,9 +5,9 @@
     style="width: 321px;"
   >
     <header class="flex items-center justify-between">
-      <h3 class="font-medium">
+      <h1 class="font-medium">
         Exercise Rules
-      </h3>
+      </h1>
 
       <button
         class="px-3 py-1 text-sm font-medium border rounded active:bg-green-dark active:text-white border-green-dark text-green-darker"

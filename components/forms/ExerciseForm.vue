@@ -1,5 +1,5 @@
 <template>
-  <div
+  <section
     class="flex flex-col w-full p-2 px-2 text-white rounded bg-green-dark transition-shadow duration-100 transition-transform ease-in-out"
     :class="active ? 'shadow-2xl' : 'shadow-md'"
     style="width: calc(100vw - 24px); max-width: 383px;"
@@ -20,11 +20,15 @@
         Sets
       </label>
 
-      <label class="text-sm font-medium capitalize" for="reps">
+      <label id="reps-label" class="text-sm font-medium capitalize" for="reps">
         {{ header.unit }}
       </label>
 
-      <label class="text-sm font-medium capitalize" for="weight">
+      <label
+        :id="`${header.weight}-label`"
+        class="text-sm font-medium capitalize"
+        for="weight"
+      >
         {{ header.weight }}
       </label>
 
@@ -32,12 +36,13 @@
 
       <!-- Rows that accept user input -->
       <template v-for="(set, i) in exercise.scheme">
-        <span :key="`set-${i}`">{{ i + 1 }}</span>
+        <span :id="`set-${i}`" :key="`set-${i}`">{{ i + 1 }}</span>
 
         <!-- Unit value input -->
         <InputNumber
           :key="`unit-${i}`"
           class="w-20"
+          aria-labelledby="reps-label"
           :value="exercise.scheme[i]"
           on-focus="this.select()"
           @change="updateValue($event, i, 'scheme')"
@@ -47,6 +52,7 @@
         <InputNumber
           :key="`weight-${i}`"
           class="w-20"
+          :aria-labelledby="`${header.weight}-label`"
           :value="exercise.weights[i]"
           on-focus="this.select()"
           @change="updateValue($event, i, 'weights')"
@@ -58,14 +64,16 @@
           class="justify-self-end"
           @click="removeSet(i)"
         >
-          <IconBase size="24" icon="x-mark" />
+          <IconBase size="24" icon="x-mark" :labelledby="`set-${i}`" />
         </button>
       </template>
 
-      <!-- Dummy row to add more rows-->
+      <!-- Dummy row to add more sets -->
+      <label id="add-new-set" class="hidden">Add new set</label>
       <IconBase
         size="20"
         icon="plus"
+        labelledby="add-new-set"
         class="cursor-pointer text-green-darker"
         @click="addSet"
       />
@@ -106,11 +114,16 @@
         class="flex items-center px-3 py-1 text-sm font-medium bg-white rounded shadow text-red-dark active:bg-red-dark"
         @click="makeExercise"
       >
-        <IconBase size="16" icon="x-mark" class="mr-1" />
-        Reset
+        <IconBase
+          size="16"
+          icon="x-mark"
+          labelledby="reset-exercise-form"
+          class="mr-1"
+        />
+        <span id="reset-exercise-form">Reset</span>
       </button>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

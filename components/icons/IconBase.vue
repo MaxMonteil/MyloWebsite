@@ -4,7 +4,7 @@
     :width="props.size"
     :height="props.size"
     viewBox="0 0 16 16"
-    :aria-labelledby="props.icon"
+    :aria-labelledby="props.labelledby"
     role="presentation"
     class="inline-block align-top fill-current"
     :class="[data.class, data.staticClass]"
@@ -29,6 +29,10 @@ export default {
     icon: {
       type: String,
       default: 'dropdown',
+    },
+    labelledby: {
+      type: String,
+      required: true,
     },
     size: {
       type: [Number, String],
