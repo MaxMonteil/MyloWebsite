@@ -1,5 +1,5 @@
 <template>
-  <div class="antialiased space-y-16">
+  <div class="py-5 space-y-10">
     <TheHeader />
     <Nuxt />
     <TheFooter />
