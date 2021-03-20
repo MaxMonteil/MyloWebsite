@@ -7,19 +7,18 @@
     <label
       v-for="label in props.labels"
       :key="label.value || label"
-      class="relative px-3 py-1 rounded cursor-pointer"
-      :class="
+      class="relative rounded cursor-pointer"
+      :class="[
+        props.size === 'large' ? 'text-lg px-3 py-2' : 'px-3 py-1',
         (label.value || label) === props.modelValue
           ? props.theme === 'dark'
             ? 'bg-green-darker shadow text-white'
             : 'bg-green shadow text-green-darker'
-          : 'bg-transparent text-gray-dark'
-      "
+          : 'bg-transparent text-gray-dark',
+      ]"
     >
-      <slot :label="label">
-        {{ label.text || label }}
-      </slot>
-      <input
+      <slot :label="label">{{ label.text || label }}</slot
+      ><input
         :ref="data.ref"
         type="radio"
         class="sr-only"
@@ -49,6 +48,10 @@ export default {
     theme: {
       type: String,
       default: 'light',
+    },
+    size: {
+      type: String,
+      default: 'default',
     },
   },
 }

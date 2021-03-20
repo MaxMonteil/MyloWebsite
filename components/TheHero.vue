@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col items-center pt-1 overflow-hidden md:overflow-visible"
+    class="flex flex-col items-center pt-2 overflow-hidden md:overflow-visible"
   >
     <div class="relative w-full max-w-md">
       <img
@@ -13,14 +13,12 @@
     </div>
 
     <InputRadio
-      v-slot="{ label }"
       v-model="display"
       theme="dark"
       class="z-10 mb-6"
       :labels="labels"
-    >
-      {{ label }}
-    </InputRadio>
+      size="large"
+    />
 
     <div
       class="z-10 items-start max-w-md px-3 pb-20 align-top grid-cols-2 transform grid"

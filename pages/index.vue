@@ -2,9 +2,9 @@
   <main class="overflow-hidden space-y-16">
     <!-- HERO -->
     <section
-      class="flex flex-col max-w-6xl mx-auto -mb-20 md:flex-row space-y-12"
+      class="flex flex-col max-w-6xl mx-auto -mb-20 md:flex-row space-y-12 md:space-y-0"
     >
-      <div class="px-6 space-y-6 md:w-1/2 lg:w-2/3">
+      <div class="px-6 lg:pt-16 space-y-6 md:w-1/2 lg:w-2/3">
         <h1
           class="text-4xl font-semibold leading-tight tracking-tight text-black space-y-2 sm:space-y-0 md:text-5xl"
         >
@@ -18,7 +18,7 @@
         </p>
 
         <a
-          href="https://app.mylo.fit/login"
+          href="https://app.mylo.fit/register"
           class="inline-block px-8 py-3 font-medium rounded shadow-lg focus:outline-none focus:shadow-outline hover:bg-opacity-75 transition duration-150 bg-green text-green-darker"
         >
           Try it now for free
@@ -55,7 +55,7 @@
           </p>
 
           <a
-            href="https://app.mylo.fit/login"
+            href="https://app.mylo.fit/register"
             class="inline-block px-4 py-3 font-medium text-center rounded shadow-lg sm:px-8 focus:outline-none focus:shadow-outline hover:bg-opacity-75 transition duration-150 bg-green text-green-darker"
           >
             Automate your first workout now
@@ -113,7 +113,7 @@
           </p>
 
           <a
-            href="https://app.mylo.fit/login"
+            href="https://app.mylo.fit/register"
             class="inline-block px-4 py-3 font-medium rounded shadow-lg sm:px-8 focus:outline-none focus:shadow-outline hover:bg-opacity-75 transition duration-150 bg-green text-green-darker"
           >
             Start creating your workout plan
@@ -293,7 +293,7 @@
           </p>
 
           <a
-            href="https://app.mylo.fit/login"
+            href="https://app.mylo.fit/register"
             class="inline-block px-8 py-3 font-medium bg-white rounded shadow-lg focus:outline-none focus:shadow-outline hover:bg-opacity-75 transition duration-150 text-green-darker"
           >
             Try out Mylo
