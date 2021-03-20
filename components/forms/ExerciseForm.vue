@@ -103,6 +103,7 @@
           <InputNumber
             :max="300"
             :min="0"
+            :value="exercise.rest"
             class="w-12 pr-1 text-right"
             @change="exercise.rest = $event"
           />

@@ -9,12 +9,21 @@
         <span id="mylo">Mylo</span>
       </a>
 
-      <a
-        href="https://app.mylo.fit/login"
-        class="px-5 py-2 text-sm font-medium border rounded focus:shadow-outline focus:outline-none active:text-white active:bg-green-darker transition duration-150 hover:bg-green-dark hover:text-white hover:shadow text-green-dark border-green-dark"
-      >
-        Log in
-      </a>
+      <div class="space-x-4">
+        <a
+          href="https://app.mylo.fit/register"
+          class="px-5 py-2 text-sm rounded focus:shadow-outline focus:outline-none text-green-darker active:text-white active:bg-green-darker transition duration-150 hover:bg-green-dark hover:text-white hover:shadow"
+        >
+          Register
+        </a>
+
+        <a
+          href="https://app.mylo.fit/login"
+          class="px-5 py-2 text-sm font-medium border rounded focus:shadow-outline focus:outline-none active:text-white active:bg-green-darker transition duration-150 hover:bg-green-dark hover:text-white hover:shadow text-green-dark border-green-dark"
+        >
+          Log in
+        </a>
+      </div>
     </div>
   </header>
 </template>
