@@ -56,7 +56,7 @@
 
           <a
             href="https://app.mylo.fit/login"
-            class="inline-block px-8 py-3 font-medium text-center rounded shadow-lg focus:outline-none focus:shadow-outline hover:bg-opacity-75 transition duration-150 bg-green text-green-darker"
+            class="inline-block px-4 py-3 font-medium text-center rounded shadow-lg sm:px-8 focus:outline-none focus:shadow-outline hover:bg-opacity-75 transition duration-150 bg-green text-green-darker"
           >
             Automate your first workout now
           </a>
@@ -114,7 +114,7 @@
 
           <a
             href="https://app.mylo.fit/login"
-            class="inline-block px-8 py-3 font-medium rounded shadow-lg focus:outline-none focus:shadow-outline hover:bg-opacity-75 transition duration-150 bg-green text-green-darker"
+            class="inline-block px-4 py-3 font-medium rounded shadow-lg sm:px-8 focus:outline-none focus:shadow-outline hover:bg-opacity-75 transition duration-150 bg-green text-green-darker"
           >
             Start creating your workout plan
           </a>
