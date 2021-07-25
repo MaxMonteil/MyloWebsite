@@ -25,12 +25,12 @@
             <p class="text-sm text-center text-gray-darker">Completely Free</p>
           </div>
 
-          <NuxtLink
-            to="/free-workouts"
-            class="px-4 py-2 text-lg font-medium text-indigo-dark bg-indigo-lighter rounded-md"
-          >
-            See free workouts
-          </NuxtLink>
+          <!-- <NuxtLink -->
+          <!--   to="/free-workouts" -->
+          <!--   class="px-4 py-2 text-lg font-medium text-indigo-dark bg-indigo-lighter rounded-md" -->
+          <!-- > -->
+          <!--   See free workouts -->
+          <!-- </NuxtLink> -->
         </div>
       </div>
 
