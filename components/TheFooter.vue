@@ -1,5 +1,5 @@
 <template>
-  <footer class="w-full px-6 py-12 pt-4">
+  <footer class="w-full px-6 pb-8">
     <section
       class="flex items-center justify-between text-green-dark"
     >
