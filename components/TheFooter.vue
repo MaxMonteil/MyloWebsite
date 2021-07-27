@@ -8,7 +8,7 @@
         <p id="tagline" class="text-sm">Stop exercising without a plan</p>
       </div>
 
-      <p class="text-sm">© 2021 Mylo</p>
+      <p class="text-sm">© {{ (new Date()).getFullYear() || '2021' }} Mylo</p>
     </section>
   </footer>
 </template>
