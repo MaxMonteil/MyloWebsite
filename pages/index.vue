@@ -36,27 +36,48 @@
 
       <div class="relative w-full sm:w-1/2">
         <div class="overflow-hidden">
-          <SportsIcons class="z-0 motion-safe:animate-spin-slow text-green-dark" />
+          <div
+            class="z-0 opacity-60 motion-safe:animate-spin-slow text-green-dark"
+            v-html="require('~/assets/images/sports_icons.svg?include')"
+          />
         </div>
 
-        <div class="absolute top-0 left-0 z-10 flex w-full px-4 gap-3">
-          <NuxtImg
-            src="/images/schedule.png"
-            width="160"
-            height="320"
-            format="webp"
-            class="w-1/2 rounded-lg shadow-xl"
-            loading="lazy"
-          />
+        <div class="absolute top-0 left-0 z-10 flex justify-between w-full px-4 gap-3">
+          <picture>
+            <source
+              srcset="
+                /images/schedule.png?webp,
+                /images/schedule@2x.png?webp 2x
+              "
+              type="image/webp"
+            />
 
-          <NuxtImg
-            src="/images/training.png"
-            width="160"
-            height="320"
-            format="webp"
-            class="w-1/2 rounded-lg shadow-xl transform translate-y-8"
-            loading="lazy"
-          />
+            <img
+              src="/images/schedule.png"
+              srcset="/images/schedule@2x.png 2x"
+              width="160"
+              height="320"
+              class="w-full rounded-lg shadow-xl"
+            />
+          </picture>
+
+          <picture>
+            <source
+              srcset="
+                /images/training.png?webp,
+                /images/training@2x.png?webp 2x
+              "
+              type="image/webp"
+            />
+
+            <img
+              src="/images/training.png"
+              srcset="/images/training@2x.png 2x"
+              width="160"
+              height="320"
+              class="w-full rounded-lg shadow-xl transform translate-y-8"
+            />
+          </picture>
         </div>
       </div>
     </section>
@@ -65,15 +86,30 @@
     <section class="flex flex-col items-center max-w-6xl px-6 mx-auto overflow-hidden sm:overflow-visible align-center gap-4 sm:flex-row sm:gap-8">
       <div class="z-0 items-center justify-items-center grid grid-cols-1">
         <div class="z-10 sm:justify-self-end row-start-1 col-start-1">
-          <NuxtImg
-            src="/images/kinds_of_workouts.png"
-            format="webp"
-            class="max-w-none"
-            loading="lazy"
-          />
+          <picture>
+            <source
+              srcset="
+                /images/kinds_of_workouts.png?webp,
+                /images/kinds_of_workouts@2x.png?webp 2x
+              "
+              type="image/webp"
+            />
+
+            <img
+              src="/images/kinds_of_workouts.png"
+              srcset="/images/kinds_of_workouts@2x.png 2x"
+              width="787"
+              height="238"
+              class="h-full max-w-none"
+              loading="lazy"
+            />
+          </picture>
         </div>
 
-        <SportsIcons class="z-0 w-96 row-start-1 col-start-1 transform scale-75 text-green-dark sm:w-2/3" />
+        <div
+          class="z-0 opacity-60 w-96 row-start-1 col-start-1 transform scale-75 text-green-dark sm:w-2/3"
+          v-html="require('~/assets/images/sports_icons.svg?include')"
+          />
       </div>
 
       <div class="z-10 w-full space-y-4 sm:w-1/2">
@@ -85,15 +121,21 @@
 
     <section class="relative flex flex-col items-center justify-center max-w-6xl px-6 pt-10 mx-auto -mt-10 overflow-x-hidden sm:items-start sm:overflow-visible gap-8 sm:flex-row-reverse">
       <div class="relative z-0 flex justify-center max-w-sm sm:w-1/2">
-        <SportsIcons class="absolute top-0 left-0 z-0 -translate-y-24 transform scale-50 translate-x-48 text-green-dark" />
-        <SportsIcons class="absolute bottom-0 left-0 z-0 translate-y-20 -translate-x-32 transform scale-75 text-green-dark" />
+        <div
+          class="absolute top-0 left-0 z-0 w-full opacity-60 -translate-y-24 transform scale-50 translate-x-48 text-green-dark"
+          v-html="require('~/assets/images/sports_icons.svg?include')"
+        />
 
-        <NuxtImg
+        <div
+          class="absolute bottom-0 left-0 z-0 w-full opacity-60 translate-y-20 -translate-x-32 transform scale-75 text-green-dark"
+          v-html="require('~/assets/images/sports_icons.svg?include')"
+        />
+
+        <img
           src="/images/exercise_rules.png"
           width="331"
           height="589"
-          format="webp"
-          class="relative z-10 shadow-xl rounded-2xl"
+          class="relative z-10 w-full shadow-xl rounded-2xl"
           loading="lazy"
         />
       </div>
@@ -107,17 +149,33 @@
 
     <section class="flex flex-col items-center justify-center max-w-6xl px-6 pt-12 mx-auto -mt-12 overflow-x-hidden sm:overflow-visible sm:flex-row gap-4 sm:gap-8">
       <div class="relative z-0">
-        <SportsIcons class="absolute top-0 left-0 z-0 origin-top-left -translate-x-12 -translate-y-12 transform scale-50 text-green-dark" />
-        <SportsIcons class="absolute bottom-0 left-0 z-0 origin-bottom-right transform scale-25 translate-x-8 translate-y-4 text-green-dark" />
-
-        <NuxtImg
-          src="/images/share_workout.png"
-          width="363"
-          height="186"
-          format="webp"
-          class="relative z-10 w-full shadow-xl rounded-2xl"
-          loading="lazy"
+        <div
+          class="absolute top-0 left-0 z-0 w-full opacity-60 origin-top-left -translate-x-12 -translate-y-12 transform scale-50 text-green-dark"
+          v-html="require('/assets/images/sports_icons.svg?include')"
         />
+        <div
+          class="absolute bottom-0 left-0 z-0 w-full opacity-60 origin-bottom-right transform scale-25 translate-x-8 translate-y-4 text-green-dark"
+          v-html="require('/assets/images/sports_icons.svg?include')"
+        />
+
+        <picture>
+          <source
+            srcset="
+              /images/share_workout.png?webp,
+              /images/share_workout@2x.png?webp 2x
+            "
+            type="image/webp"
+          />
+
+          <img
+            src="/images/share_workout.png"
+            srcset="/images/share_workout@2x.png 2x"
+            width="363"
+            height="186"
+            class="relative z-10 w-full shadow-xl rounded-2xl"
+            loading="lazy"
+          />
+        </picture>
       </div>
 
       <div class="space-y-4 sm:w-1/2">
@@ -129,22 +187,36 @@
 
     <section class="flex flex-col items-center justify-center max-w-6xl px-6 mx-auto gap-4 sm:gap-8 sm:flex-row-reverse">
       <div class="relative z-0">
-        <SportsIcons class="absolute top-0 left-0 transform scale-75 text-green-dark" />
-
-        <NuxtImg
-          src="/images/perfect_workout.png"
-          width="387"
-          height="386"
-          format="webp"
-          class="relative z-10"
-          loading="lazy"
+        <div
+          class="absolute top-0 left-0 w-full opacity-60 transform scale-75 text-green-dark"
+          v-html="require('/assets/images/sports_icons.svg?include')"
         />
-      </div>
+
+          <picture>
+            <source
+              srcset="
+                /images/perfect_workout.png?webp,
+                /images/perfect_workout@2x.png?webp 2x
+              "
+              type="image/webp"
+            />
+
+            <img
+              alt="examples of workouts"
+              src="/images/perfect_workout.png"
+              srcset="/images/perfect_workout@2x.png 2x"
+              width="363"
+              height="360"
+              class="relative z-10"
+              loading="lazy"
+            />
+          </picture>
+        </div>
 
       <div class="space-y-4 sm:w-1/2">
         <div>
           <p class="text-base text-yellow-dark">Coming Soon!</p>
-          <h2 class="text-3xl font-semibold">Find the perfect workout</h2>
+          <h2 class="text-3xl font-semibold">Find your perfect workout</h2>
         </div>
         <p class="text-lg leading-snug text-gray-darker">Every shared workout is available publicly so you can assemble the perfect schedule for you.</p>
         <p class="text-lg leading-snug text-gray-darker">Imagine your own warmup, Arnold’s strength training, Phelp’s swim routine, and Copeland’s cool-down stretches!</p>
@@ -160,14 +232,24 @@
 
     <section class="flex flex-col items-center justify-center max-w-6xl px-6 mx-auto gap-4 sm:gap-8 sm:flex-row">
       <div class="relative z-0">
-        <NuxtImg
-          src="/images/coming_soon.png"
-          width="363"
-          height="178"
-          format="webp"
-          class="relative z-10"
-          loading="lazy"
-        />
+        <picture>
+          <source
+            srcset="
+              /images/coming_soon.png?webp,
+              /images/coming_soon@2x.png?webp 2x
+            "
+            type="image/webp"
+          />
+
+          <img
+            src="/images/coming_soon.png"
+            srcset="/images/coming_soon@2x.png 2x"
+            width="363"
+            height="178"
+            class="relative z-10 w-full"
+            loading="lazy"
+          />
+        </picture>
       </div>
 
       <div class="space-y-4 sm:w-1/2">
@@ -179,12 +261,22 @@
 
     <!-- Why Mylo -->
     <section class="flex flex-col items-start justify-center p-6 text-lg sm:flex-row-reverse bg-green-lighter gap-4 sm:gap-12 bg-opacity-25 text-green-darkest">
-      <NuxtImg
-        src="/images/maximilien.png"
-        format="webp"
-        class="relative z-10 self-center sm:self-start rounded-2xl"
-        loading="lazy"
-      />
+      <picture>
+        <source
+          srcset="
+            /images/maximilien.png?webp,
+            /images/maximilien@2x.png?webp 2x
+          "
+          type="image/webp"
+        />
+
+        <img
+          src="/images/maximilien.png"
+          srcset="/images/maximilien@2x.png 2x"
+          class="relative z-10 self-center sm:self-start rounded-2xl"
+          loading="lazy"
+        />
+      </picture>
 
       <div class="space-y-4 sm:w-1/2">
         <h2 class="self-start text-3xl font-semibold">Why Mylo?</h2>
@@ -200,15 +292,5 @@
 </template>
 
 <script>
-import SportsIcons from '~/assets/images/sports_icons.svg?inline'
-
-export default {
-  components: { SportsIcons },
-}
+export default {}
 </script>
-
-<style scoped>
-/* * { */
-  /* outline: 1px solid #f00 !important; */
-/* } */
-</style>
