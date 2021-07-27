@@ -4,22 +4,25 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Mylo - Stop training without a plan.',
+    title: 'Mylo - Stop exercising without a plan',
     htmlAttrs: {
       lang: 'en',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
       {
         hid: 'description',
         name: 'description',
-        content: 'Mylo - Stop training without a plan.',
+        content:
+          'Mylo is an app that helps you create and discover workout plans that can progress automatically as you train. Never second-guess your workouts again and instead focus on training.',
       },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'canonical', href: 'https://www.mylo.fit' },
+    ],
     script: [
       {
         src: 'https://plausible.io/js/plausible.js',
