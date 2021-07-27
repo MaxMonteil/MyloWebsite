@@ -40,7 +40,7 @@
       <div class="relative w-full sm:w-1/2">
         <div class="overflow-hidden">
           <div
-            class="z-0 opacity-60 motion-safe:animate-spin-slow text-green-dark"
+            class="z-0 opacity-50 animate-spin-slow text-green-dark"
             v-html="require('~/assets/images/sports_icons.svg?include')"
           />
         </div>
@@ -110,7 +110,7 @@
         </div>
 
         <div
-          class="z-0 opacity-60 w-96 row-start-1 col-start-1 transform scale-75 text-green-dark sm:w-2/3"
+          class="z-0 opacity-50 w-96 row-start-1 col-start-1 transform scale-75 text-green-dark sm:w-2/3"
           v-html="require('~/assets/images/sports_icons.svg?include')"
           />
       </div>
@@ -125,22 +125,33 @@
     <section class="relative flex flex-col items-center justify-center max-w-6xl px-6 pt-10 mx-auto -mt-10 overflow-x-hidden sm:items-start sm:overflow-visible gap-8 sm:flex-row-reverse">
       <div class="relative z-0 flex justify-center max-w-sm sm:w-1/2">
         <div
-          class="absolute top-0 left-0 z-0 w-full opacity-60 -translate-y-24 transform scale-50 translate-x-48 text-green-dark"
+          class="absolute top-0 left-0 z-0 w-full opacity-50 -translate-y-24 transform scale-50 translate-x-48 text-green-dark"
           v-html="require('~/assets/images/sports_icons.svg?include')"
         />
 
         <div
-          class="absolute bottom-0 left-0 z-0 w-full opacity-60 translate-y-20 -translate-x-32 transform scale-75 text-green-dark"
+          class="absolute bottom-0 left-0 z-0 w-full opacity-50 translate-y-20 -translate-x-32 transform scale-75 text-green-dark"
           v-html="require('~/assets/images/sports_icons.svg?include')"
         />
 
-        <img
-          src="/images/exercise_rules.png"
-          width="331"
-          height="589"
-          class="relative z-10 w-full shadow-xl rounded-2xl"
-          loading="lazy"
-        />
+        <picture>
+          <source
+            srcset="
+              /images/exercise_rules.png?webp,
+              /images/exercise_rules@2x.png?webp 2x
+            "
+            type="image/webp"
+          />
+
+          <img
+            src="/images/exercise_rules.png"
+            srcset="/images/exercise_rules@2x.png 2x"
+            width="363"
+            height="646"
+            class="relative z-10 w-full shadow-xl rounded-2xl"
+            loading="lazy"
+          />
+        </picture>
       </div>
 
       <div class="relative z-10 space-y-4 sm:w-1/2">
@@ -153,11 +164,11 @@
     <section class="flex flex-col items-center justify-center max-w-6xl px-6 pt-12 mx-auto -mt-12 overflow-x-hidden sm:overflow-visible sm:flex-row gap-4 sm:gap-8">
       <div class="relative z-0">
         <div
-          class="absolute top-0 left-0 z-0 w-full opacity-60 origin-top-left -translate-x-12 -translate-y-12 transform scale-50 text-green-dark"
+          class="absolute top-0 left-0 z-0 w-full opacity-50 origin-top-left -translate-x-12 -translate-y-12 transform scale-50 text-green-dark"
           v-html="require('/assets/images/sports_icons.svg?include')"
         />
         <div
-          class="absolute bottom-0 left-0 z-0 w-full opacity-60 origin-bottom-right transform scale-25 translate-x-8 translate-y-4 text-green-dark"
+          class="absolute bottom-0 left-0 z-0 w-full opacity-50 origin-bottom-right transform scale-25 translate-x-8 translate-y-4 text-green-dark"
           v-html="require('/assets/images/sports_icons.svg?include')"
         />
 
@@ -191,7 +202,7 @@
     <section class="flex flex-col items-center justify-center max-w-6xl px-6 mx-auto gap-4 sm:gap-8 sm:flex-row-reverse">
       <div class="relative z-0">
         <div
-          class="absolute top-0 left-0 w-full opacity-60 transform scale-75 text-green-dark"
+          class="absolute top-0 left-0 w-full opacity-50 transform scale-75 text-green-dark"
           v-html="require('/assets/images/sports_icons.svg?include')"
         />
 
@@ -210,7 +221,7 @@
               srcset="/images/perfect_workout@2x.png 2x"
               width="363"
               height="360"
-              class="relative z-10"
+              class="relative z-10 drop-shadow-lg"
               loading="lazy"
             />
           </picture>
@@ -297,3 +308,9 @@
 <script>
 export default {}
 </script>
+
+<style scoped>
+.drop-shadow-lg {
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.05));
+}
+</style>
