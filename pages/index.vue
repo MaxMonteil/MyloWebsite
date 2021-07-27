@@ -1,7 +1,7 @@
 <template>
   <main class="flex flex-col gap-32">
     <!-- Hero Section -->
-    <section class="flex flex-col max-w-6xl px-6 mx-auto gap-6 sm:flex-row sm:items-center">
+    <section class="flex flex-col px-6 mx-auto max-w-7xl gap-y-6 sm:flex-row sm:items-center">
       <div class="space-y-6 sm:w-1/2">
         <div class="text-center sm:text-left space-y-3 sm:space-y-6">
           <h1 class="text-4xl font-semibold sm:text-6xl">
@@ -37,16 +37,34 @@
         </div>
       </div>
 
-      <div class="relative w-full sm:w-1/2">
+      <div class="relative flex-grow w-full sm:w-60">
         <div class="overflow-hidden">
           <div
-            class="z-0 opacity-50 animate-spin-slow text-green-dark"
+            class="z-0 opacity-40 animate-spin-slow text-green-dark"
             v-html="require('~/assets/images/sports_icons.svg?include')"
           />
         </div>
 
-        <div class="absolute top-0 left-0 z-10 flex justify-between w-full px-4 gap-3">
+        <div class="absolute top-0 left-0 z-10 flex justify-center w-full px-4 gap-3">
           <picture>
+            <source
+              media="(min-width: 640px)"
+              srcset="
+                /images/schedule-250.png?webp,
+                /images/schedule-250@2x.png?webp 2x
+              "
+              type="image/webp"
+            />
+
+            <source
+              media="(min-width: 640px)"
+              srcset="
+                /images/schedule-250.png,
+                /images/schedule-250@2x.png 2x
+              "
+              type="image/png"
+            />
+
             <source
               srcset="
                 /images/schedule.png?webp,
@@ -65,6 +83,24 @@
           </picture>
 
           <picture>
+            <source
+              media="(min-width: 640px)"
+              srcset="
+                /images/training-250.png?webp,
+                /images/training-250@2x.png?webp 2x
+              "
+              type="image/webp"
+            />
+
+            <source
+              media="(min-width: 640px)"
+              srcset="
+                /images/training-250.png,
+                /images/training-250@2x.png 2x
+              "
+              type="image/png"
+            />
+
             <source
               srcset="
                 /images/training.png?webp,
@@ -110,9 +146,9 @@
         </div>
 
         <div
-          class="z-0 opacity-50 w-96 row-start-1 col-start-1 transform scale-75 text-green-dark sm:w-2/3"
+          class="z-0 opacity-40 w-96 row-start-1 col-start-1 transform scale-75 text-green-dark sm:w-2/3"
           v-html="require('~/assets/images/sports_icons.svg?include')"
-          />
+        />
       </div>
 
       <div class="z-10 w-full space-y-4 sm:w-1/2">
@@ -122,15 +158,15 @@
       </div>
     </section>
 
-    <section class="relative flex flex-col items-center justify-center max-w-6xl px-6 pt-10 mx-auto -mt-10 overflow-x-hidden sm:items-start sm:overflow-visible gap-8 sm:flex-row-reverse">
+    <section class="relative flex flex-col items-center justify-center max-w-6xl px-6 pt-10 pb-10 mx-auto -mt-10 -mb-10 overflow-hidden sm:items-start gap-8 sm:flex-row-reverse">
       <div class="relative z-0 flex justify-center max-w-sm sm:w-1/2">
         <div
-          class="absolute top-0 left-0 z-0 w-full opacity-50 -translate-y-24 transform scale-50 translate-x-48 text-green-dark"
+          class="absolute top-0 left-0 z-0 w-full opacity-40 -translate-y-24 transform scale-50 translate-x-48 text-green-dark"
           v-html="require('~/assets/images/sports_icons.svg?include')"
         />
 
         <div
-          class="absolute bottom-0 left-0 z-0 w-full opacity-50 translate-y-20 -translate-x-32 transform scale-75 text-green-dark"
+          class="absolute bottom-0 left-0 z-0 w-full opacity-40 translate-y-20 -translate-x-32 transform scale-75 text-green-dark"
           v-html="require('~/assets/images/sports_icons.svg?include')"
         />
 
@@ -164,11 +200,11 @@
     <section class="flex flex-col items-center justify-center max-w-6xl px-6 pt-12 mx-auto -mt-12 overflow-x-hidden sm:overflow-visible sm:flex-row gap-4 sm:gap-8">
       <div class="relative z-0">
         <div
-          class="absolute top-0 left-0 z-0 w-full opacity-50 origin-top-left -translate-x-12 -translate-y-12 transform scale-50 text-green-dark"
+          class="absolute top-0 left-0 z-0 w-full opacity-40 origin-top-left -translate-x-12 -translate-y-12 transform scale-50 text-green-dark"
           v-html="require('/assets/images/sports_icons.svg?include')"
         />
         <div
-          class="absolute bottom-0 left-0 z-0 w-full opacity-50 origin-bottom-right transform scale-25 translate-x-8 translate-y-4 text-green-dark"
+          class="absolute bottom-0 left-0 z-0 w-full opacity-40 origin-bottom-right transform scale-25 translate-x-8 translate-y-4 text-green-dark"
           v-html="require('/assets/images/sports_icons.svg?include')"
         />
 
@@ -202,7 +238,7 @@
     <section class="flex flex-col items-center justify-center max-w-6xl px-6 mx-auto gap-4 sm:gap-8 sm:flex-row-reverse">
       <div class="relative z-0">
         <div
-          class="absolute top-0 left-0 w-full opacity-50 transform scale-75 text-green-dark"
+          class="absolute top-0 left-0 w-full opacity-40 transform scale-75 text-green-dark"
           v-html="require('/assets/images/sports_icons.svg?include')"
         />
 
