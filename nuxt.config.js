@@ -20,6 +20,14 @@ export default {
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [
+      {
+        src: 'https://plausible.io/js/plausible.js',
+        async: true,
+        defer: true,
+        'data-domain': 'mylo.fit',
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -37,10 +45,8 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    // https://github.com/nuxt-community/svg-module
-    '@nuxtjs/svg',
-    // https://image.nuxtjs.org
-    '@nuxt/image',
+    // https://marquez.co/docs/nuxt-optimized-images/
+    '@aceforth/nuxt-optimized-images',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -48,6 +54,11 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
   ],
+
+  // Config for Nuxt Optimized Images
+  optimizedImages: {
+    optimizeImages: true,
+  },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {},
