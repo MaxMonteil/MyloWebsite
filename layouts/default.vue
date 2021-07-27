@@ -1,5 +1,5 @@
 <template>
-  <div class="overflow-hidden space-y-8">
+  <div class="space-y-8">
     <TheHeader />
     <Nuxt />
     <TheFooter />
