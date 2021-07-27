@@ -22,7 +22,10 @@
                 Make a plan!
             </a>
 
-            <p class="text-sm text-center text-gray-darker">Completely Free</p>
+            <ul>
+              <li class="text-sm text-center text-gray-darker">100% Free</li>
+              <li class="text-sm text-center text-gray-darker">No credit card required</li>
+            </ul>
           </div>
 
           <!-- <NuxtLink -->
