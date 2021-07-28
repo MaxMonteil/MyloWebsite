@@ -1,14 +1,14 @@
 <template>
-  <footer class="w-full px-6">
+  <footer class="w-full px-6 pb-8">
     <section
-      class="mx-auto text-lg text-green-darker sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl space-y-5 divide-y"
+      class="flex items-center justify-between text-green-dark"
     >
       <div class="flex items-center space-x-2">
-        <TheLogo labelledby="tagline" :size="56" />
-        <p id="tagline">Mylo, your personal training assistant.</p>
+        <TheLogo labelledby="tagline" :size="36" />
+        <p id="tagline" class="text-sm">Stop exercising without a plan</p>
       </div>
 
-      <p class="pt-5">© 2021 Mylo</p>
+      <p class="text-sm">© {{ (new Date()).getFullYear() || '2021' }} Mylo</p>
     </section>
   </footer>
 </template>

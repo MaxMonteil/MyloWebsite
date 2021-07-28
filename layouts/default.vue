@@ -1,5 +1,5 @@
 <template>
-  <div class="py-5 space-y-10">
+  <div class="space-y-8">
     <TheHeader />
     <Nuxt />
     <TheFooter />

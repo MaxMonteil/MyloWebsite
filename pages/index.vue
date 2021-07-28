@@ -1,339 +1,352 @@
 <template>
-  <main class="overflow-hidden space-y-16">
-    <!-- HERO -->
-    <section
-      class="flex flex-col max-w-6xl mx-auto -mb-20 md:flex-row space-y-12 md:space-y-0"
-    >
-      <div class="px-6 lg:pt-16 space-y-6 md:w-1/2 lg:w-2/3">
-        <h1
-          class="text-4xl font-semibold leading-tight tracking-tight text-black space-y-2 sm:space-y-0 md:text-5xl"
-        >
-          Create workout plans that progress
-          <span class="text-green-darker">automatically</span>
-        </h1>
+  <main class="flex flex-col gap-32">
+    <!-- Hero Section -->
+    <section class="flex flex-col px-6 mx-auto max-w-7xl gap-y-6 sm:flex-row sm:items-center">
+      <div class="space-y-6 sm:w-1/2">
+        <div class="text-center sm:text-left space-y-3 sm:space-y-6">
+          <h1 class="text-4xl font-semibold sm:text-6xl">
+            Stop exercising without a plan <br /> <span class="text-green-dark">use Mylo</span>
+          </h1>
 
-        <p class="text-lg md:text-xl text-gray-darker">
-          No more spreadsheets or notebooks, Mylo manages everything so you can
-          focus on training.
-        </p>
-
-        <a
-          href="https://app.mylo.fit/register"
-          class="inline-block px-8 py-3 font-medium rounded shadow-lg focus:outline-none focus:shadow-outline hover:bg-opacity-75 transition duration-150 bg-green text-green-darker"
-        >
-          Try it now for free
-        </a>
-      </div>
-
-      <TheHero />
-    </section>
-
-    <!-- FEATURES -->
-    <section class="max-w-5xl mx-auto space-y-20">
-      <article
-        class="px-6 md:flex md:flex-row-reverse md:space-x-6 md:space-x-reverse"
-      >
-        <div class="mb-6 text-lg space-y-5">
-          <h2
-            class="text-3xl font-semibold leading-tight tracking-tight md:text-4xl"
-          >
-            Automatic exercise progression
-          </h2>
-
-          <p class="text-gray-darker">
-            This isn't just a workout logging app, it’s your personal training
-            assistant.
+          <p class="max-w-lg text-lg leading-snug text-gray-darker">
+            Mylo helps you create and discover workout plans that progress automatically so you can focus on training.
           </p>
-          <p class="text-gray-darker">
-            Mylo lets you describe how your exercises should progress with
-            <span class="font-medium text-green-darker">Exercise Rules</span>.
-            This way, you can focus on training and Mylo will take care of the
-            rest. Of course, you can always take over.
-          </p>
-          <p class="font-medium text-green-darker">
-            No more second guessing weights or reps.
-          </p>
-
-          <a
-            href="https://app.mylo.fit/register"
-            class="inline-block px-4 py-3 font-medium text-center rounded shadow-lg sm:px-8 focus:outline-none focus:shadow-outline hover:bg-opacity-75 transition duration-150 bg-green text-green-darker"
-          >
-            Automate your first workout now
-          </a>
         </div>
 
-        <div class="relative flex flex-col items-center">
+        <div class="flex items-start justify-center sm:justify-start gap-4">
+          <div class="space-y-1">
+            <a
+                href="https://app.mylo.fit/register"
+                class="inline-block px-6 py-2 text-lg font-medium text-white rounded-md bg-green-dark"
+                >
+                Make a plan!
+            </a>
+
+            <ul>
+              <li class="text-sm text-center text-gray-darker">100% Free</li>
+              <li class="text-sm text-center text-gray-darker">No credit card required</li>
+            </ul>
+          </div>
+
+          <!-- <NuxtLink -->
+          <!--   to="/free-workouts" -->
+          <!--   class="px-4 py-2 text-lg font-medium text-indigo-dark bg-indigo-lighter rounded-md" -->
+          <!-- > -->
+          <!--   See free workouts -->
+          <!-- </NuxtLink> -->
+        </div>
+      </div>
+
+      <div class="relative flex-grow w-full sm:w-60">
+        <div class="overflow-hidden">
+          <div
+            class="z-0 opacity-40 animate-spin-slow text-green-dark"
+            v-html="require('~/assets/images/sports_icons.svg?include')"
+          />
+        </div>
+
+        <div class="absolute top-0 left-0 z-10 flex justify-center w-full px-4 gap-3">
+          <picture>
+            <source
+              media="(min-width: 640px)"
+              srcset="
+                /images/schedule-250.png?webp,
+                /images/schedule-250@2x.png?webp 2x
+              "
+              type="image/webp"
+            />
+
+            <source
+              media="(min-width: 640px)"
+              srcset="
+                /images/schedule-250.png,
+                /images/schedule-250@2x.png 2x
+              "
+              type="image/png"
+            />
+
+            <source
+              srcset="
+                /images/schedule.png?webp,
+                /images/schedule@2x.png?webp 2x
+              "
+              type="image/webp"
+            />
+
+            <img
+              src="/images/schedule.png"
+              srcset="/images/schedule@2x.png 2x"
+              width="160"
+              height="320"
+              class="w-full rounded-lg shadow-xl"
+            />
+          </picture>
+
+          <picture>
+            <source
+              media="(min-width: 640px)"
+              srcset="
+                /images/training-250.png?webp,
+                /images/training-250@2x.png?webp 2x
+              "
+              type="image/webp"
+            />
+
+            <source
+              media="(min-width: 640px)"
+              srcset="
+                /images/training-250.png,
+                /images/training-250@2x.png 2x
+              "
+              type="image/png"
+            />
+
+            <source
+              srcset="
+                /images/training.png?webp,
+                /images/training@2x.png?webp 2x
+              "
+              type="image/webp"
+            />
+
+            <img
+              src="/images/training.png"
+              srcset="/images/training@2x.png 2x"
+              width="160"
+              height="320"
+              class="w-full rounded-lg shadow-xl transform translate-y-8"
+            />
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="flex flex-col items-center max-w-6xl px-6 mx-auto overflow-hidden sm:overflow-visible align-center gap-4 sm:flex-row sm:gap-8">
+      <div class="z-0 items-center justify-items-center grid grid-cols-1">
+        <div class="z-10 sm:justify-self-end row-start-1 col-start-1">
+          <picture>
+            <source
+              srcset="
+                /images/kinds_of_workouts.png?webp,
+                /images/kinds_of_workouts@2x.png?webp 2x
+              "
+              type="image/webp"
+            />
+
+            <img
+              src="/images/kinds_of_workouts.png"
+              srcset="/images/kinds_of_workouts@2x.png 2x"
+              width="787"
+              height="238"
+              class="h-full max-w-none"
+              loading="lazy"
+            />
+          </picture>
+        </div>
+
+        <div
+          class="z-0 opacity-40 w-96 row-start-1 col-start-1 transform scale-75 text-green-dark sm:w-2/3"
+          v-html="require('~/assets/images/sports_icons.svg?include')"
+        />
+      </div>
+
+      <div class="z-10 w-full space-y-4 sm:w-1/2">
+        <h2 class="text-3xl font-semibold">Create every kind of workout</h2>
+        <p class="text-lg leading-snug text-gray-darker">There are almost no constraints on the kinds of exercises and workouts you can create.</p>
+        <p class="text-lg leading-snug text-gray-darker">Whatever you can think of, Mylo can manage.</p>
+      </div>
+    </section>
+
+    <section class="relative flex flex-col items-center justify-center max-w-6xl px-6 pt-10 pb-10 mx-auto -mt-10 -mb-10 overflow-hidden sm:items-start gap-8 sm:flex-row-reverse">
+      <div class="relative z-0 flex justify-center max-w-sm sm:w-1/2">
+        <div
+          class="absolute top-0 left-0 z-0 w-full opacity-40 -translate-y-24 transform scale-50 translate-x-48 text-green-dark"
+          v-html="require('~/assets/images/sports_icons.svg?include')"
+        />
+
+        <div
+          class="absolute bottom-0 left-0 z-0 w-full opacity-40 translate-y-20 -translate-x-32 transform scale-75 text-green-dark"
+          v-html="require('~/assets/images/sports_icons.svg?include')"
+        />
+
+        <picture>
+          <source
+            srcset="
+              /images/exercise_rules.png?webp,
+              /images/exercise_rules@2x.png?webp 2x
+            "
+            type="image/webp"
+          />
+
           <img
-            src="~/assets/images/sports_icons.svg"
-            alt="sports icons"
-            width="100%"
-            title="Sport Icons"
-            class="absolute z-0 max-w-md opacity-75 transform scale-90 -translate-y-10 -translate-x-40 stroke-green"
+            src="/images/exercise_rules.png"
+            srcset="/images/exercise_rules@2x.png 2x"
+            width="363"
+            height="646"
+            class="relative z-10 w-full shadow-xl rounded-2xl"
             loading="lazy"
           />
+        </picture>
+      </div>
+
+      <div class="relative z-10 space-y-4 sm:w-1/2">
+        <h2 class="text-3xl font-semibold">Plan once, train forever</h2>
+        <p class="text-lg leading-snug text-gray-darker">Add progression rules to your exercises! Watch reps, weights, and more progress automatically as you train.</p>
+        <p class="text-lg leading-snug text-gray-darker">Never second-guess your workout again.</p>
+      </div>
+    </section>
+
+    <section class="flex flex-col items-center justify-center max-w-6xl px-6 pt-12 mx-auto -mt-12 overflow-x-hidden sm:overflow-visible sm:flex-row gap-4 sm:gap-8">
+      <div class="relative z-0">
+        <div
+          class="absolute top-0 left-0 z-0 w-full opacity-40 origin-top-left -translate-x-12 -translate-y-12 transform scale-50 text-green-dark"
+          v-html="require('/assets/images/sports_icons.svg?include')"
+        />
+        <div
+          class="absolute bottom-0 left-0 z-0 w-full opacity-40 origin-bottom-right transform scale-25 translate-x-8 translate-y-4 text-green-dark"
+          v-html="require('/assets/images/sports_icons.svg?include')"
+        />
+
+        <picture>
+          <source
+            srcset="
+              /images/share_workout.png?webp,
+              /images/share_workout@2x.png?webp 2x
+            "
+            type="image/webp"
+          />
+
+          <img
+            src="/images/share_workout.png"
+            srcset="/images/share_workout@2x.png 2x"
+            width="363"
+            height="186"
+            class="relative z-10 w-full shadow-xl rounded-2xl"
+            loading="lazy"
+          />
+        </picture>
+      </div>
+
+      <div class="space-y-4 sm:w-1/2">
+        <h2 class="text-3xl font-semibold">Share workouts with anyone</h2>
+        <p class="text-lg leading-snug text-gray-darker">Quickly and easily share workouts with friends, gym partners, clients, or anyone (you can make your workout private anytime).</p>
+        <p class="text-lg leading-snug text-gray-darker">And with Exercise Rules, you’re sharing dynamic plans that can progress without your supervision.</p>
+      </div>
+    </section>
+
+    <section class="flex flex-col items-center justify-center max-w-6xl px-6 mx-auto gap-4 sm:gap-8 sm:flex-row-reverse">
+      <div class="relative z-0">
+        <div
+          class="absolute top-0 left-0 w-full opacity-40 transform scale-75 text-green-dark"
+          v-html="require('/assets/images/sports_icons.svg?include')"
+        />
 
           <picture>
             <source
               srcset="
-                ~/assets/images/exercise-rule.png?webp,
-                ~/assets/images/exercise-rule@2x.png?webp 2x
+                /images/perfect_workout.png?webp,
+                /images/perfect_workout@2x.png?webp 2x
               "
               type="image/webp"
             />
+
             <img
-              alt="Exercise form"
-              src="~/assets/images/exercise-rule.png"
-              srcset="~/assets/images/exercise-rule@2x.png 2x"
-              class="relative shadow-xl max-w-none"
-              width="318"
-              height="429"
+              alt="examples of workouts"
+              src="/images/perfect_workout.png"
+              srcset="/images/perfect_workout@2x.png 2x"
+              width="363"
+              height="360"
+              class="relative z-10 drop-shadow-lg"
+              loading="lazy"
             />
           </picture>
         </div>
-      </article>
 
-      <article class="space-y-10">
-        <div class="px-6 text-lg space-y-5">
-          <h2
-            class="text-3xl font-semibold leading-tight tracking-tight md:text-4xl"
-          >
-            Super flexible workout creation
-          </h2>
-
-          <p class="text-gray-darker">
-            Saw an awesome exercise in a video? Invented your own? Go ahead and
-            create it!
-          </p>
-          <p class="text-gray-darker">
-            Mylo is here to help you, not limit you, so there are almost no
-            constraints on the kind of exercises or workouts you can create.
-          </p>
-          <p class="font-medium text-green-darker">
-            Whatever you can think of, Mylo can manage.
-          </p>
-
-          <a
-            href="https://app.mylo.fit/register"
-            class="inline-block px-4 py-3 font-medium rounded shadow-lg sm:px-8 focus:outline-none focus:shadow-outline hover:bg-opacity-75 transition duration-150 bg-green text-green-darker"
-          >
-            Start creating your workout plan
-          </a>
+      <div class="space-y-4 sm:w-1/2">
+        <div>
+          <p class="text-base text-yellow-dark">Coming Soon!</p>
+          <h2 class="text-3xl font-semibold">Find your perfect workout</h2>
         </div>
+        <p class="text-lg leading-snug text-gray-darker">Every shared workout is available publicly so you can assemble the perfect schedule for you.</p>
+        <p class="text-lg leading-snug text-gray-darker">Imagine your own warmup, Arnold’s strength training, Phelp’s swim routine, and Copeland’s cool-down stretches!</p>
 
-        <div
-          class="relative flex justify-center w-full overflow-hidden md:overflow-visible"
-        >
-          <div class="absolute top-0 left-0 w-full overflow-visible">
-            <img
-              src="~/assets/images/sports_icons.svg"
-              alt="sports_icons"
-              title="Sport Icons"
-              class="absolute left-0 z-0 stroke-green transform -translate-x-32 translate-y-56 scale-50 rotate-45"
-              loading="lazy"
-            />
+        <!-- <NuxtLink -->
+        <!--   to="/free-workouts" -->
+        <!--   class="self-end inline-block px-3 py-2 font-semibold text-indigo-dark bg-indigo-lighter rounded-md" -->
+        <!-- > -->
+        <!--   See free workouts -->
+        <!-- </NuxtLink> -->
+      </div>
+    </section>
 
-            <img
-              src="~/assets/images/sports_icons.svg"
-              alt="sports_icons"
-              title="Sport Icons"
-              class="absolute z-0 pl-12 stroke-green transform translate-x-56 translate-y-16 scale-90"
-              loading="lazy"
-            />
+    <section class="flex flex-col items-center justify-center max-w-6xl px-6 mx-auto gap-4 sm:gap-8 sm:flex-row">
+      <div class="relative z-0">
+        <picture>
+          <source
+            srcset="
+              /images/coming_soon.png?webp,
+              /images/coming_soon@2x.png?webp 2x
+            "
+            type="image/webp"
+          />
 
-            <img
-              src="~/assets/images/sports_icons.svg"
-              alt="sports_icons"
-              title="Sport Icons"
-              class="absolute top-0 z-0 hidden stroke-green lg:block transform-circle rotate-180"
-              loading="lazy"
-            />
-          </div>
+          <img
+            src="/images/coming_soon.png"
+            srcset="/images/coming_soon@2x.png 2x"
+            width="363"
+            height="178"
+            class="relative z-10 w-full"
+            loading="lazy"
+          />
+        </picture>
+      </div>
 
-          <div
-            class="flex items-end px-12 overflow-auto space-x-12 after scroll-snap-x"
-          >
-            <div class="z-10 flex-shrink-0 snap-center">
-              <picture>
-                <source
-                  srcset="
-                    ~/assets/images/routine-form.png?webp,
-                    ~/assets/images/routine-form@2x.png?webp 2x
-                  "
-                  type="image/webp"
-                />
-                <img
-                  alt="Exercise form"
-                  src="~/assets/images/routine-form.png"
-                  srcset="~/assets/images/routine-form@2x.png 2x"
-                  class="w-56 mb-4 shadow-xl"
-                  width="411"
-                  height="777"
-                  loading="lazy"
-                />
-              </picture>
-              <p class="text-lg text-center text-gray-dark">
-                Create your routines
-              </p>
-            </div>
-
-            <div class="relative flex-shrink-0 snap-center">
-              <picture>
-                <source
-                  srcset="
-                    ~/assets/images/workout-form.png?webp,
-                    ~/assets/images/workout-form@2x.png?webp 2x
-                  "
-                  type="image/webp"
-                />
-                <img
-                  alt="Workout form"
-                  src="~/assets/images/workout-form.png"
-                  srcset="~/assets/images/workout-form@2x.png 2x"
-                  class="w-56 mb-4 shadow-xl"
-                  width="411"
-                  height="825"
-                  loading="lazy"
-                />
-              </picture>
-              <p class="text-lg text-center text-gray-dark">
-                Organize your workout
-              </p>
-            </div>
-
-            <div class="relative flex-shrink-0 snap-center">
-              <picture>
-                <source
-                  srcset="
-                    ~/assets/images/training.png?webp,
-                    ~/assets/images/training@2x.png?webp 2x
-                  "
-                  type="image/webp"
-                />
-                <img
-                  alt="Screenshot of the training view"
-                  src="~/assets/images/training.png"
-                  srcset="~/assets/images/training@2x.png 2x"
-                  class="w-56 mb-4 shadow-xl"
-                  width="411"
-                  height="912"
-                  loading="lazy"
-                />
-              </picture>
-              <p class="text-lg text-center text-gray-dark">
-                Start training!
-              </p>
-            </div>
-
-            <div class="md:hidden smth">&nbsp;</div>
-          </div>
-        </div>
-      </article>
+      <div class="space-y-4 sm:w-1/2">
+        <h2 class="text-3xl font-semibold">Even more coming soon!</h2>
+        <p class="text-lg leading-snug text-gray-darker">There’s still so much more Mylo can do to help you reach your fitness goals and I’m hard at work making this possible.</p>
+        <p class="text-lg leading-snug text-gray-darker">Check back regularly to see what gets added!</p>
+      </div>
     </section>
 
     <!-- Why Mylo -->
-    <section
-      class="relative w-full overflow-hidden shadow-inner bg-green-darker"
-    >
-      <img
-        class="absolute stroke-green-dark transform -translate-x-48 -rotate-45 -translate-y-24"
-        src="~/assets/images/sports_icons.svg"
-        alt="sports_icons"
-        title="Sport Icons"
-        loading="lazy"
-      />
+    <section class="flex flex-col items-start justify-center p-6 text-lg sm:flex-row-reverse bg-green-lighter gap-4 sm:gap-12 bg-opacity-25 text-green-darkest">
+      <picture>
+        <source
+          srcset="
+            /images/maximilien.png?webp,
+            /images/maximilien@2x.png?webp 2x
+          "
+          type="image/webp"
+        />
 
-      <img
-        class="absolute bottom-0 right-0 stroke-green-dark transform translate-y-48 translate-x-32 scale-110 -rotate-90"
-        src="~/assets/images/sports_icons.svg"
-        alt="sports_icons"
-        title="Sport Icons"
-        loading="lazy"
-      />
+        <img
+          src="/images/maximilien.png"
+          srcset="/images/maximilien@2x.png 2x"
+          class="relative z-10 self-center sm:self-start rounded-2xl"
+          loading="lazy"
+        />
+      </picture>
 
-      <div class="relative z-10 max-w-5xl px-6 py-8 mx-auto space-y-6">
-        <h2
-          class="text-3xl font-semibold leading-tight tracking-tight text-white md:text-4xl"
-        >
-          Why Mylo?
-        </h2>
+      <div class="space-y-4 sm:w-1/2">
+        <h2 class="self-start text-3xl font-semibold">Why Mylo?</h2>
 
-        <article class="text-lg text-white space-y-5">
-          <p>
-            Whether you're a beginner or a pro, it should be as easy as possible
-            to exercise and stick to it.
-          </p>
-
-          <p>
-            There are other apps out there that let you track your workouts but
-            that’s all they do. You still have to manually log what you did then
-            calculate reps, weights, and more for next time.
-          </p>
-
-          <p>
-            I think your workout app should be more like an assistant and less
-            like a digital notebook, it should handle all this stuff and
-            <span class="font-medium text-green">let you focus on training</span
-            >.
-          </p>
-
-          <p>
-            I’m building Mylo to
-            <span class="font-medium text-green"
-              >automate all the hassle around training</span
-            >, no more wondering what you're supposed to do today, next week, or
-            even next year!
-          </p>
-
-          <p>
-            Your
-            <span class="font-medium text-green"
-              >personal training assistant</span
-            >
-            takes care of it all for you.
-          </p>
-
-          <a
-            href="https://app.mylo.fit/register"
-            class="inline-block px-8 py-3 font-medium bg-white rounded shadow-lg focus:outline-none focus:shadow-outline hover:bg-opacity-75 transition duration-150 text-green-darker"
-          >
-            Try out Mylo
-          </a>
-        </article>
+        <p>Beginner or pro, <span class="font-semibold">it should be as simple as possible to exercise and stick to it.</span></p>
+        <p>With other apps you still have to manually log your session and then calculate reps, weights, and more for next time.</p>
+        <p>I think your workout app should be more like an assistant and less like a digital notebook, it should handle all this stuff and <span class="font-semibold">let you focus on training.</span></p>
+        <p class="font-semibold">I’m building Mylo to help anyone can find or create the perfect workout to help them reach their health goals.</p>
+        <p class="self-start text-green-dark">- Maximilien Monteil</p>
       </div>
     </section>
   </main>
 </template>
 
 <script>
-export default {
-  name: 'Index',
-}
+export default {}
 </script>
 
-<style>
-/* CSS filters to color SVG icons embedded with <img />
- * source: https://codepen.io/sosuke/pen/Pjoqqp
- */
-.stroke-green-dark {
-  filter: invert(47%) sepia(29%) saturate(403%) hue-rotate(99deg)
-    brightness(90%) contrast(83%);
-}
-
-.stroke-green {
-  filter: invert(91%) sepia(10%) saturate(1436%) hue-rotate(90deg)
-    brightness(94%) contrast(93%);
-}
-/****************************/
-
-.scroll-snap-x {
-  scroll-snap-type: x mandatory;
-}
-
-.snap-center {
-  scroll-snap-align: center;
-}
-
-.transform-circle {
-  transform: scale(0.5) translate(80rem, -18rem);
+<style scoped>
+.drop-shadow-lg {
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.05));
 }
 </style>
