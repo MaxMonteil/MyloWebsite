@@ -331,7 +331,7 @@
       <div class="space-y-4 sm:w-1/2">
         <h2 class="self-start text-3xl font-semibold">Why Mylo?</h2>
 
-        <p>Beginner or a pro, <span class="font-semibold">it should be as simple as possible to exercise and stick to it.</span></p>
+        <p>Beginner or pro, <span class="font-semibold">it should be as simple as possible to exercise and stick to it.</span></p>
         <p>With other apps you still have to manually log your session and then calculate reps, weights, and more for next time.</p>
         <p>I think your workout app should be more like an assistant and less like a digital notebook, it should handle all this stuff and <span class="font-semibold">let you focus on training.</span></p>
         <p class="font-semibold">I’m building Mylo to help anyone can find or create the perfect workout to help them reach their health goals.</p>
