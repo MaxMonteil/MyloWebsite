@@ -11,7 +11,13 @@
 
       <!-- <NuxtLink to="/blog">Blog</NuxtLink> -->
 
-      <!-- <NuxtLink to="/free-workouts">Free Workouts</NuxtLink> -->
+      <NuxtLink
+        to="/workouts"
+        class="text-black"
+        :class="{ 'workouts-link-active': $route.name === 'workouts' }"
+      >
+        Free Workouts
+      </NuxtLink>
 
       <a
         href="https://app.mylo.fit/login"
@@ -28,3 +34,12 @@ export default {
   name: 'Header',
 }
 </script>
+
+<style scoped>
+.workouts-link-active {
+  background-image: linear-gradient(to bottom, #D3F8E7 33%, transparent 33%, transparent 66%);
+  background-position: 0 0.9em;
+  background-repeat: repeat-x;
+  background-size: 2px 100px;
+}
+</style>
