@@ -40,7 +40,13 @@ export default {
     const qAll = query(collection(db, 'shared'), where('data.creatorId', '!=', this.$config.OFFICIAL_ACCOUNT))
 
     const [recommendedSnapshot, allSnapshot] = await Promise.all([getDocs(qRecommended), getDocs(qAll)])
-    const addWorkouts = (array, doc) => array.push(doc.data().data)
+
+    const addWorkouts = (array, doc) => {
+      const workout = doc.data()
+      if (Object.keys(workout.exercises).length === 0) return
+
+      array.push(workout.data)
+    }
 
     recommendedSnapshot.forEach(doc => addWorkouts(this.recommendedWorkouts, doc))
     allSnapshot.forEach(doc => addWorkouts(this.allWorkouts, doc))
@@ -57,9 +63,6 @@ export default {
   },
   methods: {
     search (query) {
-      if (!query) return
-
-      console.log(query)
     },
   },
 }
