@@ -28,12 +28,12 @@
             </ul>
           </div>
 
-          <!-- <NuxtLink -->
-          <!--   to="/free-workouts" -->
-          <!--   class="px-4 py-2 text-lg font-medium text-indigo-dark bg-indigo-lighter rounded-md" -->
-          <!-- > -->
-          <!--   See free workouts -->
-          <!-- </NuxtLink> -->
+          <NuxtLink
+            to="/workouts"
+            class="px-4 py-2 text-lg font-medium text-indigo-dark bg-indigo-lighter rounded-md"
+          >
+            Get free workouts
+          </NuxtLink>
         </div>
       </div>
 
@@ -265,18 +265,17 @@
 
       <div class="space-y-4 sm:w-1/2">
         <div>
-          <p class="text-base text-yellow-dark">Coming Soon!</p>
           <h2 class="text-3xl font-semibold">Find your perfect workout</h2>
         </div>
         <p class="text-lg leading-snug text-gray-darker">Every shared workout is available publicly so you can assemble the perfect schedule for you.</p>
         <p class="text-lg leading-snug text-gray-darker">Imagine your own warmup, Arnold’s strength training, Phelp’s swim routine, and Copeland’s cool-down stretches!</p>
 
-        <!-- <NuxtLink -->
-        <!--   to="/free-workouts" -->
-        <!--   class="self-end inline-block px-3 py-2 font-semibold text-indigo-dark bg-indigo-lighter rounded-md" -->
-        <!-- > -->
-        <!--   See free workouts -->
-        <!-- </NuxtLink> -->
+        <NuxtLink
+          to="/workouts"
+          class="self-end inline-block px-3 py-2 font-semibold text-indigo-dark bg-indigo-lighter rounded-md"
+        >
+          Explore free workouts
+        </NuxtLink>
       </div>
     </section>
 

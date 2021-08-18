@@ -1,3 +1,22 @@
+const firebaseKeys =
+  process.env.NODE_ENV === 'production'
+    ? {
+        APIKEY: 'AIzaSyAd5FiZsSyH-hqayyNxPd0Bym1NQkH9sNE',
+        AUTHDOMAIN: 'mylo-production.firebaseapp.com',
+        DATABASEURL: 'https://mylo-production.firebaseio.com',
+        PROJECTID: 'mylo-production',
+        STORAGEBUCKET: 'mylo-production.appspot.com',
+        APPID: '1:544179213091:web:28371061c4c9c8a0',
+      }
+    : {
+        APIKEY: 'AIzaSyDpQa_0M6z90wvmFiWMLh9Pl-L8ziMhJ9I',
+        AUTHDOMAIN: 'routine-tracker-dev.firebaseapp.com',
+        DATABASEURL: 'https://routine-tracker-dev.firebaseio.com',
+        PROJECTID: 'routine-tracker-dev',
+        STORAGEBUCKET: 'routine-tracker-dev.appspot.com',
+        APPID: '1:1002160015176:web:cfb3292d0a956fbe96d57d',
+      }
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -37,7 +56,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['~/plugins/firebase.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -68,4 +87,20 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  env: {
+    FIREBASE: firebaseKeys,
+  },
+
+  publicRuntimeConfig: {
+    FIREBASE: firebaseKeys,
+    OFFICIAL_ACCOUNT:
+      process.env.NODE_ENV === 'production'
+        ? 'DecoOCZd5jnY4i3wSE3D'
+        : 'HU-qJL80h_hUVGJ0Y7ec',
+    WORKOUT_URL:
+      process.env.NODE_ENV === 'production'
+        ? 'http://localhost:8080/s/workout'
+        : 'https://app.mylo.fit/s/workout',
+  },
 }

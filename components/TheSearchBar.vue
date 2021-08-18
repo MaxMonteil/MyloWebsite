@@ -6,7 +6,7 @@
     <input
       id="search"
       v-model="query"
-      placeholder="Search workouts"
+      placeholder="Search"
       type="text"
       class="w-full pl-4 border rounded-lg focus:ring-2 ring-green-dark focus:outline-none border-gray shadow-sm placeholder-gray-dark"
     >
