@@ -100,7 +100,7 @@ export default {
         : 'HU-qJL80h_hUVGJ0Y7ec',
     WORKOUT_URL:
       process.env.NODE_ENV === 'production'
-        ? 'http://localhost:8080/s/workout'
-        : 'https://app.mylo.fit/s/workout',
+        ? 'https://app.mylo.fit/s/workout'
+        : 'http://localhost:8080/s/workout',
   },
 }
