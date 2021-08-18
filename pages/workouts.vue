@@ -6,7 +6,7 @@
     </section>
 
     <!-- INTRO -->
-    <section class="w-full max-w-2xl p-4 mx-auto rounded-lg text-indigo-dark bg-green-lighter">
+    <section class="w-full max-w-2xl p-4 mx-auto text-center rounded-lg sm:text-left text-indigo-dark bg-green-lighter">
       <h2 class="text-2xl font-semibold text-indigo-darker">How it works</h2>
       <ul>
         <li>You can add any of these workouts to your own schedule <span class="text-green-darker">for Free!</span></li>
@@ -30,16 +30,14 @@
 import { collection, query, where, getDocs } from 'firebase/firestore'
 import { db } from '~/plugins/firebase.js'
 
-const OFFICIAL_ACCOUNT = 'HU-qJL80h_hUVGJ0Y7ec'
-
 export default {
   data: () => ({
     recommendedWorkouts: [],
     allWorkouts: [],
   }),
   async fetch () {
-    const qRecommended = query(collection(db, 'shared'), where('data.creatorId', '==', OFFICIAL_ACCOUNT))
-    const qAll = query(collection(db, 'shared'), where('data.creatorId', '!=', OFFICIAL_ACCOUNT))
+    const qRecommended = query(collection(db, 'shared'), where('data.creatorId', '==', this.$config.OFFICIAL_ACCOUNT))
+    const qAll = query(collection(db, 'shared'), where('data.creatorId', '!=', this.$config.OFFICIAL_ACCOUNT))
 
     const [recommendedSnapshot, allSnapshot] = await Promise.all([getDocs(qRecommended), getDocs(qAll)])
     const addWorkouts = (array, doc) => array.push(doc.data().data)
