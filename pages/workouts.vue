@@ -1,12 +1,12 @@
 <template>
   <main class="flex flex-col max-w-6xl px-6 mx-auto gap-6">
     <!-- SEARCH -->
-    <section>
-      <TheSearchBar @submit="search" />
-    </section>
+    <!-- <section> -->
+    <!--   <TheSearchBar @submit="search" /> -->
+    <!-- </section> -->
 
     <!-- INTRO -->
-    <section class="w-full max-w-2xl p-4 mx-auto text-center rounded-lg sm:text-left text-indigo-dark bg-green-lighter">
+    <section class="w-full max-w-2xl p-4 mx-auto rounded-lg text-indigo-dark bg-green-lighter">
       <h2 class="text-2xl font-semibold text-indigo-darker">How it works</h2>
       <ul>
         <li>You can add any of these workouts to your own schedule <span class="text-green-darker">for Free!</span></li>
@@ -45,7 +45,7 @@ export default {
       const workout = doc.data().data
       if (Object.keys(workout.exercises).length === 0) return
 
-      if (workout.publicId == null) workout.publicId = doc.id
+      workout.publicId = doc.id
       array.push(workout)
     }
 

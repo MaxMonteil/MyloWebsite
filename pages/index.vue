@@ -9,11 +9,11 @@
           </h1>
 
           <p class="max-w-lg text-lg leading-snug text-gray-darker">
-            Mylo helps you create and discover workout plans that progress automatically so you can focus on training.
+            Create and discover workout plans that progress automatically so that you can focus on training.
           </p>
         </div>
 
-        <div class="flex items-start justify-center sm:justify-start gap-4">
+        <div class="flex flex-col items-center justify-center sm:flex-row sm:justify-start sm:items-start gap-4">
           <div class="space-y-1">
             <a
                 href="https://app.mylo.fit/register"
@@ -23,8 +23,8 @@
             </a>
 
             <ul>
-              <li class="text-sm text-center text-gray-darker">100% Free</li>
-              <li class="text-sm text-center text-gray-darker">No credit card required</li>
+              <li class="text-sm text-center text-gray-darker">100% Free - No Ads</li>
+              <li class="text-sm text-center text-gray-darker">No Credit Card required</li>
             </ul>
           </div>
 
@@ -331,9 +331,9 @@
         <h2 class="self-start text-3xl font-semibold">Why Mylo?</h2>
 
         <p>Beginner or pro, <span class="font-semibold">it should be as simple as possible to exercise and stick to it.</span></p>
-        <p>With other apps you still have to manually log your session and then calculate reps, weights, and more for next time.</p>
+        <p>With other apps you still have to manually log your session and then calculate reps, weights, and more for next time. What a hassle!</p>
         <p>I think your workout app should be more like an assistant and less like a digital notebook, it should handle all this stuff and <span class="font-semibold">let you focus on training.</span></p>
-        <p class="font-semibold">I’m building Mylo to help anyone can find or create the perfect workout to help them reach their health goals.</p>
+        <p class="font-semibold">I’m building Mylo to help anyone find or create the perfect workout to help them reach their health goals.</p>
         <p class="self-start text-green-dark">- Maximilien Monteil</p>
       </div>
     </section>

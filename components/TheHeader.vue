@@ -13,7 +13,7 @@
 
       <NuxtLink
         to="/workouts"
-        class="text-black"
+        class="text-lg text-black"
         :class="{ 'workouts-link-active': $route.name === 'workouts' }"
       >
         Free Workouts
@@ -37,8 +37,8 @@ export default {
 
 <style scoped>
 .workouts-link-active {
-  background-image: linear-gradient(to bottom, #D3F8E7 33%, transparent 33%, transparent 66%);
-  background-position: 0 0.9em;
+  background-image: linear-gradient(to bottom, #D3F8E7 33%, transparent 33%);
+  background-position: 0 0.7em;
   background-repeat: repeat-x;
   background-size: 2px 100px;
 }

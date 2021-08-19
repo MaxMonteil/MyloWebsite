@@ -35,7 +35,7 @@ export default {
         hid: 'description',
         name: 'description',
         content:
-          'Stop exercising without a plan! Create and discover workout plans that can progress automatically as you train. Never second-guess your workouts again.',
+          'Stop exercising without a plan! Create and discover workout plans that can progress automatically so that you can focus on training.',
       },
     ],
     link: [
