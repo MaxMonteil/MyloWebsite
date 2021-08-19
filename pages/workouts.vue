@@ -43,7 +43,7 @@ export default {
 
     const addWorkouts = (array, doc) => {
       const workout = doc.data().data
-      if (Object.keys(workout.exercises).length === 0) return
+      if (Object.keys(workout.exercises).length === 0 && workout.publicId != null) return
 
       array.push(workout)
     }
