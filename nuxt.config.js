@@ -23,7 +23,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Mylo - Stop exercising without a plan',
+    title: 'Mylo | Stop exercising without a plan',
     htmlAttrs: {
       lang: 'en',
     },

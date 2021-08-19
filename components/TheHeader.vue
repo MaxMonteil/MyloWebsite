@@ -21,7 +21,7 @@
 
       <a
         href="https://app.mylo.fit/login"
-        class="px-3 py-1 rounded-md bg-green-lighter text-green-dark"
+        class="px-3 py-1 rounded-md bg-green-lighter text-green-darkest"
       >
         Get Started
       </a>

@@ -16,10 +16,10 @@
         <div class="flex flex-col items-center justify-center sm:flex-row sm:justify-start sm:items-start gap-4">
           <div class="space-y-1">
             <a
-                href="https://app.mylo.fit/register"
-                class="inline-block px-6 py-2 text-lg font-medium text-white rounded-md bg-green-dark"
-                >
-                Make a plan!
+              href="https://app.mylo.fit/register"
+              class="inline-block px-6 py-2 text-lg font-medium text-white rounded-md bg-green-dark"
+            >
+              Make a plan!
             </a>
 
             <ul>
