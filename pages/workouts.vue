@@ -42,10 +42,10 @@ export default {
     const [recommendedSnapshot, allSnapshot] = await Promise.all([getDocs(qRecommended), getDocs(qAll)])
 
     const addWorkouts = (array, doc) => {
-      const workout = doc.data()
+      const workout = doc.data().data
       if (Object.keys(workout.exercises).length === 0) return
 
-      array.push(workout.data)
+      array.push(workout)
     }
 
     recommendedSnapshot.forEach(doc => addWorkouts(this.recommendedWorkouts, doc))
