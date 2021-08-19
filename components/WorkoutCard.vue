@@ -47,7 +47,7 @@ export default {
         .join(' ') 
     },
     publicLink () {
-      return this.$config.WORKOUT_URL + this.workout.id
+      return `${this.$config.WORKOUT_URL}/${this.workout.publicId}`
     },
   },
 }

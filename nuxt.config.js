@@ -35,7 +35,7 @@ export default {
         hid: 'description',
         name: 'description',
         content:
-          'Mylo is an app that helps you create and discover workout plans that can progress automatically as you train. Never second-guess your workouts again and instead focus on training.',
+          'Stop exercising without a plan! Create and discover workout plans that can progress automatically as you train. Never second-guess your workouts again.',
       },
     ],
     link: [
