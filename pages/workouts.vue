@@ -6,7 +6,7 @@
     <!-- </section> -->
 
     <!-- INTRO -->
-    <section class="w-full max-w-2xl p-4 mx-auto rounded-lg text-indigo-dark bg-green-lighter">
+    <section class="w-full max-w-2xl p-4 mx-auto rounded-lg text-indigo-light bg-green-lighter">
       <h2 class="text-2xl font-semibold text-indigo-darker">How it works</h2>
       <ul>
         <li>You can add any of these workouts to your own schedule <span class="text-green-darker">for Free!</span></li>
@@ -34,7 +34,15 @@
         All Workouts
       </WorkoutsList>
 
-      <section class="flex flex-col items-center pt-8 border-none">
+      <section class="flex flex-col items-center pt-8 border-none space-y-4">
+        <!-- ERRORS -->
+        <article
+          v-if="error != null"
+          class="w-full max-w-2xl px-4 py-3 text-center rounded-lg bg-red-lighter text-indigo-darker"
+        >
+          <p class="truncate">{{ error }}</p>
+        </article>
+
         <button
           v-if="!reachedEnd"
           class="flex justify-center w-full max-w-2xl px-6 py-2 text-lg font-medium rounded-lg focus:ring-2 ring-green-dark focus:outline-none text-green-dark bg-green-lighter shadow-sm"
@@ -47,7 +55,7 @@
           <span v-show="!isLoading">Load more</span>
         </button>
 
-        <div
+        <article
           v-else
           class="w-full max-w-2xl p-4 text-center rounded-lg bg-gray"
         >
@@ -60,14 +68,14 @@
           >
             Start making a plan
           </a>
-        </div>
+        </article>
       </section>
     </section>
   </main>
 </template>
 
 <script>
-import { collection, query, orderBy, limit, where, startAfter, getDoc, doc, getDocs } from 'firebase/firestore'
+import { collection, doc, getDoc, getDocs, limit, orderBy, query, startAfter, where } from 'firebase/firestore'
 import { db } from '~/plugins/firebase.js'
 
 // Not a data property because the doc is circular and can't be serialized by Nuxt
@@ -89,13 +97,13 @@ export default {
     allWorkouts: [],
     isLoading: false,
     reachedEnd: false,
+    error: null,
   }),
   async fetch () {
     const qRecommended = query(
       collection(db, 'shared'),
       where('data.creatorId', '==', this.$config.OFFICIAL_ACCOUNT),
       orderBy('data.name'),
-      limit(PAGE_SIZE),
     )
 
     const qAll = query(
@@ -128,6 +136,7 @@ export default {
       if (this.reachedEnd) return
 
       try {
+        this.error = null
         this.isLoading = true
 
         // this is only actually used when lastFetchedDoc is null which happens on first load only
@@ -149,7 +158,7 @@ export default {
 
         if (nextPage.docs.length < PAGE_SIZE) this.reachedEnd = true
       } catch (e) {
-        console.log(e)
+        this.error = e.message ?? 'Something went wrong while getting the workouts :/'
       } finally {
         this.isLoading = false
       }
