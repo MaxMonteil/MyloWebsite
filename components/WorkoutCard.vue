@@ -1,8 +1,8 @@
 <template>
   <article class="p-3 border rounded-lg space-y-3 shadow-sm border-gray">
     <div class="space-y-2">
-      <h3 class="text-xl font-medium line-clamp-2">{{ workout.name }}</h3>
-      <p class="line-clamp-3 leading-6 text-indigo-dark">{{ workout.description }}</p>
+      <h3 class="text-xl font-medium line-clamp-2 text-indigo-darker">{{ workout.name }}</h3>
+      <p class="line-clamp-3 leading-6 text-indigo-light">{{ workout.description }}</p>
     </div>
       <div class="flex justify-between text-green-dark">
         <p>{{ exerciseCount }}</p>

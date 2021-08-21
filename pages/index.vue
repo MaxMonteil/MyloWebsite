@@ -1,5 +1,5 @@
 <template>
-  <main class="flex flex-col gap-32">
+  <main class="flex flex-col text-indigo-darker gap-32">
     <!-- Hero Section -->
     <section class="flex flex-col px-6 mx-auto max-w-7xl gap-y-6 sm:flex-row sm:items-center">
       <div class="space-y-6 sm:w-1/2">
@@ -8,7 +8,7 @@
             Stop exercising without a plan <br /> <span class="text-green-dark">use Mylo</span>
           </h1>
 
-          <p class="max-w-lg text-lg leading-snug text-gray-darker">
+          <p class="max-w-lg text-lg leading-snug text-indigo-light">
             Create and discover workout plans that progress automatically so that you can focus on training.
           </p>
         </div>
@@ -23,8 +23,8 @@
             </a>
 
             <ul>
-              <li class="text-sm text-center text-gray-darker">100% Free - No Ads</li>
-              <li class="text-sm text-center text-gray-darker">No Credit Card required</li>
+              <li class="text-sm text-center text-indigo-light">100% Free - No Ads</li>
+              <li class="text-sm text-center text-indigo-light">No Credit Card required</li>
             </ul>
           </div>
 
@@ -32,7 +32,7 @@
             to="/workouts"
             class="px-4 py-2 text-lg font-medium text-indigo-dark bg-indigo-lighter rounded-md focus:outline-none focus:ring-2 ring-green-dark"
           >
-            Get free workouts
+            Explore free workouts
           </NuxtLink>
         </div>
       </div>
@@ -153,8 +153,8 @@
 
       <div class="z-10 w-full space-y-4 sm:w-1/2">
         <h2 class="text-3xl font-semibold">Create every kind of workout</h2>
-        <p class="text-lg leading-snug text-gray-darker">There are almost no constraints on the kinds of exercises and workouts you can create.</p>
-        <p class="text-lg leading-snug text-gray-darker">Whatever you can think of, Mylo can manage.</p>
+        <p class="text-lg leading-snug text-indigo-light">There are almost no constraints on the kinds of exercises and workouts you can create.</p>
+        <p class="text-lg leading-snug text-indigo-light">Whatever you can think of, Mylo can manage.</p>
       </div>
     </section>
 
@@ -192,8 +192,8 @@
 
       <div class="relative z-10 space-y-4 sm:w-1/2">
         <h2 class="text-3xl font-semibold">Plan once, train forever</h2>
-        <p class="text-lg leading-snug text-gray-darker">Add progression rules to your exercises! Watch reps, weights, and more progress automatically as you train.</p>
-        <p class="text-lg leading-snug text-gray-darker">Never second-guess your workout again.</p>
+        <p class="text-lg leading-snug text-indigo-light">Add progression rules to your exercises! Watch reps, weights, and more progress automatically as you train.</p>
+        <p class="text-lg leading-snug text-indigo-light">Never second-guess your workout again.</p>
       </div>
     </section>
 
@@ -230,8 +230,8 @@
 
       <div class="space-y-4 sm:w-1/2">
         <h2 class="text-3xl font-semibold">Share workouts with anyone</h2>
-        <p class="text-lg leading-snug text-gray-darker">Quickly and easily share workouts with friends, gym partners, clients, or anyone (you can make your workout private anytime).</p>
-        <p class="text-lg leading-snug text-gray-darker">And with Exercise Rules, you’re sharing dynamic plans that can progress without your supervision.</p>
+        <p class="text-lg leading-snug text-indigo-light">Quickly and easily share workouts with friends, gym partners, clients, or anyone (you can make your workout private anytime).</p>
+        <p class="text-lg leading-snug text-indigo-light">And with Exercise Rules, you’re sharing dynamic plans that can progress without your supervision.</p>
       </div>
     </section>
 
@@ -267,8 +267,8 @@
         <div>
           <h2 class="text-3xl font-semibold">Find your perfect workout</h2>
         </div>
-        <p class="text-lg leading-snug text-gray-darker">Every shared workout is available publicly so you can assemble the perfect schedule for you.</p>
-        <p class="text-lg leading-snug text-gray-darker">Imagine your own warmup, Arnold’s strength training, Phelp’s swim routine, and Copeland’s cool-down stretches!</p>
+        <p class="text-lg leading-snug text-indigo-light">Every shared workout is available publicly so you can assemble the perfect schedule for you.</p>
+        <p class="text-lg leading-snug text-indigo-light">Imagine your own warmup, Arnold’s strength training, Phelp’s swim routine, and Copeland’s cool-down stretches!</p>
 
         <NuxtLink
           to="/workouts"
@@ -303,8 +303,8 @@
 
       <div class="space-y-4 sm:w-1/2">
         <h2 class="text-3xl font-semibold">Even more coming soon!</h2>
-        <p class="text-lg leading-snug text-gray-darker">There’s still so much more Mylo can do to help you reach your fitness goals and I’m hard at work making this possible.</p>
-        <p class="text-lg leading-snug text-gray-darker">Check back regularly to see what gets added!</p>
+        <p class="text-lg leading-snug text-indigo-light">There’s still so much more Mylo can do to help you reach your fitness goals and I’m hard at work making this possible.</p>
+        <p class="text-lg leading-snug text-indigo-light">Check back regularly to see what gets added!</p>
       </div>
     </section>
 
