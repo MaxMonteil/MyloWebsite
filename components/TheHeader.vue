@@ -13,7 +13,7 @@
 
       <NuxtLink
         to="/workouts"
-        class="text-lg text-black"
+        class="text-lg text-black rounded-md ring-offset-2 focus:outline-none focus:ring-2 ring-green-dark"
         :class="{ 'workouts-link-active': $route.name === 'workouts' }"
       >
         Free Workouts
@@ -21,7 +21,7 @@
 
       <a
         href="https://app.mylo.fit/login"
-        class="px-3 py-1 rounded-md bg-green-lighter text-green-darkest"
+        class="px-3 py-1 focus:outline-none focus:ring-2 ring-green-dark rounded-md bg-green-lighter text-green-darkest"
       >
         Get Started
       </a>

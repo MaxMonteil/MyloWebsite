@@ -37,7 +37,7 @@
       <section class="flex flex-col items-center pt-8 border-none">
         <button
           v-if="!reachedEnd"
-          class="flex justify-center w-full max-w-2xl px-6 py-2 text-lg font-medium rounded-lg text-green-dark bg-green-lighter shadow-sm"
+          class="flex justify-center w-full max-w-2xl px-6 py-2 text-lg font-medium rounded-lg focus:ring-2 ring-green-dark focus:outline-none text-green-dark bg-green-lighter shadow-sm"
           @click="loadNextPage"
         >
           <LoadingSpinner
@@ -56,7 +56,7 @@
 
           <a
             href="https://app.mylo.fit/register"
-            class="inline-block px-6 py-2 mt-5 text-lg font-medium text-white rounded-md bg-green-dark"
+            class="inline-block px-6 py-2 mt-5 text-lg font-medium text-white focus:outline-none focus:ring-2 ring-green-light rounded-md bg-green-dark"
           >
             Start making a plan
           </a>
@@ -128,7 +128,7 @@ export default {
       if (this.reachedEnd) return
 
       try {
-        this.isLoading = true 
+        this.isLoading = true
 
         // this is only actually used when lastFetchedDoc is null which happens on first load only
         // because fetch() can't set the value to a non data property in the server.

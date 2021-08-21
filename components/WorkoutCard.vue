@@ -10,7 +10,7 @@
       </div>
 
     <a
-      class="inline-block px-2 py-1 text-sm font-medium text-indigo-dark bg-indigo-lighter rounded-md"
+      class="inline-block px-2 py-1 text-sm font-medium focus:outline-none focus:ring-2 ring-green-dark text-indigo-dark bg-indigo-lighter rounded-md"
       :href="publicLink"
     >
       See more

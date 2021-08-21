@@ -17,7 +17,7 @@
           <div class="space-y-1">
             <a
               href="https://app.mylo.fit/register"
-              class="inline-block px-6 py-2 text-lg font-medium text-white rounded-md bg-green-dark"
+              class="inline-block px-6 py-2 text-lg font-medium text-white focus:outline-none focus:ring-2 ring-green-light rounded-md bg-green-dark"
             >
               Make a plan!
             </a>
@@ -30,7 +30,7 @@
 
           <NuxtLink
             to="/workouts"
-            class="px-4 py-2 text-lg font-medium text-indigo-dark bg-indigo-lighter rounded-md"
+            class="px-4 py-2 text-lg font-medium text-indigo-dark bg-indigo-lighter rounded-md focus:outline-none focus:ring-2 ring-green-dark"
           >
             Get free workouts
           </NuxtLink>
@@ -272,7 +272,7 @@
 
         <NuxtLink
           to="/workouts"
-          class="self-end inline-block px-3 py-2 font-semibold text-indigo-dark bg-indigo-lighter rounded-md"
+          class="self-end inline-block px-3 py-2 font-semibold focus:outline-none focus:ring-2 ring-green-dark text-indigo-dark bg-indigo-lighter rounded-md"
         >
           Explore free workouts
         </NuxtLink>
