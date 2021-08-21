@@ -9,22 +9,29 @@
         <span class="hidden pt-1 text-lg md:block">Mylo</span>
       </NuxtLink>
 
-      <!-- <NuxtLink to="/blog">Blog</NuxtLink> -->
-
       <NuxtLink
         to="/workouts"
-        class="text-lg text-black rounded-md ring-offset-2 focus:outline-none focus:ring-2 ring-green-dark"
+        class="text-lg text-black"
         :class="{ 'workouts-link-active': $route.name === 'workouts' }"
       >
         Free Workouts
       </NuxtLink>
 
-      <a
-        href="https://app.mylo.fit/login"
-        class="px-3 py-1 focus:outline-none focus:ring-2 ring-green-dark rounded-md bg-green-lighter text-green-darkest"
-      >
-        Get Started
-      </a>
+      <div class="space-x-2">
+        <a
+          href="https://app.mylo.fit/login"
+          class="px-3 py-1 rounded-md focus:outline-none focus:ring-2 ring-green-dark"
+        >
+        Login
+        </a>
+
+        <a
+          href="https://app.mylo.fit/register"
+          class="px-3 py-1 focus:outline-none focus:ring-2 ring-green-dark rounded-md bg-green-lighter text-green-darkest"
+        >
+        Sign up
+        </a>
+      </div>
     </div>
   </header>
 </template>
