@@ -103,7 +103,7 @@
         </article>
 
         <button
-            v-if="!reachedEnd && allWorkouts.length > 0"
+          v-if="!reachedEnd && allWorkouts.length > 0"
           class="flex justify-center w-full max-w-xs px-6 py-2 text-lg font-medium rounded-lg focus:ring-2 ring-green-dark focus:outline-none text-green-dark bg-green-lighter shadow-sm"
           @click="loadNextPage"
         >
@@ -114,7 +114,7 @@
           <span v-else>Load more</span>
         </button>
 
-        <ResultsEnd v-else />
+        <ResultsEnd v-if="reachedEnd" />
       </section>
     </section>
   </main>

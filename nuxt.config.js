@@ -114,4 +114,31 @@ export default {
         ? 'https://app.mylo.fit/s/workout'
         : 'http://localhost:8080/s/workout',
   },
+
+  hooks: {
+    generate: {
+      async before(generator) {
+        const { initializeApp, getApps } = await import('firebase/app')
+        const { getFirestore } = await import('firebase/firestore')
+
+        const apps = getApps()
+        const firebaseApp = apps.length
+          ? apps[0]
+          : initializeApp({
+              apiKey: generator.options.env.FIREBASE.APIKEY,
+              authDomain: generator.options.env.FIREBASE.AUTHDOMAIN,
+              databaseURL: generator.options.env.FIREBASE.DATABASEURL,
+              projectId: generator.options.env.FIREBASE.PROJECTID,
+              storageBucket: generator.options.env.FIREBASE.STORAGEBUCKET,
+              appId: generator.options.env.FIREBASE.APPID,
+            })
+
+        generator.firestore = getFirestore(firebaseApp, {})
+      },
+      async done(generator) {
+        const { terminate } = await import('firebase/firestore')
+        await terminate(generator.firestore)
+      },
+    },
+  },
 }
