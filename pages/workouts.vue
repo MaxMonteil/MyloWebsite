@@ -123,7 +123,8 @@
 <script>
 import { AisInstantSearchSsr, AisConfigure, AisInfiniteHits, AisSearchBox, AisPoweredBy, createServerRootMixin } from 'vue-instantsearch';
 import algoliasearch from 'algoliasearch/lite'
-import { collection, doc, getDoc, getDocs, limit, orderBy, query, startAfter, where } from 'firebase/firestore'
+// orderBy seems to cause an issue during site generation, all queries return [] when using it :/
+import { collection, doc, getDoc, getDocs, limit, /* orderBy, */ query, startAfter, where } from 'firebase/firestore'
 import NuxtConfig from '~/nuxt.config'
 import { db } from '~/plugins/firebase.js'
 
@@ -188,14 +189,14 @@ export default {
     const qRecommended = query(
       collection(db, 'shared'),
       where('data.creatorId', '==', this.$config.OFFICIAL_ACCOUNT),
-      orderBy('data.name'),
+      // orderBy('data.name'),
     )
 
     const qAll = query(
       collection(db, 'shared'),
       where('data.creatorId', '!=', this.$config.OFFICIAL_ACCOUNT),
-      orderBy('data.creatorId'),
-      orderBy('data.name'),
+      // orderBy('data.creatorId'),
+      // orderBy('data.name'),
       limit(PAGE_SIZE),
     )
 
@@ -235,13 +236,13 @@ export default {
 
         // this is only actually used when lastFetchedDoc is null which happens on first load only
         // because fetch() can't set the value to a non data property in the server.
-        const lastWorkoutId = this.allWorkouts[PAGE_SIZE - 1].publicId
+        const lastWorkoutId = this.allWorkouts[PAGE_SIZE - 1]?.publicId
 
         const nextPageQuery = query(
           collection(db, 'shared'),
           where('data.creatorId', '!=', this.$config.OFFICIAL_ACCOUNT),
-          orderBy('data.creatorId'),
-          orderBy('data.name'),
+          // orderBy('data.creatorId'),
+          // orderBy('data.name'),
           startAfter(lastFetchedDoc ?? await getDoc(doc(db, 'shared', lastWorkoutId))),
           limit(PAGE_SIZE),
         )
