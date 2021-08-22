@@ -3,7 +3,7 @@
     <h2 class="text-2xl font-semibold truncate text-indigo-darkest"><slot /></h2>
 
     <LoadingSpinner
-      v-show="pending"
+      v-if="isLoading"
       class="self-center w-12 h-12 border-green-dark"
     />
 
@@ -25,7 +25,7 @@ export default {
       type: Array,
       required: true,
     },
-    pending: {
+    isLoading: {
       type: Boolean,
       required: true,
     },

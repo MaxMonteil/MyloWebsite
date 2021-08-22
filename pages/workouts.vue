@@ -28,7 +28,7 @@
               v-show="items.length > 0 || query != ''"
               class="mt-8"
               :list="items"
-              :pending="isSearchLoading"
+              :is-loading="isSearchLoading"
             >
               <span class="text-indigo-light">Results for:</span> {{ query }}
             </WorkoutsList>
@@ -79,7 +79,7 @@
       <!-- RECOMMENDED WORKOUTS -->
       <WorkoutsList
         :list="recommendedWorkouts"
-        :pending="$fetchState.pending"
+        :is-loading="$fetchState.pending"
       >
         Recommended Workouts
       </WorkoutsList>
@@ -88,7 +88,7 @@
       <WorkoutsList
         class="pt-8"
         :list="allWorkouts"
-        :pending="$fetchState.pending"
+        :is-loading="$fetchState.pending"
       >
         All Workouts
       </WorkoutsList>
