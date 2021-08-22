@@ -103,15 +103,15 @@
         </article>
 
         <button
-          v-if="!reachedEnd"
+            v-if="!reachedEnd && allWorkouts.length > 0"
           class="flex justify-center w-full max-w-xs px-6 py-2 text-lg font-medium rounded-lg focus:ring-2 ring-green-dark focus:outline-none text-green-dark bg-green-lighter shadow-sm"
           @click="loadNextPage"
         >
           <LoadingSpinner
-            v-show="isLoading"
+            v-if="isLoading"
             class="w-7 h-7 border-green-dark"
           />
-          <span v-show="!isLoading">Load more</span>
+          <span v-else>Load more</span>
         </button>
 
         <ResultsEnd v-else />
