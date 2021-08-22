@@ -20,14 +20,14 @@
       <div class="space-x-2">
         <a
           href="https://app.mylo.fit/login"
-          class="px-3 py-1 rounded-md focus:outline-none focus:ring-2 ring-green-dark"
+          class="px-3 py-2 rounded-md focus:outline-none focus:ring-2 ring-green-dark"
         >
         Login
         </a>
 
         <a
           href="https://app.mylo.fit/register"
-          class="px-3 py-1 focus:outline-none focus:ring-2 ring-green-dark rounded-md bg-green-lighter text-green-darkest"
+          class="px-3 py-2 focus:outline-none focus:ring-2 ring-green-dark rounded-md bg-green-lighter text-green-darkest"
         >
         Sign up
         </a>
