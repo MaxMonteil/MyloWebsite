@@ -1,4 +1,4 @@
-const firebaseKeys =
+const firebaseConfig =
   process.env.NODE_ENV === 'production'
     ? {
         APIKEY: 'AIzaSyAd5FiZsSyH-hqayyNxPd0Bym1NQkH9sNE',
@@ -16,6 +16,14 @@ const firebaseKeys =
         STORAGEBUCKET: 'routine-tracker-dev.appspot.com',
         APPID: '1:1002160015176:web:cfb3292d0a956fbe96d57d',
       }
+
+const algoliaConfig = {
+  APPID: '4NSN10UAEA',
+  SEARCHKEY:
+    process.env.NODE_ENV === 'production'
+      ? ''
+      : '5ad031c2dcb511c592c6bde5ecd461aa',
+}
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -86,14 +94,17 @@ export default {
   content: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    transpile: ['vue-instantsearch', 'instantsearch.js/es'],
+  },
 
   env: {
-    FIREBASE: firebaseKeys,
+    FIREBASE: firebaseConfig,
   },
 
   publicRuntimeConfig: {
-    FIREBASE: firebaseKeys,
+    FIREBASE: firebaseConfig,
+    ALGOLIA: algoliaConfig,
     OFFICIAL_ACCOUNT:
       process.env.NODE_ENV === 'production'
         ? 'DecoOCZd5jnY4i3wSE3D'

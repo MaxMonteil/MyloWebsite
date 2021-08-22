@@ -1,13 +1,69 @@
 <template>
   <main class="flex flex-col max-w-6xl px-6 mx-auto gap-6">
     <!-- SEARCH -->
-    <!-- <section> -->
-    <!--   <TheSearchBar @submit="search" /> -->
-    <!-- </section> -->
+    <section style="min-height: 68px;">
+      <AisInstantSearchSsr>
+        <AisConfigure :hits-per-page.camel="25" />
+
+        <div class="flex flex-col w-full max-w-2xl mx-auto space-y-2">
+          <ClientOnly>
+            <AisPoweredBy class="self-end"/>
+          </ClientOnly>
+
+          <AisSearchBox>
+            <template #default="{ currentRefinement, isSearchStalled, refine }">
+              <TheSearchBar
+                :is-loading="isSearchStalled"
+                :with-search-button="false"
+                :value="currentRefinement"
+                @input="refineSearch($event, refine)"
+              />
+            </template>
+          </AisSearchBox>
+        </div>
+
+        <AisInfiniteHits class="flex flex-col items-start space-y-8">
+          <template #default="{ items, refineNext, isLastPage }">
+            <WorkoutsList
+              v-show="items.length > 0 || query != ''"
+              class="mt-8"
+              :list="items"
+              :pending="isSearchLoading"
+            >
+              <span class="text-indigo-light">Results for:</span> {{ query }}
+            </WorkoutsList>
+
+            <ResultsEnd v-show="query != '' && !isSearchLoading && (isLastPage || items.length === 0)">
+              <span v-if="items.length === 0">No workouts found</span>
+            </ResultsEnd>
+
+            <button
+              v-show="!isLastPage"
+              class="flex self-center justify-center w-full max-w-xs px-6 py-2 text-lg font-medium rounded-lg focus:ring-2 ring-green-dark focus:outline-none text-green-dark bg-green-lighter shadow-sm"
+              @click="refineNext"
+            >
+              Load more
+            </button>
+          </template>
+        </AisInfiniteHits>
+      </AisInstantSearchSsr>
+    </section>
 
     <!-- INTRO -->
-    <section class="w-full max-w-2xl p-4 mx-auto rounded-lg text-indigo-light bg-green-lighter">
-      <h2 class="text-2xl font-semibold text-indigo-darker">How it works</h2>
+    <section
+      v-if="!hideMessage"
+      v-show="query === ''"
+      class="w-full max-w-2xl p-4 mx-auto rounded-lg text-indigo-light bg-green-lighter"
+    >
+      <div class="flex justify-between">
+        <h2 class="text-2xl font-semibold text-indigo-darker">How it works</h2>
+        <button
+          class="text-green-darkest"
+          @click="hideMessage = true"
+        >
+          Close
+        </button>
+      </div>
       <ul>
         <li>You can add any of these workouts to your own schedule <span class="text-green-darker">for Free!</span></li>
         <li>Modify them as much as you want or start training directly.</li>
@@ -16,7 +72,10 @@
     </section>
 
     <!-- WORKOUTS GRID -->
-    <section class="flex flex-col divide-y space-y-8 divide-green-lighter">
+    <section
+      v-show="query === ''"
+      class="flex flex-col divide-y space-y-8 divide-green-lighter"
+    >
       <!-- RECOMMENDED WORKOUTS -->
       <WorkoutsList
         :list="recommendedWorkouts"
@@ -45,7 +104,7 @@
 
         <button
           v-if="!reachedEnd"
-          class="flex justify-center w-full max-w-2xl px-6 py-2 text-lg font-medium rounded-lg focus:ring-2 ring-green-dark focus:outline-none text-green-dark bg-green-lighter shadow-sm"
+          class="flex justify-center w-full max-w-xs px-6 py-2 text-lg font-medium rounded-lg focus:ring-2 ring-green-dark focus:outline-none text-green-dark bg-green-lighter shadow-sm"
           @click="loadNextPage"
         >
           <LoadingSpinner
@@ -55,28 +114,21 @@
           <span v-show="!isLoading">Load more</span>
         </button>
 
-        <article
-          v-else
-          class="w-full max-w-2xl p-4 text-center rounded-lg bg-gray"
-        >
-          <h3 class="text-xl font-semibold text-indigo-darker">You've reached the end!</h3>
-          <p class="mt-2 text-indigo">Still couldn't find the workout you wanted? Check back later or create it yourself! Once you share it, it will appear here for others.</p>
-
-          <a
-            href="https://app.mylo.fit/register"
-            class="inline-block px-6 py-2 mt-5 text-lg font-medium text-white focus:outline-none focus:ring-2 ring-green-light rounded-md bg-green-dark"
-          >
-            Start making a plan
-          </a>
-        </article>
+        <ResultsEnd v-else />
       </section>
     </section>
   </main>
 </template>
 
 <script>
+import { AisInstantSearchSsr, AisConfigure, AisInfiniteHits, AisSearchBox, AisPoweredBy, createServerRootMixin } from 'vue-instantsearch';
+import algoliasearch from 'algoliasearch/lite'
 import { collection, doc, getDoc, getDocs, limit, orderBy, query, startAfter, where } from 'firebase/firestore'
+import NuxtConfig from '~/nuxt.config'
 import { db } from '~/plugins/firebase.js'
+
+const config = NuxtConfig.publicRuntimeConfig
+const algoliaClient = algoliasearch(config.ALGOLIA.APPID, config.ALGOLIA.SEARCHKEY)
 
 // Not a data property because the doc is circular and can't be serialized by Nuxt
 let lastFetchedDoc = null
@@ -92,12 +144,45 @@ const addWorkouts = (array, doc) => {
 
 export default {
   name: 'WorkoutsPage',
+  components: {
+    AisInstantSearchSsr,
+    AisConfigure,
+    AisSearchBox,
+    AisPoweredBy,
+    AisInfiniteHits,
+  },
+  mixins: [
+    createServerRootMixin({
+      indexName: 'public_workouts_dev',
+      stalledSearchDelay: 500,
+      searchClient: {
+        ...algoliaClient,
+        search (requests) {
+          // avoid the initial empty search
+          if (requests.every(({ params }) => !params.query)) {
+            return Promise.resolve({
+              results: requests.map(() => ({
+                hits: [],
+                nbHits: 0,
+                nbPages: 0,
+                processingTimeMS: 0,
+              })),
+            })
+          }
+
+          return algoliaClient.search(requests)
+        },
+      },
+    }),
+  ],
   data: () => ({
     recommendedWorkouts: [],
     allWorkouts: [],
+    hideMessage: false,
     isLoading: false,
     reachedEnd: false,
     error: null,
+    query: '',
   }),
   async fetch () {
     const qRecommended = query(
@@ -131,7 +216,16 @@ export default {
       },
     ],
   },
+  computed: {
+    isSearchLoading () {
+      return this.instantsearch?._isSearchStalled ?? false
+    },
+  },
   methods: {
+    refineSearch (query, cb) {
+      this.query = query
+      cb(query)
+    },
     async loadNextPage () {
       if (this.reachedEnd) return
 
@@ -162,8 +256,6 @@ export default {
       } finally {
         this.isLoading = false
       }
-    },
-    search (query) {
     },
   },
 }

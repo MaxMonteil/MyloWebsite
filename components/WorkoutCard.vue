@@ -42,7 +42,11 @@ export default {
       return `${count} Exercise${count > 1 ? 's' : ''}`
     },
     workoutSchedule () {
-      return WEEK.filter(day => this.workout.week[day].length > 0)
+      const schedule = Array.isArray(this.workout.week)
+        ? this.workout.week // coming from search results
+        : WEEK.filter(day => this.workout.week[day].length > 0)
+
+      return schedule
         .map(day => day.substring(0, 2))
         .join(' ') 
     },
