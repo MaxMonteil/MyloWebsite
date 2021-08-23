@@ -154,7 +154,7 @@ export default {
   },
   mixins: [
     createServerRootMixin({
-      indexName: 'public_workouts_dev',
+      indexName: config.ALGOLIA.INDEX,
       stalledSearchDelay: 500,
       searchClient: {
         ...algoliaClient,

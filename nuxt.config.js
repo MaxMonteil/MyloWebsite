@@ -19,6 +19,10 @@ const firebaseConfig =
 
 const algoliaConfig = {
   APPID: '4NSN10UAEA',
+  INDEX:
+    process.env.NODE_ENV === 'production'
+      ? 'public_workouts_prod'
+      : 'public_workouts_dev',
   SEARCHKEY:
     process.env.NODE_ENV === 'production'
       ? 'e2f1224792ae41af662ff92dc103e071'
@@ -28,6 +32,13 @@ const algoliaConfig = {
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
+
+  // vue: {
+  //   config: {
+  //     devtools: true,
+  //     productionTip: true,
+  //   },
+  // },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
