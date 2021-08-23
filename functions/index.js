@@ -10,7 +10,7 @@ const WEEK = [
   "Sunday",
 ];
 
-exports.transformWorkoutForSearch = functions.https.onRequest((req, res) => {
+const transformWorkout = (req, res) => {
   try {
     const workout = req.body.data;
 
@@ -27,4 +27,12 @@ exports.transformWorkoutForSearch = functions.https.onRequest((req, res) => {
     functions.logger.log("There was an error", {message: e.message});
     res.status(500).end();
   }
-});
+};
+
+exports.transformWorkoutForSearch = functions.https.onRequest((req, res) =>
+  transformWorkout(req, res)
+);
+
+exports.transformWorkoutForSearchProd = functions
+    .region("europe-west1")
+    .https.onRequest((req, res) => transformWorkout(req, res));

@@ -21,7 +21,7 @@ const algoliaConfig = {
   APPID: '4NSN10UAEA',
   SEARCHKEY:
     process.env.NODE_ENV === 'production'
-      ? '5ad031c2dcb511c592c6bde5ecd461aa'
+      ? 'e2f1224792ae41af662ff92dc103e071'
       : '5ad031c2dcb511c592c6bde5ecd461aa',
 }
 
