@@ -1,0 +1,19 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "shared",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "data.creatorId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "data.name",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}
