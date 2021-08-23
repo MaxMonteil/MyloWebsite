@@ -16,6 +16,7 @@
                 :is-loading="isSearchStalled"
                 :with-search-button="false"
                 :value="currentRefinement"
+                @loading="isSearchLoading = $event"
                 @input="refineSearch($event, refine)"
               />
             </template>
@@ -155,7 +156,6 @@ export default {
   mixins: [
     createServerRootMixin({
       indexName: config.ALGOLIA.INDEX,
-      stalledSearchDelay: 500,
       searchClient: {
         ...algoliaClient,
         search (requests) {
@@ -180,6 +180,7 @@ export default {
     recommendedWorkouts: [],
     allWorkouts: [],
     hideMessage: false,
+    isSearchLoading: false,
     isLoading: false,
     reachedEnd: false,
     error: null,
@@ -216,11 +217,6 @@ export default {
         content: 'Discover completely free workouts that you can easily add to your own workout schedule in Mylo.',
       },
     ],
-  },
-  computed: {
-    isSearchLoading () {
-      return this.instantsearch?._isSearchStalled ?? false
-    },
   },
   methods: {
     refineSearch (query, cb) {

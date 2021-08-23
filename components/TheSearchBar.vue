@@ -44,6 +44,12 @@ export default {
       default: true,
     },
   },
+  watch: {
+    isLoading: {
+      handler (v) { this.$emit('loading', v) },
+      immediate: true,
+    },
+  },
 }
 </script>
 
