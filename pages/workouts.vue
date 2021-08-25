@@ -80,18 +80,32 @@
       <!-- RECOMMENDED WORKOUTS -->
       <WorkoutsList
         :list="recommendedWorkouts"
-        :is-loading="$fetchState.pending"
+        :is-loading="$fetchState.pending || isRecommendedWorkoutsLoading"
       >
-        Recommended Workouts
+        🌟 Recommended
+
+        <button
+          class="px-2 py-1 text-base text-indigo-dark bg-indigo-lighter rounded-md focus:outline-none"
+          @click="fetchRecommendedWorkouts(true)"
+        >
+          Refresh
+        </button>
       </WorkoutsList>
 
       <!-- ALL WORKOUTS -->
       <WorkoutsList
         class="pt-8"
         :list="allWorkouts"
-        :is-loading="$fetchState.pending"
+        :is-loading="$fetchState.pending || isAllWorkoutsLoading"
       >
         All Workouts
+
+        <button
+          class="px-2 py-1 text-base text-indigo-dark bg-indigo-lighter rounded-md focus:outline-none"
+          @click="fetchAllWorkouts(true)"
+        >
+          Refresh
+        </button>
       </WorkoutsList>
 
       <section class="flex flex-col items-center pt-8 border-none space-y-4">
@@ -109,7 +123,7 @@
           @click="loadNextPage"
         >
           <LoadingSpinner
-            v-if="isLoading"
+            v-if="isAllWorkoutsLoading"
             class="w-7 h-7 border-green-dark"
           />
           <span v-else>Load more</span>
@@ -177,36 +191,28 @@ export default {
     }),
   ],
   data: () => ({
-    recommendedWorkouts: [],
-    allWorkouts: [],
     hideMessage: false,
+
+    // search
+    query: '',
     isSearchLoading: false,
-    isLoading: false,
+
+    // recommended
+    recommendedWorkouts: [],
+    isRecommendedWorkoutsLoading: false,
+
+    // all
+    allWorkouts: [],
+    isAllWorkoutsLoading: false,
     reachedEnd: false,
     error: null,
-    query: '',
   }),
   async fetch () {
-    const qRecommended = query(
-      collection(db, 'shared'),
-      where('data.creatorId', '==', this.$config.OFFICIAL_ACCOUNT),
-      // orderBy('data.name'),
-    )
-
-    const qAll = query(
-      collection(db, 'shared'),
-      where('data.creatorId', '!=', this.$config.OFFICIAL_ACCOUNT),
-      // orderBy('data.creatorId'),
-      // orderBy('data.name'),
-      limit(PAGE_SIZE),
-    )
-
-    const [recommendedSnapshot, allSnapshot] = await Promise.all([getDocs(qRecommended), getDocs(qAll)])
-
-    recommendedSnapshot.forEach(doc => addWorkouts(this.recommendedWorkouts, doc))
-    allSnapshot.forEach(doc => addWorkouts(this.allWorkouts, doc))
-
-    if (allSnapshot.docs.length < PAGE_SIZE) this.reachedEnd = true
+    await Promise.all([this.fetchRecommendedWorkouts(), this.fetchAllWorkouts()])
+  },
+  fetchKey (getCounter) {
+    // ensure fetch runs on navigation
+    return `${+(new Date())}` + getCounter('workouts-directory')
   },
   head: {
     title: 'Mylo | Free Workouts',
@@ -214,11 +220,53 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Discover completely free workouts that you can easily add to your own workout schedule in Mylo.',
+        content: 'Discover completely free workouts that you can easily add to your own schedule in Mylo.',
       },
     ],
   },
   methods: {
+    async fetchRecommendedWorkouts (refresh = false) {
+      this.isRecommendedWorkoutsLoading = true
+
+      try {
+        const recommendedSnapshot = await getDocs(query(
+          collection(db, 'shared'),
+          where('data.creatorId', '==', this.$config.OFFICIAL_ACCOUNT),
+          // orderBy('data.name'),
+        ))
+
+        if (refresh) this.recommendedWorkouts = []
+        recommendedSnapshot.forEach(doc => addWorkouts(this.recommendedWorkouts, doc))
+      } catch (e) {
+        this.error = e.message
+        return Promise.reject(e)
+      } finally {
+        this.isRecommendedWorkoutsLoading = false
+      }
+    },
+    async fetchAllWorkouts (refresh = false) {
+      this.isAllWorkoutsLoading = true
+
+      try {
+        const allSnapshot = await getDocs(query(
+          collection(db, 'shared'),
+          where('data.creatorId', '!=', this.$config.OFFICIAL_ACCOUNT),
+          // orderBy('data.creatorId'),
+          // orderBy('data.name'),
+          limit(PAGE_SIZE),
+        ))
+
+        if (refresh) this.allWorkouts = []
+        allSnapshot.forEach(doc => addWorkouts(this.allWorkouts, doc))
+
+        if (allSnapshot.docs.length < PAGE_SIZE) this.reachedEnd = true
+      } catch (e) {
+        this.error = e.message
+        return Promise.reject(e)
+      } finally {
+        this.isAllWorkoutsLoading = false
+      }
+    },
     refineSearch (query, cb) {
       this.query = query
       cb(query)
@@ -228,7 +276,7 @@ export default {
 
       try {
         this.error = null
-        this.isLoading = true
+        this.isAllWorkoutsLoading = true
 
         // this is only actually used when lastFetchedDoc is null which happens on first load only
         // because fetch() can't set the value to a non data property in the server.
@@ -251,7 +299,7 @@ export default {
       } catch (e) {
         this.error = e.message ?? 'Something went wrong while getting the workouts :/'
       } finally {
-        this.isLoading = false
+        this.isAllWorkoutsLoading = false
       }
     },
   },
