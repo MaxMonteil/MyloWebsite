@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "routine-tracker-dev"
-  }
+    "default": "routine-tracker-dev",
+    "prod": "mylo-production",
+    "dev": "routine-tracker-dev"
+  },
+  "targets": {}
 }

@@ -29,9 +29,9 @@ const transformWorkout = (req, res) => {
   }
 };
 
-exports.transformWorkoutForSearch = functions.https.onRequest((req, res) =>
-  transformWorkout(req, res)
-);
+exports.transformWorkoutForSearch = functions
+    .region("us-central1")
+    .https.onRequest((req, res) => transformWorkout(req, res));
 
 exports.transformWorkoutForSearchProd = functions
     .region("europe-west1")
