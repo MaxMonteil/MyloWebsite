@@ -31,7 +31,7 @@
               :list="items"
               :is-loading="isSearchLoading"
             >
-              <span class="text-indigo-light">Results for:</span> {{ query }}
+              <span><span class="text-indigo-light">Results for:</span> {{ query }}</span>
             </WorkoutsList>
 
             <ResultsEnd v-show="query != '' && !isSearchLoading && (isLastPage || items.length === 0)">
