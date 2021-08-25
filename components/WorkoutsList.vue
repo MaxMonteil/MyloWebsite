@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col w-full gap-4">
-    <h2 class="text-2xl font-semibold truncate text-indigo-darkest"><slot /></h2>
+    <h2 class="flex items-center justify-between text-2xl font-semibold truncate align-top text-indigo-darkest"><slot /></h2>
 
     <LoadingSpinner
       v-if="isLoading"
