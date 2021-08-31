@@ -139,7 +139,7 @@
 import { AisInstantSearchSsr, AisConfigure, AisInfiniteHits, AisSearchBox, AisPoweredBy, createServerRootMixin } from 'vue-instantsearch';
 import algoliasearch from 'algoliasearch/lite'
 // orderBy seems to cause an issue during site generation, all queries return [] when using it :/
-import { collection, doc, getDoc, getDocs, limit, /* orderBy, */ query, startAfter, where } from 'firebase/firestore'
+import { collection, doc, getDoc, getDocs, limit, orderBy, query, startAfter, where } from 'firebase/firestore'
 import NuxtConfig from '~/nuxt.config'
 import { db } from '~/plugins/firebase.js'
 
@@ -203,16 +203,12 @@ export default {
 
     // all
     allWorkouts: [],
-    isAllWorkoutsLoading: false,
+    isAllWorkoutsLoading: true,
     reachedEnd: false,
     error: null,
   }),
   async fetch () {
-    await Promise.all([this.fetchRecommendedWorkouts(), this.fetchAllWorkouts()])
-  },
-  fetchKey (getCounter) {
-    // ensure fetch runs on navigation
-    return `${+(new Date())}` + getCounter('workouts-directory')
+    await this.fetchRecommendedWorkouts()
   },
   head: {
     title: 'Mylo | Free Workouts',
@@ -224,6 +220,9 @@ export default {
       },
     ],
   },
+  async mounted () {
+    await this.fetchAllWorkouts()
+  },
   methods: {
     async fetchRecommendedWorkouts (refresh = false) {
       this.isRecommendedWorkoutsLoading = true
@@ -232,7 +231,7 @@ export default {
         const recommendedSnapshot = await getDocs(query(
           collection(db, 'shared'),
           where('data.creatorId', '==', this.$config.OFFICIAL_ACCOUNT),
-          // orderBy('data.name'),
+          orderBy('data.name'),
         ))
 
         if (refresh) this.recommendedWorkouts = []
@@ -251,8 +250,8 @@ export default {
         const allSnapshot = await getDocs(query(
           collection(db, 'shared'),
           where('data.creatorId', '!=', this.$config.OFFICIAL_ACCOUNT),
-          // orderBy('data.creatorId'),
-          // orderBy('data.name'),
+          orderBy('data.creatorId'),
+          orderBy('data.name'),
           limit(PAGE_SIZE),
         ))
 
@@ -285,8 +284,8 @@ export default {
         const nextPageQuery = query(
           collection(db, 'shared'),
           where('data.creatorId', '!=', this.$config.OFFICIAL_ACCOUNT),
-          // orderBy('data.creatorId'),
-          // orderBy('data.name'),
+          orderBy('data.creatorId'),
+          orderBy('data.name'),
           startAfter(lastFetchedDoc ?? await getDoc(doc(db, 'shared', lastWorkoutId))),
           limit(PAGE_SIZE),
         )
