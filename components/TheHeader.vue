@@ -27,7 +27,7 @@
 
         <a
           href="https://app.mylo.fit/register"
-          class="px-3 py-2 focus:outline-none focus:ring-2 ring-green-dark rounded-md bg-green-lighter text-green-darkest"
+          class="px-3 py-2 whitespace-nowrap focus:outline-none focus:ring-2 ring-green-dark rounded-md bg-green-lighter text-green-darkest"
         >
         Sign up
         </a>

@@ -16,17 +16,23 @@
         <div class="flex flex-col items-center justify-center sm:flex-row sm:justify-start sm:items-start gap-4">
           <div class="space-y-1">
             <a
-              href="https://app.mylo.fit/register"
-              class="inline-block px-6 py-2 text-lg font-medium text-white focus:outline-none focus:ring-2 ring-green-light rounded-md bg-green-dark"
+              href="https://play.google.com/store/apps/details?id=fit.mylo.app.twa&utm_source=website&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
             >
-              Make a plan!
+              <img
+                src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                height="88"
+                width="224"
+                alt="Get it on Google Play"
+                class="w-56 pt-px -my-4"
+              />
             </a>
 
             <ul>
-              <li class="text-sm text-center text-indigo-light">100% Free - No Ads</li>
-              <li class="text-sm text-center text-indigo-light">No Credit Card required</li>
+              <li class="text-sm text-center text-indigo-light">Free, No Ads, No CC</li>
+              <li class="pt-1 text-sm text-center text-indigo"><a href="#iphone-app" class="underline">I have an iPhone</a> 😢</li>
             </ul>
           </div>
+
 
           <NuxtLink
             to="/workouts"
@@ -76,6 +82,7 @@
             <img
               src="/images/schedule.png"
               srcset="/images/schedule@2x.png 2x"
+              alt="Example screenshot of a workout schedule"
               width="160"
               height="320"
               class="w-full rounded-lg shadow-xl"
@@ -112,6 +119,7 @@
             <img
               src="/images/training.png"
               srcset="/images/training@2x.png 2x"
+              alt="Example screenshot of a workout in progress."
               width="160"
               height="320"
               class="w-full rounded-lg shadow-xl transform translate-y-8"
@@ -137,6 +145,7 @@
             <img
               src="/images/kinds_of_workouts.png"
               srcset="/images/kinds_of_workouts@2x.png 2x"
+              alt="Example names of the workouts you could create: Swimming Practice, Meditation, Fullbody Home Workout, etc."
               width="787"
               height="238"
               class="h-full max-w-none"
@@ -182,6 +191,7 @@
           <img
             src="/images/exercise_rules.png"
             srcset="/images/exercise_rules@2x.png 2x"
+            alt="In Mylo you can add progression rules to exercises such as 'Inrease weights by 5kg every workout.'"
             width="363"
             height="646"
             class="relative z-10 w-full shadow-xl rounded-2xl"
@@ -220,6 +230,7 @@
           <img
             src="/images/share_workout.png"
             srcset="/images/share_workout@2x.png 2x"
+            alt="You can easily generate a unique link for the workouts you make so that you can share them."
             width="363"
             height="186"
             class="relative z-10 w-full shadow-xl rounded-2xl"
@@ -252,9 +263,9 @@
             />
 
             <img
-              alt="examples of workouts"
               src="/images/perfect_workout.png"
               srcset="/images/perfect_workout@2x.png 2x"
+              alt="You can find all kinds of workouts made by others for Mylo."
               width="363"
               height="360"
               class="relative z-10 drop-shadow-lg"
@@ -293,6 +304,7 @@
           <img
             src="/images/coming_soon.png"
             srcset="/images/coming_soon@2x.png 2x"
+            alt="A set of Mylo logos growing."
             width="363"
             height="178"
             class="relative z-10 w-full"
@@ -322,6 +334,9 @@
         <img
           src="/images/maximilien.png"
           srcset="/images/maximilien@2x.png 2x"
+          alt="Profile image of Maximilien Monteil, creator of Mylo"
+          height="129"
+          width="129"
           class="relative z-10 self-center sm:self-start rounded-2xl"
           loading="lazy"
         />
@@ -337,11 +352,54 @@
         <p class="self-start text-green-dark">- Maximilien Monteil</p>
       </div>
     </section>
+
+    <!-- FAQ -->
+    <section class="flex flex-col items-center w-full max-w-6xl px-6 mx-auto overflow-hidden text-lg text-indigo sm:overflow-visible gap-4">
+      <h2 class="w-full text-3xl font-semibold text-indigo-darker">Frequently Asked Questions</h2>
+
+      <ul class="w-full space-y-8">
+        <li>
+          <h3 id="iphone-app" class="mb-2 text-xl font-semibold text-indigo-darker">Is there an iPhone app?</h3>
+          <p>There isn't a native iPhone app just yet but you can still add Mylo to your homescreen in 3 steps:</p>
+          <ol class="mt-2 ml-5 list-decimal">
+            <li>Go to the app page (<a href="https://app.mylo.fit" class="underline text-green-darker">app.mylo.fit</a>) with Safari</li>
+            <li>Tap '<span class="font-semibold">Share</span>'</li>
+            <li>Scroll down and tap '<span class="font-semibold">Add to Home Screen</span>'</li>
+          </ol>
+        </li>
+
+        <li class="space-y-2">
+          <h3 class="text-xl font-semibold text-indigo-darker">Is there a way to find workouts?</h3>
+          <p>Right now there is the <NuxtLink to="/workouts" class="underline text-green-dark">Free Workouts</NuxtLink> page where you can search for workouts.</p>
+          <p>I've added some workouts to the recommended section to help you get started as a beginner, if you have no equipment, or to see the kind of workouts you can create with Mylo. The other section has all the public workouts created by the community.</p>
+          <p>You can also add workouts there by sharing the ones you make!</p>
+        </li>
+
+        <li class="space-y-2">
+          <h3 class="text-xl font-semibold text-indigo-darker">How can I see my previous workouts?</h3>
+          <p>Mylo doesn't store your workout history yet. It is a highly requested feature and I'm working to add it soon.</p>
+          <p>You can stay up to date with development progress by checking out the <a href="https://mylofit.notion.site/Mylo-s-Public-Roadmap-73b68f5099b142ddbce635f18e7c922e" class="underline text-green-darker">Public Roadmap</a>. You can even leave comments there!</p>
+        </li>
+
+        <li>
+          <h3 class="mb-2 text-xl font-semibold text-indigo-darker">I have a feature idea!</h3>
+          <p>If you have ideas for new features, encounter a bug, or just want to send me a message, you can reach  me by email here: <a href="mailto:contact@mylo.fit" class="underline text-green-darker">contact@mylo.fit</a>, on Twitter <a href="https://www.twitter.com/MyloApp" class="underline text-green-darker">@MyloApp</a>, and on Instagram at <a href="https://instagram.com/mylo.app" class="underline text-green-darker">mylo.app</a>.</p>
+        </li>
+
+        <li class="space-y-2">
+          <h3 class="text-xl font-semibold text-indigo-darker">Is there somewhere we can donate to ensure future support / updates?</h3>
+          <p>Thank you so much for wanting to donate and support me, I really appreciate it!</p>
+          <p>Right now the app is completely free as I continue developing and adding what I believe to be 'core' features. Once those are added I will include some monetization methods (note that I never want to have ads). For now the app and userbase is still rather small so there aren't many costs.</p>
+        </li>
+      </ul>
+    </section>
   </main>
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'HomePage',
+}
 </script>
 
 <style scoped>
