@@ -1,0 +1,77 @@
+import type { Config } from 'tailwindcss'
+import defaultTheme from 'tailwindcss/defaultTheme'
+
+export default <Partial<Config>>{
+  theme: {
+    colors: {
+      current: 'currentColor',
+      white: '#FFFFFF',
+      black: '#000000',
+      gray: {
+        50: '#FAFAFA',
+        100: '#EFEFEF',
+        200: '#D7D7D7',
+        300: '#BDBDBD',
+        400: '#A2A2A2',
+        500: '#858585',
+        600: '#6D6D6D',
+        700: '#4A4B49',
+        800: '#353535',
+        900: '#232323',
+      },
+      green: {
+        50: '#DDFFE9',
+        100: '#C3F4D4',
+        200: '#99E2A9',
+        300: '#60D392',
+        400: '#1EB972',
+        500: '#22975A',
+        600: '#237543',
+        700: '#155635',
+        800: '#113C2B',
+        900: '#112823',
+      },
+      red: {
+        50: '#FDF6F1',
+        100: '#FFEDE4',
+        200: '#FFA680',
+        300: '#F96646',
+        400: '#E73F26',
+        500: '#CC351A',
+        600: '#B02B18',
+        700: '#912816',
+        800: '#691C11',
+        900: '#461813',
+      },
+      blue: {
+        50: '#EEF1FA',
+        100: '#E4E8F7',
+        200: '#9FB8F7',
+        300: '#6E9BF4',
+        400: '#4D89EB',
+        500: '#447AD0',
+        600: '#4569AD',
+        700: '#394D7F',
+        800: '#263559',
+        900: '#181D2F',
+      },
+      yellow: {
+        50: '#FEFCE8',
+        100: '#FEF9C3',
+        200: '#FEF08A',
+        300: '#FDE047',
+        400: '#FACC15',
+        500: '#F1B80A',
+        600: '#CA8A04',
+        700: '#A16207',
+        800: '#854D0E',
+        900: '#713F12',
+      },
+    },
+    extend: {
+      fontFamily: {
+        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+      },
+    },
+  },
+}
