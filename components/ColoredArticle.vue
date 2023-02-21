@@ -1,15 +1,15 @@
 <template>
-  <article class="p-5 pb-0 rounded-3xl space-y-10 overflow-clip" :class="[bg, text]">
+  <article class="flex flex-col p-5 pb-0 max-w-7xl gap-10 rounded-3xl md:flex-row md:p-10 md:pb-0 overflow-clip" :class="[bg, text]">
     <div class="space-y-2">
-      <h3 class="text-sm font-medium tracking-wider uppercase">
+      <h3 class="text-sm font-medium tracking-wider uppercase md:text-xl">
         <slot name="subheading" />
       </h3>
 
-      <h2 class="text-2xl font-black" :class="heading">
+      <h2 class="text-2xl font-black md:text-4xl" :class="heading">
         <slot name="heading" />
       </h2>
 
-      <p>
+      <p class="md:text-xl md:max-w-prose">
         <slot name="body" />
       </p>
     </div>

@@ -1,8 +1,7 @@
 <template v-once>
   <svg
-    width="243"
-    height="373"
     viewBox="0 0 243 373"
+    preserveAspectRatio="xMinYMin meet"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"

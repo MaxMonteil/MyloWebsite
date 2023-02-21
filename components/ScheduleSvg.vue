@@ -1,8 +1,7 @@
 <template>
   <svg
-    width="243"
-    height="377"
     viewBox="0 0 243 377"
+    preserveAspectRatio="xMinYMin meet"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
