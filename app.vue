@@ -1,15 +1,18 @@
 <template>
-  <nav class="px-5 py-2.5 bg-green-200">
+  <Html class="scroll-smooth scroll-pt-20 md:scroll-pt-32">
+  <nav class="px-5 fixed z-10 rounded-b-3xl py-2.5 bg-green-400 w-full">
     <ul class="flex items-center justify-between mx-auto text-sm text-green-800 md:justify-start md:text-base max-w-7xl">
-      <li class="text-green-800 md:grow">
-        <LogoSvg class="w-10 h-10 md:w-14 md:h-14" />
+      <li class="text-green-900 md:grow">
+        <a href="#plan-once-progress-forever">
+          <LogoSvg class="w-10 h-10 md:w-14 md:h-14" />
+        </a>
       </li>
-      <li><NuxtLink to="/free-plans">Free plans</NuxtLink></li>
-      <li class="md:ml-6"><NuxtLink to="/blog">Blog</NuxtLink></li>
+      <!-- <li><NuxtLink to="/free-plans">Free plans</NuxtLink></li> -->
+      <!-- <li class="md:ml-6"><NuxtLink to="/blog">Blog</NuxtLink></li> -->
       <li>
         <NuxtLink
           to="https://app.mylo.fit"
-          class="px-4 py-2 font-medium text-green-900 bg-green-300 rounded-lg md:ml-6 md:px-6 md:py-3 leading-4"
+          class="px-4 py-2 font-medium text-green-600 bg-white rounded-lg md:ml-6 md:px-6 md:py-3 leading-4"
         >
           Start training
         </NuxtLink>
@@ -18,11 +21,11 @@
   </nav>
 
   <main>
-    <header class="flex flex-col items-center justify-center p-5 bg-green-200 md:p-10 rounded-b-3xl gap-10 md:flex-row lg:gap-20">
+    <header class="flex flex-col items-start justify-center p-5 pt-20 bg-green-400 md:pt-32 md:p-10 rounded-b-3xl gap-10 md:flex-row lg:gap-20">
       <div class="max-w-lg">
-        <h1 class="text-4xl font-black text-green-500 md:text-6xl leading-10">
-          <span class="block">Plan once</span>
-          <span class="block italic font-black text-green-900">Progress forever</span>
+        <h1 id="plan-once-progress-forever" class="text-4xl font-black text-green-900 md:text-6xl leading-10">
+          <span class="block text-white">Plan once</span>
+          <span class="block italic font-black">Progress Forever</span>
         </h1>
 
         <h2 class="mt-2 text-green-900 md:mt-4 leading-6 md:text-xl">
@@ -32,7 +35,7 @@
         <div class="flex flex-wrap mt-6 sm:justify-center md:justify-start md:mt-8 gap-4 md:text-xl">
           <NuxtLink
             to="https://app.mylo.fit"
-            class="px-8 py-3 font-medium text-center text-green-900 bg-green-300 rounded-lg shadow-md md:px-10 leading-5"
+            class="px-8 py-3 font-medium text-center text-green-600 bg-white rounded-lg shadow-md md:px-10 leading-5"
           >
             Start training
           </NuxtLink>
@@ -47,9 +50,41 @@
       </div>
 
       <div id="hero" class="max-w-sm md:max-w-2xl">
-        <ScheduleSvg class="rounded-lg shadow-lg schedule w-[243px] md:w-[400px]" />
-        <ReportSvg class="rounded-lg shadow-lg report w-[243px] md:w-[400px]" />
-        <NuxtImg preload src="/weightlifting.png" class="w-[374px] md:w-[600px] shadow-2xl rounded-xl image" />
+        <ScheduleSvg class="rounded-lg shadow-2xl schedule w-[243px] md:w-[400px]" />
+        <ReportSvg class="rounded-lg shadow-2xl report w-[243px] md:w-[400px]" />
+
+        <div class="relative place-items-center image">
+          <NuxtImg preload src="/lifting.png" class="bg-image w-[374px] md:w-[600px] shadow-xl rounded-xl" />
+
+          <div class="p-2 text-green-900 bg-green-300 shadow-xl rounded-md card -translate-y-16 translate-x-8">
+            <p class="mb-0.5 text-sm font-medium">Weight lifting</p>
+            <p class="text-xs"><span class="mr-3">3x week</span> <span>12 exercises</span></p>
+          </div>
+
+          <div class="p-2 text-green-900 bg-green-300 shadow-xl rounded-md card -translate-x-20 translate-y-10">
+            <p class="mb-0.5 text-sm font-medium">Sprint practice</p>
+            <p class="text-xs"><span class="mr-3">5x week</span> <span>8 exercises</span></p>
+          </div>
+
+          <div class="p-2 text-green-900 bg-green-300 shadow-xl rounded-md card translate-x-20 translate-y-16">
+            <p class="mb-0.5 text-sm font-medium">Meditation</p>
+            <p class="text-xs"><span class="mr-3">Daily</span> <span>3 exercises</span></p>
+          </div>
+
+          <p class="px-1 text-center py-0.5 text-xs text-yellow-900 bg-yellow-200 shadow-lg rounded card -translate-x-[5.5rem] -translate-y-16">
+            Custom <br /> schedules
+          </p>
+
+          <p class="px-1 text-right py-0.5 text-xs text-yellow-900 bg-yellow-200 shadow-lg rounded card translate-x-24 translate-y-3">
+            Automatic <br /> progressions
+          </p>
+
+          <p class="px-1 text-right py-0.5 text-xs text-yellow-900 bg-yellow-200 shadow-lg rounded card -translate-x-[4.5rem] translate-y-24">
+            Hyper-flexible
+          </p>
+
+          <NuxtImg preload src="/no-bg-lifting.png" class="fg-image w-[374px] md:w-[600px] z-10" />
+        </div>
       </div>
     </header>
 
@@ -139,6 +174,10 @@
           <br /> <br />
           Of course, you’re always in control and can make your own changes anytime.
         </template>
+
+        <template #image>
+          <NuxtImg src="/progressions.png" />
+        </template>
       </ColoredArticle>
 
       <TextArticle>
@@ -180,7 +219,7 @@
       </ColoredArticle>
 
       <article class="max-w-4xl px-5 py-10 text-gray-800">
-        <div class="w-32 h-32 bg-gray-700 md:w-36 md:h-36 rounded-2xl"></div>
+        <NuxtImg src="/maximilien.png" class="w-32 h-32 bg-gray-700 border-4 border-gray-700 shadow-lg md:w-36 md:h-36 rounded-2xl" />
 
         <h2 class="mt-5 text-2xl font-black md:text-4xl md:mt-10">
           Why Mylo?
@@ -255,6 +294,7 @@
       <p class="text-sm text-gray-500 md:text-xl">© Mylo</p>
     </section>
   </footer>
+  </Html>
 </template>
 
 <style scoped>
@@ -302,5 +342,16 @@
   z-index: 1;
   grid-area: 1 / 1 / 2 / 2;
   aspect-ratio: 600 / 400;
+
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: min-content;
+}
+
+
+#hero > .image > .card,
+#hero > .image > .bg-image,
+#hero > .image > .fg-image {
+  grid-area: 1 / 1 / 2 / 2;
 }
 </style>

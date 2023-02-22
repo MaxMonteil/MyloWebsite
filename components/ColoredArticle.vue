@@ -14,7 +14,9 @@
       </p>
     </div>
 
-    <div class="w-full shadow-lg rounded-t-2xl" :class="img"></div>
+    <slot name="image">
+      <div class="w-full shadow-lg rounded-t-2xl" :class="img"></div>
+    </slot>
   </article>
 </template>
 
