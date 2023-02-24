@@ -92,12 +92,12 @@
       <article class="flex flex-col max-w-4xl px-5 py-10">
         <h2 class="text-sm font-medium tracking-wider text-gray-900 uppercase md:text-xl">What athletes are saying</h2>
 
-        <ol class="flex items-stretch mt-2 overflow-x-scroll md:grid md:grid-cols-2 md:overflow-x-visible snap-x md:text-lg snap-mandatory gap-4">
+        <ol class="flex mt-2 overflow-x-scroll md:grid md:grid-cols-2 md:overflow-x-visible snap-x md:text-lg snap-mandatory gap-2 md:gap-6">
           <li class="w-full max-w-lg mt-2 leading-loose text-gray-800 snap-center shrink-0">
             “Keeps track of my workouts and being reminder that I have to workout. It motivates me.”
           </li>
 
-          <li class="w-full max-w-lg mt-2 leading-loose text-gray-800 snap-center shrink-0 ">
+          <li class="w-full max-w-lg mt-2 leading-loose text-gray-800 snap-center shrink-0">
             “It offers basically as much customisability as an excel sheet with the functionality of an app.”
           </li>
 
