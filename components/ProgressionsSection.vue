@@ -18,7 +18,7 @@
     </template>
 
     <template #image>
-      <NuxtImg class="-mb-1" src="/progressions.png" />
+      <NuxtImg class="-mb-1" src="/progressions.png" alt="Image of someone doing an overhead press along with floating snippets saying: 'Increase reps', 'Increase intensity', 'Update weights', and 'Change sets'."/>
     </template>
   </ColoredArticle>
 </template>

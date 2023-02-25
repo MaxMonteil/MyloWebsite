@@ -37,11 +37,13 @@
             preload
             src="/schedule-hero.png"
             class="rounded-lg md:rounded-xl shadow-2xl schedule w-[243px] md:w-[400px]"
+            alt="Screenshot of the app schedule."
           />
           <NuxtImg
             preload
             src="/report-hero.png"
             class="rounded-lg md:rounded-xl shadow-2xl report w-[243px] md:w-[400px]"
+            alt="Screenshot of the post training workout report."
           />
           <HeroLifting />
         </div>

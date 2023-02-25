@@ -3,6 +3,9 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: 'Plan once, Progress forever | Mylo',
+      htmlAttrs: {
+        lang: 'en',
+      },
       meta: [
         {
           name: 'description',
@@ -12,5 +15,10 @@ export default defineNuxtConfig({
       ],
     },
   },
-  modules: ['@nuxt/image-edge', '@nuxtjs/plausible', '@nuxtjs/tailwindcss'],
+  modules: [
+    '@nuxt/image-edge',
+    '@nuxtjs/plausible',
+    '@nuxtjs/tailwindcss',
+    'nuxt-zero-js',
+  ],
 })

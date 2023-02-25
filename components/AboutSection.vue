@@ -1,6 +1,6 @@
 <template>
   <article class="max-w-4xl px-5 py-10 text-gray-800">
-    <NuxtImg src="/maximilien.png" class="w-32 h-32 bg-gray-700 border-4 border-gray-700 shadow-lg md:w-36 md:h-36 rounded-2xl" />
+    <NuxtImg src="/maximilien.png" class="w-32 h-32 bg-gray-700 border-4 border-gray-700 shadow-lg md:w-36 md:h-36 rounded-2xl" alt="Profile image of me, Maximilien, the guy making Mylo." />
 
     <h2 class="mt-5 text-2xl font-black md:text-4xl md:mt-10">
       Why Mylo?

@@ -2,7 +2,7 @@
   <nav class="px-5 fixed z-10 rounded-b-3xl py-2.5 bg-green-400 w-full">
     <ul class="flex items-center justify-between mx-auto text-sm text-green-800 md:justify-start md:text-base max-w-7xl">
       <li class="text-green-900 md:grow">
-        <a href="#plan-once-progress-forever">
+        <a aria-label="Mylo logo, return to top of homepage." href="#plan-once-progress-forever">
           <LogoSvg class="w-10 h-10 md:w-14 md:h-14" />
         </a>
       </li>

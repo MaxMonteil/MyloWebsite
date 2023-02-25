@@ -11,6 +11,7 @@
     "@nuxt/image-edge": "^1.0.0-27919678.2f5b64b",
     "@nuxtjs/plausible": "^0.2.0",
     "@nuxtjs/tailwindcss": "^6.4.1",
-    "nuxt": "^3.2.2"
+    "nuxt": "^3.2.2",
+    "nuxt-zero-js": "^0.1.3"
   }
 }

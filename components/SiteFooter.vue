@@ -9,7 +9,7 @@
         <p class="md:text-xl">Plan once, progress forever.</p>
       </div>
 
-      <p class="text-sm text-gray-500 md:text-xl">© Mylo</p>
+      <p class="text-sm text-gray-600 md:text-xl">© Mylo</p>
     </section>
   </footer>
 </template>

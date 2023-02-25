@@ -4,6 +4,7 @@
       preload
       src="/lifting.png"
       class="bg-image w-[374px] md:w-[600px] shadow-xl rounded-xl"
+      alt="Image of someone doing an overhead press."
     />
 
     <WorkoutCard class="card workout-1">
@@ -42,6 +43,7 @@
       preload
       src="/no-bg-lifting.png"
       class="fg-image w-[374px] md:w-[600px] z-10"
+      alt="The same image of some doing an overhead press but cut out from the rest of the background."
     />
   </div>
 </template>

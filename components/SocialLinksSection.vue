@@ -5,7 +5,7 @@
     </h2>
 
     <ul class="flex mt-4 text-base text-green-600 md:text-xl gap-14">
-      <li><a href="">Discord</a></li>
+      <li><a href="https://discord.gg/HzZ8J7E7Cc">Discord</a></li>
       <li><a href="https://www.reddit.com/r/mylofit/">r/Mylofit</a></li>
       <li><a href="https://www.twitter.com/mylofit">@MyloFit</a></li>
     </ul>
