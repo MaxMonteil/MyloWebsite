@@ -142,8 +142,5 @@
 
   transform: translate(var(--xEnd), var(--yEnd));
   animation: 300ms ease-out 0s 1 slideIn;
-  @media (min-width: 768px) {
-    animation-duration: 400ms;
-  }
 }
 </style>
