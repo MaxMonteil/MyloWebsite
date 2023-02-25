@@ -18,7 +18,7 @@
     </template>
 
     <template #image>
-      <NuxtImg src="/progressions.png" />
+      <NuxtImg class="-mb-1" src="/progressions.png" />
     </template>
   </ColoredArticle>
 </template>

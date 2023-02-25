@@ -1,5 +1,5 @@
 <template>
-  <div class="relative place-items-center image">
+  <div class="relative place-items-center hero-image">
     <NuxtImg
       preload
       src="/lifting.png"

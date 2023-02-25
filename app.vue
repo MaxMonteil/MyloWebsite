@@ -36,12 +36,12 @@
           <NuxtImg
             preload
             src="/schedule-hero.png"
-            class="rounded-lg shadow-2xl schedule w-[243px] md:w-[400px]"
+            class="rounded-lg md:rounded-xl shadow-2xl schedule w-[243px] md:w-[400px]"
           />
           <NuxtImg
             preload
             src="/report-hero.png"
-            class="rounded-lg shadow-2xl report w-[243px] md:w-[400px]"
+            class="rounded-lg md:rounded-xl shadow-2xl report w-[243px] md:w-[400px]"
           />
           <HeroLifting />
         </div>
@@ -72,49 +72,102 @@
 
 <style>
 #hero {
-  --x-shift: 20px;
-  --y-shift: 50px;
+  --xShift: 20px;
+  --yShift: 25px;
 
   @media (min-width: 768px) {
-    --x-shift: 35px;
-    --y-shift: 84px;
+    --xShift: 35px;
+
+    --yShiftStart: 22px;
+    --yShift: 42px;
   }
+
+  margin-block: 25px;
 
   position: relative;
   display: grid;
   grid-template-rows: min-content;
   place-items: center;
-  padding-inline: var(--x-shift);
+  padding-inline: var(--xShift);
 
   grid-template-columns: minmax(300px, 344px);
   @media (min-width: 768px) {
     grid-template-columns: minmax(400px, 600px);
+    margin-block: 42px;
   }
 }
 
 #hero > .schedule {
   grid-area: 1 / 1 / 2 / 2;
   justify-self: start;
-  margin-bottom: var(--y-shift);
-  transform: translateX(calc(var(--x-shift)));
 
+  transform: translate(var(--xShift), calc(-1 * var(--yShift)));
+  animation: 300ms ease-in-out 0s 1 slideUp;
   @media (min-width: 768px) {
-    transform: translateX(calc(-1 * var(--x-shift)));
+    transform: translate(calc(-1 * var(--xShift)), calc(-1 * var(--yShift)));
+    animation: 300ms ease-in-out 1 mdSlideUp;
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translate(var(--xShift), calc(-1 * var(--yShiftStart)));
+    }
+
+    to {
+      transform: translate(var(--xShift), calc(-1 * var(--yShift)));
+    }
+  }
+
+  @keyframes mdSlideUp {
+    from {
+      transform: translate(
+        calc(-1 * var(--xShift)),
+        calc(-1 * var(--yShiftStart))
+      );
+    }
+
+    to {
+      transform: translate(
+        calc(-1 * var(--xShift)),
+        calc(-1 * var(--yShift))
+      );
+    }
   }
 }
 
 #hero > .report {
   grid-area: 1 / 1 / 2 / 2;
   justify-self: end;
-  margin-top: var(--y-shift);
-  transform: translateX(calc(-1 * var(--x-shift)));
 
+  transform: translate(calc(-1 * var(--xShift)), var(--yShift));
+  animation: 300ms ease-in-out 0s 1 slideDown;
   @media (min-width: 768px) {
-    transform: translateX(calc(var(--x-shift)));
+    transform: translate(var(--xShift), var(--yShift));
+    animation: 300ms ease-in-out 1 mdSlideDown;
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translate(calc(-1 * var(--xShift)), var(--yShiftStart));
+    }
+
+    to {
+      transform: translate(calc(-1 * var(--xShift)), var(--yShift));
+    }
+  }
+
+  @keyframes mdSlideDown {
+    from {
+      transform: translate(var(--xShift), var(--yShiftStart));
+    }
+
+    to {
+      transform: translate(var(--xShift), var(--yShift));
+    }
   }
 }
 
-#hero > .image {
+#hero > .hero-image {
   z-index: 1;
   grid-area: 1 / 1 / 2 / 2;
   aspect-ratio: 600 / 400;
@@ -122,11 +175,23 @@
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: min-content;
+
+  animation: 300ms ease-in-out 0s 1 scaleIn;
+
+  @keyframes scaleIn {
+    from {
+      transform: scale(0.9);
+    }
+
+    to {
+      transform: scale(1);
+    }
+  }
 }
 
-#hero > .image > .card,
-#hero > .image > .bg-image,
-#hero > .image > .fg-image {
+#hero > .hero-image > .card,
+#hero > .hero-image > .bg-image,
+#hero > .hero-image > .fg-image {
   grid-area: 1 / 1 / 2 / 2;
 }
 
@@ -145,6 +210,6 @@
   --yStart: 0;
 
   transform: translate(var(--xEnd), var(--yEnd));
-  animation: 300ms ease-out 0s 1 slideIn;
+  animation: 200ms ease-in 0s 1 slideIn;
 }
 </style>
