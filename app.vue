@@ -33,10 +33,14 @@
         </div>
 
         <div id="hero" class="max-w-sm md:max-w-2xl">
-          <ScheduleSvg
+          <NuxtImg
+            preload
+            src="/schedule-hero.png"
             class="rounded-lg shadow-2xl schedule w-[243px] md:w-[400px]"
           />
-          <ReportSvg
+          <NuxtImg
+            preload
+            src="/report-hero.png"
             class="rounded-lg shadow-2xl report w-[243px] md:w-[400px]"
           />
           <HeroLifting />
