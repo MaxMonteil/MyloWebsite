@@ -13,12 +13,15 @@ export default defineNuxtConfig({
             'Mylo is the most flexible workout tool ever. Craft your plan exactly the way you want and forget about all the management.',
         },
       ],
+      script: [
+        {
+          src: 'https://plausible.io/js/plausible.js',
+          async: true,
+          defer: true,
+          'data-domain': 'mylo.fit',
+        },
+      ],
     },
   },
-  modules: [
-    '@nuxt/image-edge',
-    '@nuxtjs/plausible',
-    '@nuxtjs/tailwindcss',
-    'nuxt-zero-js',
-  ],
+  modules: ['@nuxtjs/tailwindcss', 'nuxt-zero-js'],
 })

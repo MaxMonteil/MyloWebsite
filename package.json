@@ -8,8 +8,6 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxt/image-edge": "^1.0.0-27919678.2f5b64b",
-    "@nuxtjs/plausible": "^0.2.0",
     "@nuxtjs/tailwindcss": "^6.4.1",
     "@unpic/vue": "^0.0.7",
     "nuxt": "^3.2.2",
