@@ -33,17 +33,26 @@
         </div>
 
         <div id="hero" class="max-w-sm md:max-w-2xl">
-          <NuxtImg
-            preload
-            src="/schedule-hero.png"
-            class="rounded-lg md:rounded-xl shadow-2xl schedule w-[243px] md:w-[400px]"
+          <Image
+            src="https://res.cloudinary.com/demgpyia8/image/upload/v1677426658/schedule-hero_chpi5k"
+            layout="fixed"
+            width="1224"
+            height="800"
+            :breakpoints="[243, 400]"
+            class="rounded-lg md:rounded-xl shadow-2xl schedule max-w-[242px] md:max-w-[400px] h-[371px] max-h-[371px] md:h-[612px] md:max-h-[612px]"
             alt="Screenshot of the app schedule."
+            priority
           />
-          <NuxtImg
-            preload
-            src="/report-hero.png"
-            class="rounded-lg md:rounded-xl shadow-2xl report w-[243px] md:w-[400px]"
+
+          <Image
+            src="https://res.cloudinary.com/demgpyia8/image/upload/v1677427338/report-hero_uxo7lq"
+            layout="fixed"
+            width="1224"
+            height="800"
+            :breakpoints="[243, 400]"
+            class="rounded-lg md:rounded-xl shadow-2xl report max-w-[242px] md:max-w-[400px] h-[371px] max-h-[371px] md:h-[612px] md:max-h-[612px]"
             alt="Screenshot of the post training workout report."
+            priority
           />
           <HeroLifting />
         </div>
@@ -71,6 +80,10 @@
     <SiteFooter />
   </Html>
 </template>
+
+<script setup lang="ts">
+import { Image } from '@unpic/vue'
+</script>
 
 <style>
 #hero {
@@ -103,6 +116,8 @@
   grid-area: 1 / 1 / 2 / 2;
   justify-self: start;
 
+  /* object-fit: fill !important; */
+
   transform: translate(var(--xShift), calc(-1 * var(--yShift)));
   animation: 300ms ease-in-out 0s 1 slideUp;
   @media (min-width: 768px) {
@@ -129,10 +144,7 @@
     }
 
     to {
-      transform: translate(
-        calc(-1 * var(--xShift)),
-        calc(-1 * var(--yShift))
-      );
+      transform: translate(calc(-1 * var(--xShift)), calc(-1 * var(--yShift)));
     }
   }
 }

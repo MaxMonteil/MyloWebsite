@@ -1,7 +1,7 @@
 <template>
   <article class="flex flex-col p-5 pb-0 max-w-7xl gap-10 rounded-3xl md:flex-row md:p-10 md:pb-0 overflow-clip" :class="[bg, text]">
     <div class="space-y-2">
-      <h3 class="text-sm font-medium tracking-wider uppercase md:text-xl">
+      <h3 class="-mb-2 text-sm font-medium tracking-wider uppercase md:text-xl">
         <slot name="subheading" />
       </h3>
 

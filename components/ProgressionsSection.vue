@@ -3,7 +3,6 @@
     bg="bg-yellow-200"
     heading="text-yellow-900"
     text="text-yellow-800"
-    img="h-[220px] md:w-[612px] md:h-[397px]"
   >
     <template #subheading> Progressions </template>
 
@@ -18,7 +17,19 @@
     </template>
 
     <template #image>
-      <NuxtImg class="-mb-1" src="/progressions.png" alt="Image of someone doing an overhead press along with floating snippets saying: 'Increase reps', 'Increase intensity', 'Update weights', and 'Change sets'."/>
+      <Image
+        src="https://res.cloudinary.com/demgpyia8/image/upload/v1677414874/progressions_j02vl7"
+        layout="constrained"
+        width="600"
+        :aspect-ratio="0.66"
+        :breakpoints="[330, 600]"
+        alt="Image of someone doing an overhead press along with floating snippets saying: 'Increase reps', 'Increase intensity', 'Update weights', and 'Change sets'."
+        class="-mb-1 h-[220px] md:w-[600px] md:h-[400px]"
+      />
     </template>
   </ColoredArticle>
 </template>
+
+<script setup lang="ts">
+import { Image } from '@unpic/vue'
+</script>

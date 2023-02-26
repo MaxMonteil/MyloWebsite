@@ -1,10 +1,14 @@
 <template>
   <div class="relative place-items-center hero-image">
-    <NuxtImg
-      preload
-      src="/lifting.png"
-      class="bg-image w-[374px] md:w-[600px] shadow-xl rounded-xl"
-      alt="Image of someone doing an overhead press."
+    <Image
+      src="https://res.cloudinary.com/demgpyia8/image/upload/v1677426315/lifting_yvcttx"
+      layout="fixed"
+      width="800"
+      height="1200"
+      :breakpoints="[374, 600]"
+      alt="Image of someone doing an overhead press along with floating snippets saying: 'Increase reps', 'Increase intensity', 'Update weights', and 'Change sets'."
+      class="bg-image max-h-[250px] md:max-h-[400px] max-w-[374px] md:max-w-[600px] shadow-xl rounded-xl"
+      priority
     />
 
     <WorkoutCard class="card workout-1">
@@ -39,14 +43,22 @@
       Hyper-flexible
     </FeatureCard>
 
-    <NuxtImg
-      preload
-      src="/no-bg-lifting.png"
-      class="fg-image w-[374px] md:w-[600px] z-10"
+    <Image
+      src="https://res.cloudinary.com/demgpyia8/image/upload/v1677417306/no-bg-lifting_sdlvij"
+      layout="fixed"
+      width="800"
+      height="1200"
+      :breakpoints="[374, 600]"
       alt="The same image of some doing an overhead press but cut out from the rest of the background."
+      class="fg-image max-h-[250px] md:max-h-[400px] w-[374px] md:w-[600px] z-10"
+      priority
     />
   </div>
 </template>
+
+<script setup lang="ts">
+import { Image } from '@unpic/vue'
+</script>
 
 <style scoped>
 .workout-1 {
