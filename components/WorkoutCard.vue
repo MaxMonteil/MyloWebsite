@@ -1,59 +1,11 @@
 <template>
-  <article class="p-3 border rounded-lg space-y-3 shadow-sm border-gray">
-    <div class="space-y-2">
-      <h3 class="text-xl font-medium line-clamp-2 text-indigo-darker">{{ workout.name }}</h3>
-      <p class="line-clamp-3 leading-6 text-indigo-light">{{ workout.description }}</p>
-    </div>
-      <div class="flex justify-between text-green-dark">
-        <p>{{ exerciseCount }}</p>
-        <p>{{ workoutSchedule }}</p>
-      </div>
-
-    <a
-      class="inline-block px-2 py-1 text-sm font-medium focus:outline-none focus:ring-2 ring-green-dark text-indigo-dark bg-indigo-lighter rounded-md"
-      :href="publicLink"
-    >
-      See more
-    </a>
-  </article>
+  <div
+    class="p-2 text-green-900 bg-green-300 shadow-xl md:rounded-lg md:px-4 md:py-2 rounded-md"
+  >
+    <p class="mb-0.5 text-sm font-medium md:text-xl"><slot /></p>
+    <p class="text-xs md:text-base">
+      <span class="mr-3"><slot name="schedule" /></span>
+      <span><slot name="exercises" /></span>
+    </p>
+  </div>
 </template>
-
-<script>
-const WEEK = [
-  'Monday',
-  'Tuesday',
-  'Wednesday',
-  'Thursday',
-  'Friday',
-  'Saturday',
-  'Sunday',
-]
-
-export default {
-  props: {
-    workout: {
-      type: Object,
-      required: true,
-    },
-  },
-  computed: {
-    exerciseCount () {
-      const count = Object.keys(this.workout.exercises).length 
-      return `${count} Exercise${count > 1 ? 's' : ''}`
-    },
-    workoutSchedule () {
-      const schedule = Array.isArray(this.workout.week)
-        ? this.workout.week // coming from search results
-        : WEEK.filter(day => this.workout.week[day].length > 0)
-
-      return schedule
-        .map(day => day.substring(0, 2))
-        .join(' ') 
-    },
-    publicLink () {
-      return `${this.$config.WORKOUT_URL}/${this.workout.publicId}`
-    },
-  },
-}
-</script>
-
