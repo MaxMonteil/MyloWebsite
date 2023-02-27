@@ -26,6 +26,15 @@
           >
             Start training
           </NuxtLink>
+
+          <NuxtLink
+            to="https://play.google.com/store/apps/details?id=fit.mylo.app.twa"
+            class="px-4 py-3 font-medium flex items-center gap-2 text-center text-green-50 bg-green-700 rounded-lg shadow-md md:px-4 leading-5"
+          >
+            <GooglePlaySvg  class="w-6 h-6" />
+            Get it on Google Play
+          </NuxtLink>
+
         </div>
       </div>
 

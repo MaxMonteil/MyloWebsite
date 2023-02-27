@@ -4,7 +4,7 @@ const ogSource =
 
 const metaTitle = 'Plan once, Progress forever | Mylo'
 const metaDescription =
-  'Mylo is the most flexible workout tool ever. Craft your plan exactly the way you want and forget about all the management.'
+  'The most flexible workout tool ever. Craft your workout the way you want and forget about all the management.'
 
 export default defineNuxtConfig({
   app: {
