@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 const ogSource =
-  'https://res.cloudinary.com/demgpyia8/image/upload/v1677446092/mylo-og_p8c6je'
+  'https://res.cloudinary.com/demgpyia8/image/upload/v1677446092/mylo-og_p8c6je.png'
 
 const metaTitle = 'Plan once, Progress forever | Mylo'
 const metaDescription =
@@ -26,9 +26,9 @@ export default defineNuxtConfig({
         { name: 'og:image:height', content: '600' },
         { name: 'og:url', content: 'https://www.mylo.fit' },
         { name: 'og:title', content: metaTitle },
-        { name: 'twitter:title', content: metaTitle },
+        { name: 'twitter:title', content: 'Mylo' },
         { name: 'twitter:site', content: '@MyloFit' },
-        { name: 'twitter:image:src', content: ogSource },
+        { name: 'twitter:image', content: ogSource },
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:description', content: metaDescription },
       ],
