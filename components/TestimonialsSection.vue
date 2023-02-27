@@ -12,15 +12,15 @@
       <li
         class="w-full max-w-lg mt-2 leading-loose text-gray-800 snap-center shrink-0"
       >
-        “Keeps track of my workouts and being reminder that I have to workout.
-        It motivates me.”
+        “It offers basically as much customisability as an excel sheet with the
+        functionality of an app.”
       </li>
 
       <li
         class="w-full max-w-lg mt-2 leading-loose text-gray-800 snap-center shrink-0"
       >
-        “It offers basically as much customisability as an excel sheet with the
-        functionality of an app.”
+        “Keeps track of my workouts and being reminder that I have to workout.
+        It motivates me.”
       </li>
 
       <li

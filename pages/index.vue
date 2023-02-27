@@ -111,10 +111,10 @@ import { Image } from '@unpic/vue'
   justify-self: start;
 
   transform: translate(var(--xShift), calc(-1 * var(--yShift)));
-  animation: 300ms ease-in-out 0s 1 slideUp;
+  animation: 500ms ease-in-out 0s 1 slideUp;
   @media (min-width: 768px) {
     transform: translate(calc(-1 * var(--xShift)), calc(-1 * var(--yShift)));
-    animation: 300ms ease-in-out 1 mdSlideUp;
+    animation: 500ms ease-in-out 1 mdSlideUp;
   }
 
   @keyframes slideUp {
@@ -146,10 +146,10 @@ import { Image } from '@unpic/vue'
   justify-self: end;
 
   transform: translate(calc(-1 * var(--xShift)), var(--yShift));
-  animation: 300ms ease-in-out 0s 1 slideDown;
+  animation: 500ms ease-in-out 0s 1 slideDown;
   @media (min-width: 768px) {
     transform: translate(var(--xShift), var(--yShift));
-    animation: 300ms ease-in-out 1 mdSlideDown;
+    animation: 500ms ease-in-out 1 mdSlideDown;
   }
 
   @keyframes slideDown {
@@ -182,7 +182,7 @@ import { Image } from '@unpic/vue'
   grid-template-columns: 100%;
   grid-template-rows: min-content;
 
-  animation: 300ms ease-in-out 0s 1 scaleIn;
+  animation: 500ms ease-in-out 0s 1 scaleIn;
 
   @keyframes scaleIn {
     from {
@@ -216,6 +216,6 @@ import { Image } from '@unpic/vue'
   --yStart: 0;
 
   transform: translate(var(--xEnd), var(--yEnd));
-  animation: 200ms ease-in 0s 1 slideIn;
+  animation: 460ms ease-out 0s 1 slideIn;
 }
 </style>
