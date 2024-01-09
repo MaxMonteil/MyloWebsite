@@ -1,7 +1,7 @@
 <template>
   <main id="top">
-    <div class="px-5 header-bg">
-      <header class="max-w-screen-lg mx-auto pb-14 pt-32 md:pt-28 flex flex-col gap-5">
+    <div class="header-bg">
+      <header class="px-5 max-w-screen-lg mx-auto pb-14 pt-32 md:pt-28 flex flex-col gap-5">
         <h1 class="text-5xl">
           <span class="block text-green-50 font-semibold leading-[105%] tracking-[-2.88px]">Craft, manage, and track</span>
           <span class="block leading-[105%] tracking-[-0.48px] text-white font-black">literally any training plan</span>
@@ -28,11 +28,11 @@
       </header>
     </div>
 
-    <section class="flex flex-col items-center p-5 gap-5 md:p-10 md:gap-10 max-w-screen-lg mx-auto">
+    <section class="flex flex-col items-center p-5 gap-5 md:gap-10 max-w-screen-lg mx-auto">
       <TestimonialsSection />
     </section>
 
-    <section class="grid grid-cols-1 md:grid-cols-2 items-start max-w-screen-lg mx-auto p-5 md:p-10 gap-8">
+    <section class="grid grid-cols-1 md:grid-cols-2 items-start max-w-screen-lg mx-auto p-5 gap-8">
       <BaseCard theme="green">
         <template #title>
           Unlimited custom exercises
@@ -215,7 +215,7 @@
       </MinorCard>
     </section>
 
-    <section class="flex flex-col items-center p-5 gap-5 md:p-10 md:gap-10">
+    <section class="flex flex-col items-center p-5 gap-5 md:gap-10">
       <AboutSection />
       <SocialLinksSection />
     </section>

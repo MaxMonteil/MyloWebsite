@@ -1,6 +1,6 @@
 <template>
-  <nav class="absolute whitespace-nowrap z-10 w-full px-5 text-lg text-white bg-transparent py-4">
-    <div class="flex justify-between mx-auto max-w-screen-lg flex-col md:flex-row items-center gap-4">
+  <nav class="absolute whitespace-nowrap z-10 w-full text-lg text-white bg-transparent py-4">
+    <div class="flex justify-between mx-auto max-w-screen-lg px-5 flex-col md:flex-row items-center gap-4">
       <div class="flex w-full justify-between md:justify-normal items-center gap-8">
         <NuxtLink
           aria-label="Mylo logo, return to top of homepage."
