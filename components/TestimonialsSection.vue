@@ -1,5 +1,5 @@
 <template>
-  <article class="flex flex-col w-full max-w-4xl px-5 py-10">
+  <article class="flex flex-col w-full max-w-screen-lg mx-5">
     <h2
       class="text-sm font-medium tracking-wider text-gray-900 uppercase md:text-xl"
     >

@@ -1,30 +1,35 @@
 <template>
-  <nav class="px-5 fixed z-10 rounded-b-3xl py-2.5 bg-green-400 w-full">
-    <ul class="flex items-center justify-between mx-auto text-sm text-green-800 md:justify-start md:text-base max-w-7xl">
-      <li class="text-green-900 md:grow">
-        <a aria-label="Mylo logo, return to top of homepage." href="#plan-once-progress-forever">
-          <LogoSvg class="w-10 h-10 md:w-14 md:h-14" />
-        </a>
-      </li>
-
-      <!-- <li><NuxtLink to="/free-plans">Free plans</NuxtLink></li> -->
-      <!-- <li class="md:ml-6"><NuxtLink to="/blog">Blog</NuxtLink></li> -->
-
-      <li class="flex gap-5 items-center">
+  <nav class="absolute whitespace-nowrap z-10 w-full px-5 text-lg text-white bg-transparent py-4">
+    <div class="flex justify-between mx-auto max-w-screen-lg flex-col md:flex-row items-center gap-4">
+      <div class="flex w-full justify-between md:justify-normal items-center gap-8">
         <NuxtLink
-          to="https://play.google.com/store/apps/details?id=fit.mylo.app.twa"
-          class="p-2 md:p-3 text-green-50 bg-green-700 rounded-lg"
+          aria-label="Mylo logo, return to top of homepage."
+          to="/"
         >
-          <GooglePlaySvg  class="w-4 h-4" />
+          <WordmarkLogoSvg class="h-6" />
+        </NuxtLink>
+
+        <!-- <NuxtLink to="/free-plans"> -->
+        <!--   Free plans -->
+        <!-- </NuxtLink> -->
+
+        <!-- <NuxtLink to="/blog"> -->
+        <!--   Blog -->
+        <!-- </NuxtLink> -->
+      </div>
+
+      <div class="flex items-center gap-6">
+        <NuxtLink to="/blog">
+          Login
         </NuxtLink>
 
         <NuxtLink
           to="https://app.mylo.fit"
-          class="px-4 py-2 font-medium text-green-600 bg-white rounded-lg md:px-6 md:py-3 leading-4"
+          class="px-4 py-2 text-base font-medium text-green-700 bg-white rounded-lg leading-5"
         >
-          Start training
+          Start Training
         </NuxtLink>
-      </li>
-    </ul>
+      </div>
+    </div>
   </nav>
 </template>

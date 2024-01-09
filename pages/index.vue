@@ -1,230 +1,268 @@
 <template>
-  <main>
-    <header
-      class="flex flex-col items-center justify-center p-5 pt-20 bg-green-400 md:pt-32 md:p-10 rounded-b-3xl gap-10 md:flex-row lg:gap-20"
-    >
-      <div class="max-w-lg">
-        <h1
-          id="plan-once-progress-forever"
-          class="text-4xl font-black text-green-900 md:text-6xl leading-10"
-        >
-          <span class="block text-white">Plan once</span>
-          <span class="block italic font-black">Progress Forever</span>
+  <main id="top">
+    <div class="px-5 header-bg">
+      <header class="max-w-screen-lg mx-auto pb-14 pt-32 md:pt-28 flex flex-col gap-5">
+        <h1 class="text-5xl">
+          <span class="block text-green-50 font-semibold leading-[105%] tracking-[-2.88px]">Craft, manage, and track</span>
+          <span class="block leading-[105%] tracking-[-0.48px] text-white font-black">literally any training plan</span>
         </h1>
 
-        <h2 class="mt-2 text-green-900 md:mt-4 leading-6 md:text-xl">
-          Mylo is the most flexible workout tool ever. Craft your plan and
-          forget about all the management.
+        <h2 class="text-green-50 text-lg leading-6 max-w-[620px]">
+          Mylo gives you the freedom to train to your limits, not your app's. <br>
+          Create, follow, and adapt any training – from gym routines to yoga sequences – all in one seamless, intuitive app. And it's completely free!
         </h2>
 
-        <div
-          class="flex flex-wrap mt-6 md:justify-start md:mt-8 gap-4 md:text-xl"
-        >
-          <NuxtLink
-            to="https://app.mylo.fit"
-            class="px-8 py-3 font-medium text-center text-green-600 bg-white rounded-lg shadow-md md:px-10 leading-5"
-          >
-            Start training
-          </NuxtLink>
+        <div class="flex gap-4">
+          <button class="shadow-md bg-white py-[10px] px-6 rounded-md self-start text-green-700 font-medium">
+            Start Training
+          </button>
 
-          <NuxtLink
-            to="https://play.google.com/store/apps/details?id=fit.mylo.app.twa"
-            class="px-4 py-3 font-medium flex items-center gap-2 text-center text-green-50 bg-green-700 rounded-lg shadow-md md:px-4 leading-5"
+          <a
+            href="https://play.google.com/store/apps/details?id=fit.mylo.app.twa"
+            class="shadow-md flex gap-2 items-center bg-green-700 py-[10px] px-6 rounded-md self-start text-white font-medium"
           >
-            <GooglePlaySvg  class="w-6 h-6" />
+            <GooglePlaySvg class="w-6 h-6" />
             Get it on Google Play
-          </NuxtLink>
-
+          </a>
         </div>
-      </div>
-
-      <div id="hero" class="max-w-sm md:max-w-2xl">
-        <Image
-          src="https://res.cloudinary.com/demgpyia8/image/upload/v1677426658/schedule-hero_chpi5k"
-          layout="fixed"
-          width="1224"
-          height="800"
-          :breakpoints="[243, 400]"
-          class="rounded-lg md:rounded-xl shadow-2xl schedule max-w-[242px] md:max-w-[400px] h-[371px] max-h-[371px] md:h-[612px] md:max-h-[612px]"
-          alt="Screenshot of the app schedule."
-          priority
-        />
-
-        <Image
-          src="https://res.cloudinary.com/demgpyia8/image/upload/v1677427338/report-hero_uxo7lq"
-          layout="fixed"
-          width="1224"
-          height="800"
-          :breakpoints="[243, 400]"
-          class="rounded-lg md:rounded-xl shadow-2xl report max-w-[242px] md:max-w-[400px] h-[371px] max-h-[371px] md:h-[612px] md:max-h-[612px]"
-          alt="Screenshot of the post training workout report."
-          priority
-        />
-        <HeroLifting />
-      </div>
-    </header>
+      </header>
+    </div>
 
     <section class="flex flex-col items-center p-5 gap-5 md:p-10 md:gap-10">
       <TestimonialsSection />
+    </section>
 
-      <CraftingSection />
+    <section class="flex justify-center mx-auto max-w-screen-lg flex-wrap items-center p-5 md:p-0 gap-8">
+      <BaseCard theme="green">
+        <template #title>
+          Unlimited custom exercises
+        </template>
 
-      <SharingSection />
+        <template #content>
+          <p>In Mylo you can create any exercise you want with support for rep, time, and distance based moves.</p>
+        </template>
 
-      <ProgressionsSection />
+        <template #media>
+          <div class="relative">
+            <span class="absolute bg-green-400 text-green-800 px-2 py-1 rounded font-medium right-0 transform rotate-12 -translate-y-3 shadow-md translate-x-2">Try it out!</span>
+            <ExerciseForm />
+          </div>
+        </template>
+      </BaseCard>
 
-      <PricingSection />
+      <BaseCard theme="yellow">
+        <template #title>
+          Own your schedule
+        </template>
 
-      <SchedulingSection />
+        <template #content>
+          <p>All your workout plans get organized into your own tailored schedule.</p>
+          <p>No second guessing today's plan.</p>
+        </template>
 
+        <template #media>
+          <HomeSchedule />
+        </template>
+      </BaseCard>
+
+      <BaseCard theme="blue">
+        <template #title>
+          Limitless workouts
+        </template>
+
+        <template #content>
+          Craft as many workout plans as you want. Organize your exercises into month long plans or repeating weekly schedules.
+        </template>
+
+        <template #media>
+          <div class="limitless-workouts py-2 relative h-[191px] overflow-clip">
+            <div class="parallax w-full flex flex-col gap-2">
+              <WorkoutItem
+                times="3"
+                count="5"
+              >
+                Stronglifts 5x5
+              </WorkoutItem>
+
+              <WorkoutItem
+                times="3"
+                count="8"
+              >
+                Boxing Practice
+              </WorkoutItem>
+
+              <WorkoutItem
+                times="5"
+                count="5"
+              >
+                Yoga Flow
+              </WorkoutItem>
+
+              <WorkoutItem
+                times="2"
+                count="3"
+              >
+                Swimming Class
+              </WorkoutItem>
+
+              <WorkoutItem
+                times="7"
+                count="12"
+              >
+                Starting Flexibility
+              </WorkoutItem>
+
+              <WorkoutItem times="7">
+                Daily Walks
+              </WorkoutItem>
+            </div>
+          </div>
+        </template>
+      </BaseCard>
+
+      <MinorCard>
+        <template #title>
+          Custom workout timers
+        </template>
+
+        <template #content>
+          <p>Set custom timers per exercise that automatically start when you finish a set.</p>
+          <p>There’s even a setup countdown to give you time to get into position.</p>
+        </template>
+      </MinorCard>
+
+      <MinorCard>
+        <template #title>
+          Edit anything, anytime
+        </template>
+
+        <template #content>
+          <p>You can edit the workouts you create or download, even in the middle of training.</p>
+          <p>If something feels limiting, let me know!</p>
+        </template>
+      </MinorCard>
+
+      <BaseCard theme="red">
+        <template #title>
+          Automatic progressions
+        </template>
+
+        <template #content>
+          <p>Exercise Rules let you intuitively define automatic progressions for any exercises.</p>
+          <p>You can always change the values, even while training.</p>
+        </template>
+      </BaseCard>
+
+      <BaseCard>
+        <template #title>
+          Share workouts freely
+        </template>
+
+        <template #content>
+          <p>
+            Every workout plan is shareable with a link!
+            Easily share your workouts with friends, clients, or a community.
+          </p>
+          <p>Since this is Mylo, you’re free to edit downloaded workouts however you want.</p>
+        </template>
+      </BaseCard>
+
+      <MinorCard>
+        <template #title>
+          Clean &amp; intuitive UI
+        </template>
+
+        <template #content>
+          <p>The pursuit of flexibility is core to Mylo. But adding options can complicate interfaces.</p>
+          <p>Every change is thoughtfully included to keep things intuitive, clean, and beautiful.</p>
+        </template>
+      </MinorCard>
+
+      <!-- <BaseCard> -->
+      <!--   <template #title> -->
+      <!--     Looking for a plan? -->
+      <!--   </template> -->
+      <!--  -->
+      <!--   <template #content> -->
+      <!--     Reliably finding good workout plans can be a huge pain and once you do, you -->
+      <!--     still have to make sense of them. -->
+      <!--     <br><br> -->
+      <!--     Mylo comes with free workouts you can follow right away or edit to suit your -->
+      <!--     needs. They all have exercise rules so all you need to do is show up and follow -->
+      <!--     the plan. -->
+      <!--     <br><br> -->
+      <!--  -->
+      <!--     <NuxtLink -->
+      <!--       to="/free-plans" -->
+      <!--       class="inline-block px-6 py-3 font-medium text-green-700 rounded-lg md:text-xl md:px-8 leading-5 bg-green-50" -->
+      <!--     > -->
+      <!--       Explore free plans -->
+      <!--     </NuxtLink> -->
+      <!--   </template> -->
+      <!-- </BaseCard> -->
+    </section>
+
+    <section class="bg-gray-50 flex flex-col items-center gap-5 p-5 mt-12 md:gap-10">
+      <MinorCard>
+        <template #title>
+          Free. No Ads.
+        </template>
+
+        <template #content>
+          <p>This a personal project of mine and is completely free to use. There are no ads and I don’t care to track you.</p>
+          <p>Mylo will always be free to use, but I do plan to add more features and value behind a paid tier.</p>
+        </template>
+      </MinorCard>
+    </section>
+
+    <section class="flex flex-col items-center p-5 gap-5 md:p-10 md:gap-10">
       <AboutSection />
-
       <SocialLinksSection />
     </section>
   </main>
 </template>
 
-<script setup lang="ts">
-import { Image } from '@unpic/vue'
-</script>
+<script setup lang="ts"></script>
 
-<style>
-#hero {
-  --xShift: 20px;
-  --yShift: 25px;
+<style scoped>
+.header-bg {
+  --green-700: #155635;
 
-  @media (min-width: 768px) {
-    --xShift: 35px;
-
-    --yShiftStart: 22px;
-    --yShift: 42px;
-  }
-
-  margin-block: 25px;
-
-  position: relative;
-  display: grid;
-  grid-template-rows: min-content;
-  place-items: center;
-  padding-inline: var(--xShift);
-
-  grid-template-columns: minmax(300px, 344px);
-  @media (min-width: 768px) {
-    grid-template-columns: minmax(400px, 600px);
-    margin-block: 42px;
-  }
+  background:
+    radial-gradient(
+      100vw 50vw at 80% 85%,
+      rgba(17, 60, 43, 0.80) 0%,
+      rgba(21, 86, 53, 0.00) 100%
+    ),
+    radial-gradient(
+      100vw 72vw at 25% 25%,
+      rgba(96, 211, 146, 0.80) 0%,
+      rgba(153, 226, 169, 0.00) 100%
+    ),
+    var(--green-700)
+  ;
 }
 
-#hero > .schedule {
-  grid-area: 1 / 1 / 2 / 2;
-  justify-self: start;
-
-  transform: translate(var(--xShift), calc(-1 * var(--yShift)));
-  animation: 500ms ease-in-out 0s 1 slideUp;
-  @media (min-width: 768px) {
-    transform: translate(calc(-1 * var(--xShift)), calc(-1 * var(--yShift)));
-    animation: 500ms ease-in-out 1 mdSlideUp;
-  }
-
-  @keyframes slideUp {
-    from {
-      transform: translate(var(--xShift), calc(-1 * var(--yShiftStart)));
-    }
-
-    to {
-      transform: translate(var(--xShift), calc(-1 * var(--yShift)));
-    }
-  }
-
-  @keyframes mdSlideUp {
-    from {
-      transform: translate(
-        calc(-1 * var(--xShift)),
-        calc(-1 * var(--yShiftStart))
-      );
-    }
-
-    to {
-      transform: translate(calc(-1 * var(--xShift)), calc(-1 * var(--yShift)));
-    }
-  }
-}
-
-#hero > .report {
-  grid-area: 1 / 1 / 2 / 2;
-  justify-self: end;
-
-  transform: translate(calc(-1 * var(--xShift)), var(--yShift));
-  animation: 500ms ease-in-out 0s 1 slideDown;
-  @media (min-width: 768px) {
-    transform: translate(var(--xShift), var(--yShift));
-    animation: 500ms ease-in-out 1 mdSlideDown;
-  }
-
-  @keyframes slideDown {
-    from {
-      transform: translate(calc(-1 * var(--xShift)), var(--yShiftStart));
-    }
-
-    to {
-      transform: translate(calc(-1 * var(--xShift)), var(--yShift));
-    }
-  }
-
-  @keyframes mdSlideDown {
-    from {
-      transform: translate(var(--xShift), var(--yShiftStart));
-    }
-
-    to {
-      transform: translate(var(--xShift), var(--yShift));
-    }
-  }
-}
-
-#hero > .hero-image {
-  z-index: 1;
-  grid-area: 1 / 1 / 2 / 2;
-  aspect-ratio: 600 / 400;
-
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: min-content;
-
-  animation: 500ms ease-in-out 0s 1 scaleIn;
-
-  @keyframes scaleIn {
-    from {
-      transform: scale(0.9);
-    }
-
-    to {
-      transform: scale(1);
-    }
-  }
-}
-
-#hero > .hero-image > .card,
-#hero > .hero-image > .bg-image,
-#hero > .hero-image > .fg-image {
-  grid-area: 1 / 1 / 2 / 2;
-}
-
-@keyframes slideIn {
-  from {
-    transform: translate(var(--xStart), var(--yStart));
-  }
-
+@keyframes parallax {
   to {
-    transform: translate(var(--xEnd), var(--yEnd));
+    transform: translateY(-250px);
   }
 }
 
-.card {
-  --xStart: 0;
-  --yStart: 0;
+.limitless-workouts {
+  view-timeline-name: --workout-scroll;
 
-  transform: translate(var(--xEnd), var(--yEnd));
-  animation: 460ms ease-out 0s 1 slideIn;
+  mask-image: linear-gradient(
+    transparent,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+.parallax {
+  animation: parallax linear;
+  animation-range-start: 200px;
+  animation-timeline: --workout-scroll;
 }
 </style>

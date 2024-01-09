@@ -1,16 +1,21 @@
 {
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.4.1",
-    "@unpic/vue": "^0.0.7",
-    "nuxt": "^3.2.2",
+    "@antfu/eslint-config": "^2.2.1",
+    "@nuxtjs/tailwindcss": "^6.9.4",
+    "@unpic/vue": "^0.0.34",
+    "eslint": "^8.55.0",
+    "nuxt": "^3.9.1",
     "nuxt-zero-js": "^0.1.3"
   }
 }

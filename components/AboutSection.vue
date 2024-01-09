@@ -1,5 +1,5 @@
 <template>
-  <article class="max-w-4xl px-5 py-10 text-gray-800">
+  <article class="max-w-screen-lg m-5 text-gray-800">
     <Image
       src="https://res.cloudinary.com/demgpyia8/image/upload/v1677427674/maximilien_imyhnl"
       layout="fixed"
@@ -14,13 +14,13 @@
       Why Mylo?
     </h2>
 
-    <p class="mt-2 max-w-prose md:text-xl md:mt-4">
+    <p class="mt-2 max-w-prose md:text-lg md:mt-4">
       I wanted something more than just a digital notebook. Something smart enough
       to handle all the management so that I can focus on training.
-      <br /> <br />
+      <br><br>
       It needed to be fully featured, extremely flexible, and never in the way. That’s
       what I’m building.
-      <br /> <br />
+      <br><br>
       If that sounds cool you should try out Mylo.
     </p>
   </article>
@@ -29,4 +29,3 @@
 <script setup lang="ts">
 import { Image } from '@unpic/vue'
 </script>
-

@@ -1,10 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-const ogSource =
-  'https://res.cloudinary.com/demgpyia8/image/upload/v1677446092/mylo_promo.jpg'
+const ogSource
+  = 'https://res.cloudinary.com/demgpyia8/image/upload/v1677446092/mylo_promo.jpg'
 
-const metaTitle = 'Plan once, Progress forever | Mylo'
-const metaDescription =
-  'The most flexible workout tool ever. Craft your workout the way you want and forget about all the management.'
+const metaTitle = 'Train literally anything with Mylo'
+const metaDescription
+  = 'The most flexible workout tool ever. Craft your training the way you want and forget about all the management.'
 
 export default defineNuxtConfig({
   app: {
@@ -34,13 +34,16 @@ export default defineNuxtConfig({
       ],
       script: [
         {
-          src: 'https://plausible.io/js/plausible.js',
-          async: true,
-          defer: true,
+          'src': 'https://plausible.io/js/plausible.js',
+          'async': true,
+          'defer': true,
           'data-domain': 'mylo.fit',
         },
       ],
     },
+  },
+  vue: {
+    propsDestructure: true,
   },
   modules: ['@nuxtjs/tailwindcss', 'nuxt-zero-js'],
 })
