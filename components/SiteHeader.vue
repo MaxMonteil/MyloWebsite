@@ -25,7 +25,7 @@
 
         <NuxtLink
           to="https://app.mylo.fit"
-          class="px-4 py-2 text-base font-medium text-green-700 bg-white rounded-lg leading-5"
+          class="px-4 py-2 text-base font-medium text-green-700 bg-white rounded-md leading-5"
         >
           Start Training
         </NuxtLink>
