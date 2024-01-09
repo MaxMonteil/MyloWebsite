@@ -28,11 +28,11 @@
       </header>
     </div>
 
-    <section class="flex flex-col items-center p-5 gap-5 md:p-10 md:gap-10">
+    <section class="flex flex-col items-center p-5 gap-5 md:p-10 md:gap-10 max-w-screen-lg mx-auto">
       <TestimonialsSection />
     </section>
 
-    <section class="flex justify-center mx-auto max-w-screen-lg flex-wrap items-center p-5 md:p-0 gap-8">
+    <section class="grid grid-cols-1 md:grid-cols-2 items-start max-w-screen-lg mx-auto p-5 md:p-10 gap-8">
       <BaseCard theme="green">
         <template #title>
           Unlimited custom exercises

@@ -1,6 +1,6 @@
 <template>
   <section class="border border-gray-200 bg-white p-2 rounded-lg flex flex-col gap-2">
-    <nav class="flex justify-between p-2 capitalize bg-gray-50 border border-gray-200 rounded-lg h-[72px]">
+    <nav class="overflow-auto flex justify-between p-2 capitalize bg-gray-50 border border-gray-200 rounded-lg h-[72px]">
       <label
         v-for="(_, date) of schedule"
         :key="date"
